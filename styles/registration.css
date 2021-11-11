@@ -5,12 +5,18 @@
 .lh-condensed { line-height: 1.25; }
 
 body{
-  background-image: url("https://wallpaperaccess.com/full/1740357.jpg");
+  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701483195.jpg");
 }
 #title{
   font-size: 16px;
   padding: 3% 15% 5%;
-  font-weight: 700;
+  font-weight: 900;
+}
+.container{
+  color: white;
+}
+.fontcolor1{
+  color: white;
 }
 .nav-item{
   padding:  18px;
