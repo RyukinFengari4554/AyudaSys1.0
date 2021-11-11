@@ -8,9 +8,17 @@ html {
   }
 
 }
+#title{
+  background-color: #9c73f2;
+  padding: 3% 15% 5%;
+}
 body{
   background-image: url("https://i.pinimg.com/originals/49/56/fd/4956fdd7903279bdce16f8071a05774d.jpg");
 }
+.navbar{
+  padding: 0 0 4.5rem;
+}
+
 .lead{
   padding: 0 0 10% 0;
   color: white;
