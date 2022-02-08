@@ -22,3 +22,11 @@ body {
 .hello{
   height: 10rem;
 }
+.qrcode{
+  position: absolute;
+  background-color: white;
+
+  left: 45%;
+
+
+}
