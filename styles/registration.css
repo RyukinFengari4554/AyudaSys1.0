@@ -20,6 +20,9 @@ html{
   height: 100%;
   overflow: hidden;
 }
+.form1{
+  color: white;
+}
 .hello{
   height: 5rem;
 }
