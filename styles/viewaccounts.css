@@ -22,6 +22,7 @@ body {
 }
 .hello{
   height: 10rem;
+  color: white;
 }
 .form-signin {
   width: 100%;

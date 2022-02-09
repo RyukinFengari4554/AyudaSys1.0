@@ -1,3 +1,7 @@
+<?php
+  include_once 'includes/db.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +33,7 @@
     <!-- Custom styles for this template -->
     <link href="styles/viewaccounts.css" rel="stylesheet">
 
-
+</head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand brand-title" href="">AyudaSys </a>
@@ -46,17 +50,26 @@
           </li>
         </ul>
     </nav>
-  </head>
-<div class="hello">
+    <div class="hello">
 
-</div>
+    <?php
+      $sql = "SELECT * FROM admin;";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        while($row = mysqli_fetch_assoc($result)){
+          echo $row['username'];
+        }
+      }
+    ?>
+    </div>
+    
+  
 
 
 
 
 
-
-
-    <script src="java/signin.js" charset="utf-8"></script>
+  <script src="java/signin.js" charset="utf-8"></script>
   </body>
 </html>

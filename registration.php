@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -59,7 +61,7 @@
 
         </div>
         <div class="col-md-12 order-md-1 fontcolor1">
-          <form action="connect_registration.php" method="post">
+          <form action="includes/register.inc.php" method="POST" class="needs-validation" novalidate>
           <h4 class="mb-3">Citizen Info</h4>
           <div class="mb-3">
             <label for="username">Barangay ID</label>
@@ -71,7 +73,7 @@
               </div>
             </div>
           </div>
-          <form class="needs-validation" novalidate>
+          <!--<form class="needs-validation" novalidate> -->
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label for="firstName">First name</label>
@@ -103,7 +105,7 @@
               </div>
             </div>
             </form>
-            <form class="needs-validation" novalidate>
+            <!--<form class="needs-validation" novalidate> -->
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label for="House">House No.</label>
@@ -167,7 +169,7 @@
         </form>
 
       <div class="hello">
-
+        
       </div>
 
 
@@ -205,5 +207,8 @@
         }, false);
       })();
     </script>
+    <script src="java/registration.js" charset="utf-8"></script>
   </body>
 </html>
+
+
