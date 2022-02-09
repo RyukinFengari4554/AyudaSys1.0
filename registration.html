@@ -59,12 +59,13 @@
 
         </div>
         <div class="col-md-12 order-md-1 fontcolor1">
+          <form action="connect_registration.php" method="post">
           <h4 class="mb-3">Citizen Info</h4>
           <div class="mb-3">
             <label for="username">Barangay ID</label>
             <div class="input-group">
 
-              <input type="text" class="form-control" id="Barangay ID " placeholder="Barangay ID" required>
+              <input type="text" class="form-control" id="Barangay ID " name="rbid" placeholder="Barangay ID" required>
               <div class="invalid-feedback" style="width: 100%;">
                 Your Barangay ID is required.
               </div>
@@ -74,21 +75,21 @@
             <div class="row">
               <div class="col-md-4 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="firstName" name="rfn" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="MiddleName">Middle name</label>
-                <input type="text" class="form-control" id="Middle Name" placeholder="" value="" required>
+                <input type="text" class="form-control" id="Middle Name" name="rmn" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="lastName" name="rln" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -96,30 +97,31 @@
             </div>
             <div class="mb-3">
               <label for="Number">Number of people in the household</label>
-              <input type="text" class="form-control" id="number"  required>
+              <input type="text" class="form-control" id="number" name="rnom" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
+            </form>
             <form class="needs-validation" novalidate>
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label for="House">House No.</label>
-                  <input type="text" class="form-control" id="address" placeholder="House No" required>
+                  <input type="text" class="form-control" id="address" name="rhn" placeholder="House No" required>
                   <div class="invalid-feedback">
                     Please enter your shipping address.
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="Street">Street</label>
-                  <input type="text" class="form-control" id="address" placeholder="Street" required>
+                  <input type="text" class="form-control" id="address" name="rs" placeholder="Street" required>
                   <div class="invalid-feedback">
                     Please enter your shipping address.
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="Barangay">Barangay</label>
-                  <input type="text" class="form-control" id="address" placeholder="Barangay" required>
+                  <input type="text" class="form-control" id="address" name="rb" placeholder="Barangay" required>
                   <div class="invalid-feedback">
                     Please enter your shipping address.
                   </div>
@@ -145,23 +147,25 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label for="email">Email <span class="text-muted"></span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                <input type="email" class="form-control" id="email" name="re" placeholder="you@example.com" required>
                 <div class="invalid-feedback">
-                  Please enter a valid email address for shipping updates.
+                  Please enter a valid email address for updates.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="Contact Information">Contact Information</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required>
+                <label for="Contact Information">Contact Number</label>
+                <input type="text" class="form-control" id="zip" name="rcn" placeholder="" required>
                 <div class="invalid-feedback">
-                  Zip code required.
+                  Contact Number required.
                 </div>
               </div>
             </div>
             <hr class="my-4">
 
           <button class="w-100 btn btn-primary " type="submit">Submit Information</button>
-        </head>
+
+        </form>
+
       <div class="hello">
 
       </div>
