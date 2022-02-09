@@ -58,7 +58,7 @@
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         while($row = mysqli_fetch_assoc($result)){
-          echo $row['username'];
+          echo $row['username']. "<br>";
         }
       }
     ?>
