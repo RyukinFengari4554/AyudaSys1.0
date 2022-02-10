@@ -1,7 +1,5 @@
 
-<?php
-  include_once 'includes/db.inc.php';
-?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,7 +27,7 @@
   <section id="title">
   <!-- Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand brand-title" href="index.html">AyudaSys </a>
+    <a class="navbar-brand brand-title" href="">AyudaSys </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,7 +36,9 @@
         <li class="nav-item">
           <a class="nav-link links" href="index.html">Home</a>
         </li>
-      
+        <li class="nav-item">
+          <a class="nav-link links" href="signin.html">Login</a>
+        </li>
       </ul>
     </div>
   </nav>
