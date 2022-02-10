@@ -1,3 +1,6 @@
+<?php
+  include_once 'includes/db.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +30,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.css" rel="stylesheet">
+    <link href="styles/mn.css" rel="stylesheet">
 
 </head>
   <body>
@@ -48,44 +51,32 @@
     </nav>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Manage Necessity Page</h1>
-      <p class="lead">The Manage Necessity Page allows for editing of packages and package content. </p>
+      <h1 class="display-4">Show Ayuda Packages List Page</h1>
+      <p class="lead">The Ayuda Packages List Page shows the list of the ayuda packages content. </p>
     </div>
   <!--packagechooseing-->
-  <button class="w-100 btn btn-primary " type="submit">Edit Necessity list</button>
+  <br>
+  <button class="w-100 btn btn-primary " type="submit" id="btns" onclick="camo()">Show Packages Content</button>
   <br>
   <br>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/register.inc.php" method="POST">
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label for="Package">Ayuda Package</label>
-      <select class="custom-select d-block w-100" id="Package" required>
-        <option value="">Package...</option>
-        <option>Package A</option>
-        <option>Package B</option>
-      </select>
-      <div class="invalid-feedback">
-        Please enter a valid package
-      </div>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="Package Content">Package Content <span class="text-muted"></span></label>
-      <input type="Text" class="form-control" id="Package Type" name="re" placeholder="...." required>
-      <div class="invalid-feedback">
-        Please enter a valid package content
-      </div>
-    </div>
+  <div id="camo">
+    <?php
+      $sql = "SELECT * FROM ayuda_package;";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo 'name'.'package_content'."<br>";
+        while($row = mysqli_fetch_assoc($result)){
+        echo $row['name']. $row['package_content']. "<br>";
+      }
+    }
   </div>
-  <br>
-  <br>
-  <button class="w-100 btn btn-primary " type="submit">Confirm Changes</button>
-
-</form>
+  </form>
 
 
 
 
-  <script src="java/signin.js" charset="utf-8"></script>
+  <script src="java/manage_necessity.js" charset="utf-8"></script>
   </body>
 </html>
