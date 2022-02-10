@@ -1,14 +1,14 @@
 
 <?php
     include_once 'db.inc.php';
-    $barangay_id = $_POST['rbid'];
-    $house_no  = $_POST['rhn'];
-    $first_name = $_POST['rfn'];
-    $middle_name = $_POST['rmn'];
-    $last_name = $_POST['rln'];
-    $no_of_members = $_POST['rnom'];
-    $street = $_POST['rs'];
-    $barangay = $_POST['rb'];
+    $barangay_id = mysqli_real_escape_string($conn, $_POST['rbid']);
+    $house_no  = mysqli_real_escape_string($conn, $_POST['rhn']);
+    $first_name = mysqli_real_escape_string($conn, $_POST['rfn']);
+    $middle_name = mysqli_real_escape_string($conn, $_POST['rmn']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['rln']);
+    $no_of_members = mysqli_real_escape_string($conn, $_POST['rnom']);
+    $street = mysqli_real_escape_string($conn, $_POST['rs']);
+    $barangay = mysqli_real_escape_string($conn, $_POST['rb']);
 
 
 

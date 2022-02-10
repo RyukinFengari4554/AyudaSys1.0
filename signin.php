@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,23 +55,27 @@
 </div>
 
 
-    <form class="form-signin">
+    <form class="form-signin" action="includes/ab-signin.inc.php" method="POST">
       <h1 class="h3 mb-3 font-weight-normal">Admin Login Page</h1>
-      <label for="inputEmail" class="sr-only"></label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Admin username" required="" autofocus="">
+      <label for="inputUsername" class="sr-only"></label>
+      <input type="text" id="inputEmail" class="form-control" name="un" placeholder="Username" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Admin password" required="">
+      <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Admin password" required="">
       <div class="checkbox mb-3">
         <label>
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit"  onclick="clickHandler()">Sign in</button>
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
+      <?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+      ?> 
     </form>
-
-
-
-
-    <script src="java/signin.js" charset="utf-8"></script>
   </body>
 </html>
+<?php
+    unset($_SESSION["error"]);
+?>
