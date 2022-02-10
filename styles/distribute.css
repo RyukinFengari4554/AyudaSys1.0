@@ -11,6 +11,9 @@ body {
 .navbar{
 
 }
+.pricing-header{
+  color: white;
+}
 body {
   background-size:cover;
   align-items: center;
