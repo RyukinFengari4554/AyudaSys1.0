@@ -60,7 +60,7 @@
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/register.inc.php" method="POST">
+  <form class="form1" action="includes/register_citizen.inc.php" method="POST">
     <div class="row">
       <div class="col-md-3 col-sm-12 was-validated">
         <label> Barangay ID: </label>
@@ -114,32 +114,7 @@
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-md-4 col-sm-12 was-validated">
-        <label> Ayuda Package: </label>
-        <select name="rp" class="custom-select d-block w-100" id="Package" required>
-          <option value="">Package...</option>
-          <option>Package A: Cash</option>
-          <option>Package B: Goods</option>
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Please fill out this field.</div>
-        </select>
-        <!--<input type="text" class="form-control" name="rp" id="rp" placeholder="Choose your Ayuda package" name="email">-->
-      </div>
-      <div class="col-md-4 col-sm-12 was-validated">
-        <label> Email: </label>
-        <input type="text" class="form-control" name="re" id="re" placeholder="Enter your Email" name="pswd" required>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Please fill out this field.</div>
-      </div>
-      <div class="col-md-4 col-sm-12 was-validated">
-        <label> Contact Number: </label>
-        <input type="text" class="form-control" name="rcn" name="rcn" placeholder="Enter your Contact Number" name="pswd" required>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Please fill out this field.</div>
-      </div>
-    </div>
+    
     <br>
     <br>
     <button class="w-100 btn btn-primary " type="submit">Submit Information</button>

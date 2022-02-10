@@ -1,7 +1,7 @@
 
 <?php
     include_once 'db.inc.php';
-    /*
+    
     function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -11,7 +11,7 @@
         }
         return $randomString;
     }
-    */
+
     $barangay_id = $_POST['rbid'];
     $house_no  = $_POST['rhn'];
     $first_name = $_POST['rfn'];
@@ -24,12 +24,12 @@
     $barangay = $_POST['rb'];
     $v_s = "Verifying";
     $package = $_POST['rp'];
-    $qr_code = "try";
+    $qr_code = generateRandomString();
 
 
     $sql = "insert into registration (barangay_id, house_no, first_name, middle_name, last_name, no_of_members, email, contact_number, street, barangay, verification_status, package, qr_code) values ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$no_of_members', '$email', '$contact_number', '$street', '$barangay', '$v_s', '$package', '$qr_code');";
     $result = mysqli_query($conn, $sql);
     
 
-    header("Location: ../index.php?signup=success");
+    header("Location: ../registration.html?signup=success");
 ?>
