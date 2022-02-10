@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,15 +65,7 @@
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit"  onclick="clickHandler()"><a  href="adminpage.html">Sign in</button>
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
-      <?php
-                    if(isset($_SESSION["error"])){
-                        $error = $_SESSION["error"];
-                        echo "<span>$error</span>";
-                    }
-      ?> 
+     
     </form>
   </body>
 </html>
-<?php
-    unset($_SESSION["error"]);
-?>
