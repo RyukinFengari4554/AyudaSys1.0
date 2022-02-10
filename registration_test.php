@@ -1,5 +1,7 @@
 
-
+<?php
+  include_once 'includes/db.inc.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,9 +38,7 @@
         <li class="nav-item">
           <a class="nav-link links" href="index.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link links" href="signin.html">Login</a>
-        </li>
+      
       </ul>
     </div>
   </nav>
