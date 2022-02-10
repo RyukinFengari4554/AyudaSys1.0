@@ -66,9 +66,11 @@
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo 'name'.'package_content'."<br>";
+        echo "<strong>name &emsp; package_content</strong>"."<br>";
+        echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo $row['name']. $row['package_content']. "<br>";
+        echo $row['name']."&emsp;". $row['package_content']. "<br>";
+        echo "<br>";
         }
       }
       ?>

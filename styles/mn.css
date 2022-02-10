@@ -62,3 +62,7 @@ body {
 .lbl{
     color: white;
 }
+.hello{
+    font-weight: 400;
+    margin-left: 10%;
+}
