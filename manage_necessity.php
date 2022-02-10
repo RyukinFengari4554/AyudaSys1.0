@@ -60,7 +60,7 @@
   <br>
   <br>
   <!-- Custom styles for this template -->
-  <div id="camo">
+  <div class='hello' id="camo">
     <?php
       $sql = "SELECT * FROM ayuda_package;";
       $result = mysqli_query($conn, $sql);
@@ -69,10 +69,11 @@
         echo 'name'.'package_content'."<br>";
         while($row = mysqli_fetch_assoc($result)){
         echo $row['name']. $row['package_content']. "<br>";
+        }
       }
-    }
-  </div>
-  </form>
+      ?>
+    </div>
+
 
 
 
