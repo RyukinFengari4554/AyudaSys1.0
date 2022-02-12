@@ -1,40 +1,43 @@
 <?php
 
-/
- * QR_BarCode - Barcode QR Code Image Generator
- *
- *
- /
+
 class QRBarCode{
 
-    / Google Chart API URL /
+    
     private $googleChartAPI = 'https://chart.apis.google.com/chart';
-    / Code data */
+    
     private $codeData;
 
-    /
+    /**
      * Write code on Method
      *
      * @return response()
      */
+
+    
+     
+     
     public function url($url = null){
         $this->codeData = preg_match("#^https?://#", $url) ? $url : "http://{$url}";
     }
 
-    /
+    /**
      * Write code on Method
      *
      * @return response()
      */
+     
     public function text($text){
         $this->codeData = $text;
     }
 
-    /
+   /**
      * Write code on Method
      *
      * @return response()
      */
+    
+    
     public function qrCode($size = 200, $filename = null) {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->googleChartAPI);

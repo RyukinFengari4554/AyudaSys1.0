@@ -30,6 +30,19 @@
     $sql = "insert into registration (barangay_id, house_no, first_name, middle_name, last_name, no_of_members, email, contact_number, street, barangay, verification_status, package, qr_code) values ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$no_of_members', '$email', '$contact_number', '$street', '$barangay', '$v_s', '$package', '$qr_code');";
     $result = mysqli_query($conn, $sql);
     
-
-    header("Location: ../registration.html?signup=success");
+    /* include QRBarCode class */
+    include "QRBarCode.php";
+    $qr = new QRBarCode();
+    /* create text QR code  */
+    $qr->text($qr_code);
+    /* display QR code image */
+     $qr->qrCode(350, 'images/AyudaQR.png');
+    
+    class QR{
+        public function returnQR(){
+         return $this->qr_code;
+        }
+    }
+    header("Location: ../register_successfully.html");
+    exit();
 ?>
