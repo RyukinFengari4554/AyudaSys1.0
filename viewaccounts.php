@@ -63,9 +63,12 @@
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
+        echo "<table style='border: 1px solid white;'>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th>";
         while($row = mysqli_fetch_assoc($result)){
-          echo $row['username']. "<br>";
+          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td></tr>";
         }
+        echo "</table>";
       }
     ?>
     </div>

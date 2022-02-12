@@ -66,3 +66,7 @@ body {
     font-weight: 400;
     margin-left: 10%;
 }
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}

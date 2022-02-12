@@ -58,3 +58,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.hello{
+  font-weight: 400;
+  margin-left: 10%;
+}

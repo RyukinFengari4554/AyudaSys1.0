@@ -66,12 +66,15 @@
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<strong>name &emsp; package_content</strong>"."<br>";
-        echo "<br>";
+        echo "<table style='border: 1px solid white;'>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>name</th>";
+        echo "<th style='border: 1px solid white;'>package_content</th></tr>";
+        //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo $row['name']."&emsp;". $row['package_content']. "<br>";
-        echo "<br>";
+        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['name']."</td><td style='border: 1px solid white;'>". $row['package_content']. "</td></tr>";
+        //echo "<br>";
         }
+        echo "</table>";
       }
       ?>
     </div>
