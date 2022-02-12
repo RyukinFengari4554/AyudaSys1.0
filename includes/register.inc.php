@@ -36,13 +36,13 @@
     /* create text QR code  */
     $qr->text($qr_code);
     /* display QR code image */
-     $qr->qrCode(350, 'images/AyudaQR.png');
+     $qr->qrCode(250, 'images/AyudaQR');
     
     class QR{
         public function returnQR(){
          return $this->qr_code;
         }
     }
-    header("Location: ../register_successfully.html");
+    header("Location: ../register_successfully.php");
     exit();
 ?>

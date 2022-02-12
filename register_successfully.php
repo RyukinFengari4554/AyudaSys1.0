@@ -26,6 +26,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!-- Custom styles for this template -->
@@ -53,8 +55,9 @@
   <p class="lead">Please take a picture of the QR Code or Click the Downlaod Button. <br> This QR Code will serve as your Queue Number for Ayuda Distribution.</p>
 </div>
 <div class="qrcode" >
-  
-  <img  position="center" class="qrcode" src="images/AyudaQR.jpg" alt="qrcode-img" >
+  <?php
+    echo "<img  position='center' class='qrcode' src='includes/images/AyudaQR.png' alt='qrcode-img'>";
+  ?>
   <div class="">
 
   </div>
@@ -69,7 +72,10 @@
 <div class="hello">
 </div>
 <div>
-  <button class="w-100 btn btn-primary " type="submit">Download</button>
+
+<a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
+
+
 </div>
 
 <br>
