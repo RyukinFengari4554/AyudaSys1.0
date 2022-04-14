@@ -1,9 +1,15 @@
-
+<?php
+  include_once 'includes/db.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,15 +18,16 @@
     <title>AyudaSys Admin Signin</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-  <!-- Google Fonts -->
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -28,7 +35,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/signin.css" rel="stylesheet">
+    <link href="styles/distribute.css" rel="stylesheet">
 
 
   <body>
@@ -42,31 +49,54 @@
           <li class="nav-item">
             <a class="nav-link links" href="index.html">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link links" href="registration.html">Registration</a>
-          </li>
+          
         </ul>
     </nav>
   </head>
 <div class="hello">
 
 </div>
+<!--<div class="qrcode" >
+  <img  position="center" class="qrcode" src="images\qr_code.png" alt="qrcode-img" >
+</div>
+-->
+<div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <video id="preview" width="100%"></video>
+        </div>
+        <div class="col-md-6">
+          <form name="form" action="" method="get">
+            <label>SCAN QR CODE</label>
+            <input type="text" name="text" id="text" placeholder="scan qrcode" class="form-control" disabled="disabled">
+            <button>Submit</button>
+          </form>
 
-
-    <form class="form-signin" action="includes/ab-signin.inc.php" method="POST">
-      <h1 class="h3 mb-3 font-weight-normal">Admin Login Page</h1>
-      <label for="inputUsername" class="sr-only"></label>
-      <input type="text" id="inputEmail" class="form-control" name="un" placeholder="Username" required="" autofocus="">
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Admin password" required="">
-      <div class="checkbox mb-3">
-        <label>
-        </label>
+        </div>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit"  onclick="clickHandler()"><a  href="adminpage.html">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
-     
-    </form>
-    
+  </div>
+
+
+  <!-- WALA PA YUNG PHP TO CONNECT TO DATABASE-->
+
+  <script src="java/signin.js" charset="utf-8"></script>
+  <script>
+      let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
+      Instascan.Camera.getCameras().then(function(cameras){
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        }else{
+          alert('No cameras found');
+        }
+      }).catch(function(e){
+      console.error(e);
+    });
+
+    scanner.addListener('scan',function(c){
+      document.getElementById('text').value=c;
+      
+    });
+
+    </script>
   </body>
 </html>
