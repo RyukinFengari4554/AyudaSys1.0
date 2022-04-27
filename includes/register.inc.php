@@ -73,6 +73,13 @@
         header("Location: ../register_successfully.php");
         exit();
         */
+
+        /*COMMENTED on 4/14/2022
+            TODO:
+                checking granted table if qrcode is presnt to that table if it is redirect to failure due to already registered
+                insert INFO (from reg. table) -> granted table 
+
+        */
     }
     else{
         //gawa ng FAILED EIther one of your information is incorrect or you're not in the database.

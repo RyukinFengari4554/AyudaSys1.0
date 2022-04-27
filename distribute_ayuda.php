@@ -89,7 +89,7 @@
 </div>
 
 <br>
-<a href="index.html"><button class="w-100 btn btn-primary " type="submit">Confirm</button></a>
+<a href="index.html"><button class="w-100 btn btn-primary " type="submit">Confirm</button></a> <!--cmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED -->
 </div>
     <script src="java/signin.js" charset="utf-8"></script>
   </body>
