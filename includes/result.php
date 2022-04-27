@@ -58,15 +58,18 @@ switch ($httpCode) {
 			if ( $resp->status == "success" ) {
 				//echo "OTP VERIFIED\n";
 				header("Location: ../register_successfully.php");
-			}
-			
+			} else {
+			//echo "OTP Verification Failed\n";
+			header("Location: ../failed_verification.php");
+			}	
 		} else {
 			//echo "OTP Verification Failed\n";
-			header("Location: ../failed_verfication.php");
+			header("Location: ../failed_verification.php");
 		}
 	break;
 	default:
 		echo 'Http Error: ' . $httpCode . ' : ' . curl_error($ch);
+		header("Location: ../failed_verification.php");
 	break;
 }
 
