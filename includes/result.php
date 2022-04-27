@@ -59,8 +59,10 @@ switch ($httpCode) {
 				//echo "OTP VERIFIED\n";
 				header("Location: ../register_successfully.php");
 			}
+			
 		} else {
-			echo "OTP Verification Failed\n";	
+			//echo "OTP Verification Failed\n";
+			header("Location: ../failed_verfication.php");
 		}
 	break;
 	default:

@@ -1,3 +1,8 @@
+<?php
+    include_once 'includes/db.inc.php';
+    $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
+    
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,8 +62,20 @@
   </div>
 </div>
 <div class="hello">
-
-
+<?php
+    $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no WHERE g.qr_code = '$qr_code_scanned';";
+    $result = mysqli_query($conn, $sql);
+    $RC = mysqli_num_rows($result);
+    if ($RC > 0 ){
+      $row = mysqli_fetch_assoc($result);
+      echo "<p>".$row['last_name']."</p>";
+      echo "<p>".$row['barangay_id']."</p>";
+      echo "<p>".$row['package_content']."</p>";
+      echo "<p>".$row['granted_date']."</p>"; // not sure if included
+      //echo "<p>".$row['distribution_status']."</p>"; // cmted april 27 2022  TODO gonna changed the granted table in the future with family_code
+      echo "<p>".$row['distrbution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
+    }
+?>
 
 
 

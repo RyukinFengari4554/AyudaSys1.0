@@ -66,9 +66,9 @@
           <video id="preview" width="100%"></video>
         </div>
         <div class="col-md-6">
-          <form name="form" action="" method="get">
+          <form name="form" action="distribute_ayuda.php" method="POST">
             <label>SCAN QR CODE</label>
-            <input type="text" name="text" id="text" placeholder="scan qrcode" class="form-control" disabled="disabled">
+            <input type="text" name="qrs" id="qrs" placeholder="scan qrcode" class="form-control" readonly> <!--cmnt 27/04/22 TODO Error handling for empty inputbox also enlarge input box or remove from table form -->
             <button>Submit</button>
           </form>
 
@@ -93,7 +93,7 @@
     });
 
     scanner.addListener('scan',function(c){
-      document.getElementById('text').value=c;
+      document.getElementById('qrs').value=c;
       
     });
 
