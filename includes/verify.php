@@ -89,26 +89,20 @@ curl_close($ch);
                 <div class="inner">
                     <div class="site-header-content">
                         <h1 class="site-title">
-                            <img class="site-logo" src="https://blog.tiniyo.com/content/images/2020/03/logo.png" alt="Tiniyo Phone Verification">
-                        </h1>
-                        <h2 class="site-description">Phone Verification</h2>
-                        <p class="site-sub-description">How to use Tiniyo <a id="tiniyo-link" href="https://tiniyo.com/dist/index-verify.html#section/Introduction"> VERIFICATION API </a> in real time.</p> 
-                    </div>
+                            </h1>
+                        <h2 class="site-description">Phone Verification OTP</h2>
+                        </div>
                 </div>
             </div>
         </header>
         <form action="result.php" accept-charset="UTF-8" method="POST">
           <div class="container">
-            <ul>
-            <li>
-              <div>
-                <input name="otp" placeholder="Enter the OTP code you were sent:" type="text">
-              </div>
-            </li>
-            <li>
+              <h2 class="site-description" style="color: white; font-size: 2rem;">Enter the OTP code:</h2>
+              <input name="otp" placeholder="" type="text" style="font-size: 5rem; text-align: center;">
+              <p></p><br>
+              <p></p><br>
               <button name="button1" type="submit">VERIFY</button>
-            </li>
-            </ul>
+            
           </div>
         </form>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.js"></script>
