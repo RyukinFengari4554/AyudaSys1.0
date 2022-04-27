@@ -108,7 +108,7 @@
                     <option value="6" selected>6</option>
                     <option value="8">8</option>
                 </select>
-                <button name="button" type="submit">Verify</button>
+                <button name="button" type="submit">SEND SMS</button>
                 <table class="center" style="visibility: hidden">
                 <tr>
                   <td><select name="cc" id="authy-countries"  data-show-as="text"></select></td>
