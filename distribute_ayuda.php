@@ -75,6 +75,9 @@
       //echo "<p>".$row['distribution_status']."</p>"; // cmted april 27 2022  TODO gonna changed the granted table in the future with family_code
       echo "<p>".$row['distrbution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
     }
+    else{
+      echo "DATA NOT FOUND";
+    }
 ?>
 
 
@@ -84,12 +87,14 @@
 </div>
 <div>
 
-
+<!--COMMENTED ON MAY 5 TODO: IF ELSE BUTTON for UPDATE/DESTRIBUTE and else button for go back  -->
 
 </div>
 
 <br>
-<a href="index.html"><button class="w-100 btn btn-primary " type="submit">Confirm</button></a> <!--cmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED -->
+<form action="includes/update_distribute.php" method="POST" >
+  <button class="w-100 btn btn-primary " type="submit">Confirm</button> <!-- PATRTIALLY COMPLETEDcmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED -->
+</form>
 </div>
     <script src="java/signin.js" charset="utf-8"></script>
   </body>
