@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once 'db.inc.php';
 ?>
 <?php
 if(isset($_POST['button1'])){
@@ -57,6 +58,17 @@ switch ($httpCode) {
 			//echo "Status: ".$resp->status." Message:".$resp->message."\n";
 			if ( $resp->status == "success" ) {
 				//echo "OTP VERIFIED\n";
+
+				$qr_code=$_SESSION["qrc"];
+            	$reg_no=$_SESSION["regn"];
+				$start_date=$_SESSION["grd"];
+				$pud=$_SESSION["piud"];
+				$barangay_id=$_SESSION["baid"];
+				$fam_code=$_SESSION["famc"];
+				$package_no=$_SESSION["pano"];
+				$distribution_status=$_SESSION["dist"];
+				$sql = "insert into granted (qr_code, registration_no, granted_date, pick_up_date, barangay_id, family_code, package_no, distrbution_status) values ('$qr_code', '$reg_no', '$start_date', '$pud', '$barangay_id', '$fam_code','$package_no', '$distribution_status');";
+            	$result = mysqli_query($conn, $sql);
 				header("Location: ../register_successfully.php");
 			} else {
 			//echo "OTP Verification Failed\n";

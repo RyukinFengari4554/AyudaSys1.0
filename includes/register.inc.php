@@ -1,7 +1,12 @@
 
+
 <?php
+    session_start();
     include_once 'db.inc.php';
-    
+    //require_once 'newcountry.js';
+   // require_once 'style.css';
+    //require_once 'verify.php';
+    //require_once 'result.php';
     function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -44,9 +49,9 @@
             $start_date=date('y/m/d');
             $pud= date("y/m/d", strtotime("$start_date +1 week"));
             */
-            $start_date=date('y/m/d');
-            $startdate = $_POST['start_date'];
-            $pud = date('Y/m/d',strtotime('+1 week',$startdate));
+            $start_date=date('Y/m/d');
+            //$sd = $_POST['start_date'];
+            $pud = date('Y/m/d',strtotime('+1 week'));
         }
         else{
             $v_s = "Denied";
@@ -96,10 +101,51 @@
                 $package_no=2;
             }
             $distribution_status=false;
+            $_SESSION["qrc"]=$qr_code;
+            $_SESSION["regn"]=$reg_no;
+            $_SESSION["grd"]=$start_date;
+            $_SESSION["piud"]=$pud;
+            $_SESSION["baid"]=$barangay_id;
+            $_SESSION["famc"]=$fam_code;
+            $_SESSION["pano"]=$package_no;
+            $_SESSION["dist"]=$distribution_status;
             //$sql = "insert into granted (qr_code, registration_no, granted_date, pick_up_date, barangay_id, family_code, package_no, distrbution_status) values ('$qr_code', '$reg_no', '$start_date', '$pud', '$barangay_id', '$fam_code','$package_no', '$distribution_status');";
             //$result = mysqli_query($conn, $sql);
-            header("Location: otp.php");
-            exit();
+            //header("Location: ../register_successfully.php");
+
+            //header("Location: otp.php");
+            //exit();
+            //echo file_get_contents("otp.php");
+            
+
+            require_once 'otp.php';
+            //COMMENTED MAY 6
+            /*
+            echo "
+        <form action=‘verify.php’ accept-charset=‘UTF-8’ method=‘POST’>
+            <div class=‘container’>
+                <p style=‘color: white; text-align:center; font-size: 7.5rem;’>$contact_number </p>
+                <p class=‘channel’ id=‘channel’ name=‘ch’ value=‘sms’ style=‘visibility: hidden’></p>
+                <select class=‘select’ id=‘length’ name=‘l’ style=‘visibility: hidden’>
+                    <option value=‘4’>4</option>
+                    <option value=‘6’ selected>6</option>
+                    <option value=‘8’>8</option>
+                </select>
+                <button name=‘button’ type=‘submit’>SEND SMS</button>
+                <table class=‘center’ style=‘visibility: hidden’>
+                <tr>
+                  <td><select name=‘cc’ id=‘authy-countries’  data-show-as=‘text’></select></td>
+                  <td><input type=‘tel’ id=‘phone_number’ placeholder=‘Phone Number’ name=‘pn’ maxlength=‘10’ value= $vcn></td>
+                  
+                </tr>
+              </table>
+            </div>
+        </form>
+          ";
+
+
+
+
         /* COMMENTED on 4/14/2022
         $sql = "insert into granted (qr_code, granted_date, pick_up_date, distrbution_status) values ('$qr_code', '$start_date', '$pud', '$distribution_status');";
         $result = mysqli_query($conn, $sql);
@@ -122,4 +168,3 @@
         header("Location: ../failed_registered_already.php");
     }
 ?>
-
