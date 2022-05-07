@@ -46,8 +46,7 @@
             <a class="nav-link links" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link links" href="barangay.html">Barangay Official</a>
-          </li>
+            <a class="nav-link links" href="">Log out</a>
         </ul>
     </nav>
 

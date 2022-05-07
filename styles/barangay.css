@@ -39,4 +39,5 @@ body{
 
 .card-deck .card {
   min-width: 220px;
+  margin-bottom: 5rem;
 }
