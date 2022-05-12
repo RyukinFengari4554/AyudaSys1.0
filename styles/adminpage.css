@@ -25,6 +25,7 @@ body{
 
 .navbar{
   padding: 10 15 10 15 ;
+  
 
 
 }
@@ -45,6 +46,7 @@ body{
 }
 .container {
   max-width: 960px;
+  margin-bottom: .5rem;
 }
 
 .pricing-header {
@@ -53,4 +55,5 @@ body{
 
 .card-deck .card {
   min-width: 220px;
+  margin-bottom: 2rem;
 }
