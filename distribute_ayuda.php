@@ -1,7 +1,8 @@
 <?php
     include_once 'includes/db.inc.php';
+    session_start();
     $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
-    
+    $_SESSION["qrcs"]=$qr_code_scanned;
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +74,7 @@
       echo "<p>".$row['package_content']."</p>";
       echo "<p>".$row['granted_date']."</p>"; // not sure if included
       //echo "<p>".$row['distribution_status']."</p>"; // cmted april 27 2022  TODO gonna changed the granted table in the future with family_code
-      echo "<p>".$row['distrbution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
+      echo "<p>".$row['distribution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
     }
     else{
       echo "DATA NOT FOUND";
