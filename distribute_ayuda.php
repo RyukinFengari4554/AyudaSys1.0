@@ -1,7 +1,8 @@
 <?php
     include_once 'includes/db.inc.php';
+    session_start();
     $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
-    
+    $_SESSION["qrcs"]=$qr_code_scanned;
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,12 +69,34 @@
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){
       $row = mysqli_fetch_assoc($result);
+      echo "<table style='border: 1px solid white; margin-left:10%;'>";
+      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>LAST NAME:</td>";
+      echo "<td style='border: 1px solid white;'>".$row['last_name']. "</td></tr>";
+      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>BARANGAY ID:</td>";
+      echo "<td style='border: 1px solid white;'>".$row['barangay_id']. "</td></tr>";
+      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>PACKAGE:</td>";
+      echo "<td style='border: 1px solid white;'>".$row['package_content']. "</td></tr>";
+      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>GRANTED DATE:</td>";
+      $newDate = date("Y-F-d", strtotime($row['granted_date']));
+      echo "<td style='border: 1px solid white;'>".$newDate. "</td></tr>";
+      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>DISTRIBUTION STATUS:</td>";
+      if($row['distribution_status']==1){
+        echo "<td style='border: 1px solid white;'>DELIVERED</td></tr>";
+      }
+      else{
+        echo "<td style='border: 1px solid white;'>UNDELIVERED</td></tr>";
+      }
+      echo "</table>";
+
+      /*
       echo "<p>".$row['last_name']."</p>";
       echo "<p>".$row['barangay_id']."</p>";
       echo "<p>".$row['package_content']."</p>";
       echo "<p>".$row['granted_date']."</p>"; // not sure if included
       //echo "<p>".$row['distribution_status']."</p>"; // cmted april 27 2022  TODO gonna changed the granted table in the future with family_code
-      echo "<p>".$row['distrbution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
+      echo "<p>".$row['distribution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
+    */
+
     }
     else{
       echo "DATA NOT FOUND";
