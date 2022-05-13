@@ -71,21 +71,26 @@
 </div>
 <div class="hello">
 </div>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Notice:</h1>
+  <p class="lead">The ayuda will be distributed at 1 week's time .</p>
+</div>
 <div>
-
 <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
-
-
 </div>
 
 <br>
+
+
+<div>
+<button class="w-100 btn btn-primary " type="submit">Print</button>
+</div>
+<br>
+
 <a href="index.html"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
 </div>
     <script src="java/signin.js" charset="utf-8"></script>
   </body>
 
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Notice:</h1>
-    <p class="lead">The ayuda will be distributed at 1 week's time .</p>
-  </div>
+
 </html>

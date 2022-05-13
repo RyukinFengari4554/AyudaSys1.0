@@ -1,4 +1,6 @@
-
+<?php
+  include_once 'includes/db.inc.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
-    <title>AyudaSys Admin Signin</title>
+    <title>AyudaSys Citizen Information</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
 
@@ -45,13 +47,39 @@
           </li>
           <li class="nav-item">
             <a class="nav-link links" href="">Log out</a>
-          </li>
         </ul>
     </nav>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Monitor Registry Page</h1>
-      <p class="lead">The Monitor Registry Page allows for monitoring of the database list</p>
+      <h1 class="display-4">Citizen Information Page</h1>
+      <p class="lead">The Citizen Information Page allows for monitoring of the citizen information list</p>
+    </div>
+    <div class="hello">
+      <?php
+      $sql = "SELECT * FROM registration;";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<table style='border: 1px solid white;margin-left:10%;'>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
+        echo "<th style='border: 1px solid white;'>first_name</th>";
+        echo "<th style='border: 1px solid white;'>last_name</th>";
+        echo "<th style='border: 1px solid white;'>barangay</th>";
+        echo "<th style='border: 1px solid white;'>verification_status</th>";
+        echo "<th style='border: 1px solid white;'>qr_code</th></tr>";
+        //echo "<br>";
+        while($row = mysqli_fetch_assoc($result)){
+        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
+        echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['verification_status']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['qr_code']. "</td></tr>";
+        //echo "<br>";
+        }
+        echo "</table>";
+      }
+      ?>
     </div>
 
 
