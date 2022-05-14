@@ -5,8 +5,29 @@ body {
 
 .nav-item{
   padding: 0 18px;
-}
 
+}
+.navbar{
+  height: 75px;
+  background: #280137;
+}
+.navbar-brand{
+  padding: 30px 30px;
+  background-size: contain;
+
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar-brand a:hover{
+  background: rgb(0, 0, 0, 1);
+  border-radius: 10px;
+}
+.nav-item a:hover{
+  background: rgb(0, 0, 0, 1);
+  border-radius: 6px;
+}
 .pricing-header{
   color: white;
 }
@@ -16,7 +37,8 @@ body {
   padding-bottom: 40px;
   background-color: #f5f5f5;
   background-repeat: no-repeat;
-  background-image: url("https://i.imgur.com/32GO6tE.jpg");
+  background-attachment: fixed;
+  background-image: url("https://i.imgur.com/Ez6rbmZ.jpg%22");
 }
 .hello{
   height: 10rem;
