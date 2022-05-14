@@ -12,6 +12,12 @@ body{
   height:100%;
   overflow: scroll;
 }
+input[type=number].no-spinner::-webkit-inner-spin-button,
+   input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+    margin: 0;
+}
+
 html{
   background-position: center center;
   -webkit-background-size: cover;

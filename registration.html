@@ -92,7 +92,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-12 was-validated">
         <label> Number of People in Household: </label>
-        <input type="number" class="form-control" name="rnom" id="rnom" maxlength="2" placeholder="Enter the number of people in your Household" required>
+        <input type="number" class="form-control no-spinner" name="rnom" id="rnom" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" placeholder="Enter the number of people in your Household" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -104,7 +104,7 @@
       </div>
       <div class="col-md-3 col-sm-12 was-validated">
         <label> House No: </label>
-        <input type="number" class="form-control" name="rhn" id="rhn" maxlength="4" placeholder="Enter your House Number" required>
+        <input type="number" class="form-control no-spinner" name="rhn" id="rhn" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" placeholder="Enter your House Number" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -136,7 +136,7 @@
       </div>
       <div class="col-md-4 col-sm-12 was-validated">
         <label> Contact Number: </label>
-        <input type="number" class="form-control" name="rcn" name="rcn" maxlength="11" placeholder="Enter your Contact Number" required>
+        <input type="number" class="form-control no-spinner" name="rcn" name="rcn" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==11) return false;" placeholder="Enter your Contact Number" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
