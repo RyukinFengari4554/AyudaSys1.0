@@ -85,7 +85,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-12 was-validated">
         <label> Number of People in Household: </label>
-        <input type="number" class="form-control" name="rnom" id="rnom" placeholder="Enter the number of people in your Household"  required>
+        <input type="number" class="form-control" name="rnom" id="rnom" maxlength="2" placeholder="Enter the number of people in your Household"  required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -112,7 +112,7 @@
       </div>
       <div class="col-lg-4 col-sm-12 was-validated">
         <label> House No: </label>
-        <input type="number" class="form-control" name="rhn" id="rhn" placeholder="Enter the House Number"  required>
+        <input type="number" class="form-control" name="rhn" id="rhn" maxlength="4" placeholder="Enter the House Number"  required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -125,6 +125,12 @@
     </div>
 
     <br>
+    <?php
+    $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  if (strpos($fulUrl,"register_citizen.php?register=success") == true){
+                    echo "<p style='color: green'>Citizen Registration Success</p>";
+                  };
+      ?>
     <br>
     <button class="w-100 btn btn-primary " type="submit">Submit Information</button>
 

@@ -17,5 +17,5 @@
     $result = mysqli_query($conn, $sql);
     
 
-    header("Location: ../register_citizen.html?register=success");
+    header("Location: ../register_citizen.php?register=success");
 ?>
