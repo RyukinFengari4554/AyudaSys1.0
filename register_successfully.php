@@ -83,7 +83,7 @@
 
 
 <div>
-<button class="w-100 btn btn-primary " type="submit">Print</button>
+<button class="w-100 btn btn-primary " onclick="window.print()">Print</button>
 </div>
 <br>
 

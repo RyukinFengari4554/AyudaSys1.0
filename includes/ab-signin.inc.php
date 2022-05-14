@@ -25,17 +25,17 @@
                 }
                 
                 else{
-                    echo '<script>alert("Incorrect username or password.")</script>';
+                    //echo '<script>alert("Incorrect username or password.")</script>';
                     //sleep(3);
-                    //header("Location: ../signin.html?login=failed");
+                    header("Location: ../signin.php?login=failed");
                     exit();
                 }
 
             }
         }
-        else{echo '<script>alert("Incorrect username or password.")</script>';
+        else{//echo '<script>alert("Incorrect username or password.")</script>';
             //sleep(3);
-            //header("Location: ../signin.html?login=failed");
+            header("Location: ../signin.php?login=failed");
             exit();
         }
     }

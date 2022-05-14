@@ -56,25 +56,29 @@
     </div>
     <div class="hello">
       <?php
-      $sql = "SELECT * FROM registration;";
+      $sql = "SELECT * FROM granted;";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         echo "<table style='border: 1px solid white;margin-left:10%;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>first_name</th>";
-        echo "<th style='border: 1px solid white;'>last_name</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th>";
-        echo "<th style='border: 1px solid white;'>verification_status</th>";
-        echo "<th style='border: 1px solid white;'>qr_code</th></tr>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>qr_code</th>";
+        echo "<th style='border: 1px solid white;'>registration_no</th>";
+        echo "<th style='border: 1px solid white;'>granted_date</th>";
+        echo "<th style='border: 1px solid white;'>pick_up_date</th>";
+        echo "<th style='border: 1px solid white;'>barangay_id</th>";
+        echo "<th style='border: 1px solid white;'>family_code</th>";
+        echo "<th style='border: 1px solid white;'>package_no</th>";
+        echo "<th style='border: 1px solid white;'>distribution_status</th></tr>";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
-        echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['verification_status']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['qr_code']. "</td></tr>";
+        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['qr_code']."</td>";
+        echo "<td style='border: 1px solid white;'>". $row['registration_no']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['granted_date']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['pick_up_date']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['barangay_id']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['family_code']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['package_no']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['distribution_status']. "</td></tr>";
         //echo "<br>";
         }
         echo "</table>";

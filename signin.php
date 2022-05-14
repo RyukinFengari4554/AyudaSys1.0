@@ -59,11 +59,17 @@
       <input type="text" id="inputEmail" class="form-control" name="un" placeholder="Username" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Admin password" required="">
+      <?php
+      $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  if (strpos($fulUrl,"signin.php?login=failed") == true){
+                    echo "<p style='color: red'> Incorrect Email or Password</p>";
+                  };
+      ?>
       <div class="checkbox mb-3">
-        <label>
-        </label>
+    
       </div>
-      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit"  onclick="clickHandler()"><a  href="adminpage.html">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
+      
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
      
     </form>

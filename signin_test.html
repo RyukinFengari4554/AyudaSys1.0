@@ -62,7 +62,14 @@
         <label>
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit"  onclick="clickHandler()">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
+      <?php
+      $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  if (strpos($fulUrl,"login_sections.php?adminLogin=invalidpassoremail") == true){
+                    echo "<p class= 'errormessage' style=''> Incorrect Email or Password</p>";
+                  };
+      ?>
+      <!--<button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit"  onclick="clickHandler()">Sign in</button> -->
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
     </form>
   </body>

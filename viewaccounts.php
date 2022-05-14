@@ -59,7 +59,7 @@
     <!--accounts of admin-->
     <div class="hello">
     <?php
-      $sql = "SELECT * FROM admin;";
+      $sql = "SELECT * FROM barangay_officials;";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
