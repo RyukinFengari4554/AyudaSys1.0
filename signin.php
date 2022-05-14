@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
-    <title>AyudaSys Admin Signin</title>
+    <title>AyudaSys Signin</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
 
@@ -54,7 +54,7 @@
 
 
     <form class="form-signin" action="includes/ab-signin.inc.php" method="POST">
-      <h1 class="h3 mb-3 font-weight-normal">Admin Login Page</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Login Page</h1>
       <label for="inputUsername" class="sr-only"></label>
       <input type="text" id="inputEmail" class="form-control" name="un" placeholder="Username" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Password</label>

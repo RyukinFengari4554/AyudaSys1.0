@@ -76,6 +76,8 @@
       echo "<td style='border: 1px solid white;'>".$row['barangay_id']. "</td></tr>";
       echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>PACKAGE:</td>";
       echo "<td style='border: 1px solid white;'>".$row['package_content']. "</td></tr>";
+      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>NUMBER OF MEMBERS:</td>";
+      echo "<td style='border: 1px solid white;'>".$row['no_of_members']. "</td></tr>";
       echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>GRANTED DATE:</td>";
       $newDate = date("Y-F-d", strtotime($row['granted_date']));
       echo "<td style='border: 1px solid white;'>".$newDate. "</td></tr>";
