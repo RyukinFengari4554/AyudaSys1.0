@@ -165,6 +165,6 @@
         }
     }
     else{
-        header("Location: ../failed_registered_already.php");
+        header("Location: ../failed_verification.php");
     }
 ?>

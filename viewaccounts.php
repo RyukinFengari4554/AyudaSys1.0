@@ -31,7 +31,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.css" rel="stylesheet">
+    <link href="styles/viewaccounts.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -57,13 +57,13 @@
     </div>
 
     <!--accounts of admin-->
-    <div class="hello">
+    <div class='hi'>
     <?php
       $sql = "SELECT * FROM barangay_officials;";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white; margin-left:10%;'>";
+        echo "<table style='border: 1px solid white; margin: auto;'>";
         echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th></tr>";
         while($row = mysqli_fetch_assoc($result)){
           echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td></tr>";

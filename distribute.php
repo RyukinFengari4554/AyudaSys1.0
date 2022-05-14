@@ -61,19 +61,20 @@
 </div>
 -->
 <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <video id="preview" width="100%"></video>
-        </div>
-        <div class="col-md-6">
+      <div>
+        <center>
+        <video  width="auto" height="auto" id="preview" width="100%"></video>
+        </center>
+      </div>
+      <div>
           <form name="form" action="distribute_ayuda.php" method="POST">
             <label>SCAN QR CODE</label>
-            <input type="text" name="qrs" id="qrs" placeholder="scan qrcode" class="form-control" readonly> <!--cmnt 27/04/22 TODO Error handling for empty inputbox also enlarge input box or remove from table form -->
-            <button>Submit</button>
+            <input style="font-size: 2rem; text-align: center;" type="text" name="qrs" id="qrs" placeholder="scan qrcode" class="form-control" readonly> <!--cmnt 27/04/22 TODO Error handling for empty inputbox also enlarge input box or remove from table form -->
+            <br>
+            <button class="w-100 btn btn-primary " type="submit">Submit</button>
           </form>
-
-        </div>
       </div>
+      
   </div>
 
 

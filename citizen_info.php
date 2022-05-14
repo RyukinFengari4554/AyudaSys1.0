@@ -31,7 +31,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.css" rel="stylesheet">
+    <link href="styles/viewaccounts.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -54,13 +54,13 @@
       <h1 class="display-4">Citizen Information Page</h1>
       <p class="lead">The Citizen Information Page allows for monitoring of the citizen information list</p>
     </div>
-    <div class="hello">
+    <div>
       <?php
       $sql = "SELECT * FROM personal_information;";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white;margin-left:10%;'>";
+        echo "<table style='border: 1px solid white;'>";
         echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
         echo "<th style='border: 1px solid white;'>first_name</th>";
         echo "<th style='border: 1px solid white;'>last_name</th>";

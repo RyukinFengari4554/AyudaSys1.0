@@ -30,7 +30,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/mn.css" rel="stylesheet">
+    <link href="styles/mn.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -60,7 +60,7 @@
   <br>
   <br>
   <!-- Custom styles for this template -->
-  <div class='hello' id="camo">
+  <div id="camo">
     <?php
       $sql = "SELECT * FROM ayuda_package;";
       $result = mysqli_query($conn, $sql);

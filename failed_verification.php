@@ -51,7 +51,7 @@
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Failed Registration!</h1>
-  <p class="lead">Incorrect Information! <br> Please try again!</p>
+  <p class="lead">Incorrect Information or Data Not Found! <br> Please try again!</p>
 </div>
 
   </div>

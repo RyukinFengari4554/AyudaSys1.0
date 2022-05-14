@@ -36,7 +36,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/distribute.css" rel="stylesheet">
+    <link href="styles/viewaccounts.CSS" rel="stylesheet">
 
 
   <body>
@@ -62,14 +62,14 @@
 
   </div>
 </div>
-<div class="hello">
+<div>
 <?php
     $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no WHERE g.qr_code = '$qr_code_scanned';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){
       $row = mysqli_fetch_assoc($result);
-      echo "<table style='border: 1px solid white; margin-left:10%;'>";
+      echo "<table style='border: 1px solid white;'>";
       echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>LAST NAME:</td>";
       echo "<td style='border: 1px solid white;'>".$row['last_name']. "</td></tr>";
       echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>BARANGAY ID:</td>";

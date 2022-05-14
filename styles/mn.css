@@ -81,11 +81,11 @@ body {
 .lbl{
     color: white;
 }
-.hello{
-    font-weight: 400;
-    margin-left: 10%;
-}
+
 table, th, td {
+  font-weight: 400;
+  margin: auto;
+  color: white;
   border: 1px solid white;
   border-collapse: collapse;
 }
