@@ -135,8 +135,9 @@
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="col-md-4 col-sm-12 was-validated">
-        <label> Contact Number: </label>
-        <input type="number" class="form-control no-spinner" name="rcn" name="rcn" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==11) return false;" placeholder="Enter your Contact Number" required>
+        <label> Contact Number: (Format: 09XXXXXXXXX) </label>
+        <!--<input type="number" class="form-control no-spinner" name="rcn" name="rcn" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==11) return false;" placeholder="Enter your Contact Number" required> commented on: may 15, 2022-->
+        <input type="tel" class="form-control" id="phone" name="rcn" name="rcn" placeholder="Enter your Contact Number" pattern="[0][9][0-9]{9}" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
