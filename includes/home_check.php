@@ -1,10 +1,8 @@
 <?php
     include_once 'db.inc.php';
-    $username = mysqli_real_escape_string($conn, $_POST['un']);
-    $password  = mysqli_real_escape_string($conn, $_POST['ps']);
     session_start();
-    $_SESSION["sun"]=$username;
-    $_SESSION["sps"]=$password;
+    $username =$_SESSION["sun"];
+    $password=$_SESSION["sps"];
     $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
@@ -21,9 +19,10 @@
             exit();
         }
         else{
-            header("Location: ../signin.php?login=failed");
+            header("Location: ../index.html");
             exit();
         }
     }
 
 ?>
+

@@ -36,7 +36,7 @@
             <a class="nav-link links" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link links" href="">Log out</a>
+            <a class="nav-link links" href="includes/logout.php">Log out</a>
           </li>
         </ul>
       </div>

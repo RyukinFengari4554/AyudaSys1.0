@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(isset($_SESSION['sun']) && $_SESSION['sps'] == 1) {
+    //session is set
+    header('Location: includes/home_check.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

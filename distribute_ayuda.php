@@ -39,22 +39,26 @@
     <link href="styles/viewaccounts.CSS" rel="stylesheet">
 
 
-  <body>
+  
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="index.html">AyudaSys </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link links" href="index.html">Home</a>
-          </li>
+    <a class="navbar-brand brand-title" href="index.html">AyudaSys </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link links" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link links" href="includes/logout.php">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-        </ul>
-    </nav>
   </head>
-
+  <body>
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Ayuda Package Distribution</h1>
   <p class="lead">Information! <br>
