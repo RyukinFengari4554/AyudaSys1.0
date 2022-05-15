@@ -1,10 +1,20 @@
 <?php
+require 'includes/check_account.php';
 session_start();
-if(isset($_SESSION['sun']) && isset($_SESSION['sps'])) {
-    //session is set
-    header('Location: includes/home_check.php');
+
+if(!empty($_SESSION['sun'])){
+  $account=Check($_SESSION['sun'],$_SESSION['sps']);
+  if($account=="barangay"){
+    header("Location: barangay.php");
+    exit();
+  }
+  elseif($account=="admin"){
+    header("Location: adminpage.php");
+  exit();
+  }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

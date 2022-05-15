@@ -19,7 +19,9 @@
             exit();
         }
         else{
-            header("Location: ../index.html");
+            header("Location: ../signin.php");
+            session_unset();
+            session_destroy();
             exit();
         }
     }
