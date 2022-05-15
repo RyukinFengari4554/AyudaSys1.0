@@ -1,8 +1,14 @@
 <?php
-    include_once 'includes/db.inc.php';
-    session_start();
-    $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
-    $_SESSION["qrcs"]=$qr_code_scanned;
+  require 'includes/check_account.php';
+  session_start();
+  $account=Check($_SESSION['sun'],$_SESSION['sps']);
+
+  if(empty($_SESSION['sun']) || $account=="login-failed"){
+    header("Location: signin.php");
+    exit();
+  }
+  include 'includes/db.inc.php';
+    
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +74,9 @@
 </div>
 <div>
 <?php
+if(!empty($_POST['qrs'])){
+    $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
+    $_SESSION["qrcs"]=$qr_code_scanned;
     $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no WHERE g.qr_code = '$qr_code_scanned';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
@@ -105,8 +114,12 @@
 
     }
     else{
-      echo "DATA NOT FOUND";
+      echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
     }
+}
+else{
+    echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+}
 ?>
 
 
