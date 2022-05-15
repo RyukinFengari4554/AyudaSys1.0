@@ -1,5 +1,5 @@
 <?php
-function Check($username,$password){
+function Check($username, $password){
     include_once 'db.inc.php';
     $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password';";
     $result = mysqli_query($conn, $sql);

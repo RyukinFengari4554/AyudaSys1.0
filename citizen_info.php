@@ -1,7 +1,15 @@
 <?php
-  include_once 'includes/db.inc.php';
-?>
+require 'includes/check_account.php';
+session_start();
+$account=Check($_SESSION['sun'],$_SESSION['sps']);
 
+if(empty($_SESSION['sun']) || $account=="login-failed"){
+  header("Location: signin.php");
+  exit();
+}
+
+include 'includes/db.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
