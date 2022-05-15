@@ -39,7 +39,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.CSS" rel="stylesheet">
+    <link href="styles/adminpage.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -75,7 +75,7 @@ include 'includes/db.inc.php';
         echo "<th style='border: 1px solid white;'>barangay</th>";
         echo "<th style='border: 1px solid white;'>house_no</th>";
         echo "<th style='border: 1px solid white;'>street</th>";
-        echo "<th style='border: 1px solid white;'>no_of_members</th>";
+        echo "<th style='border: 1px solid white;'>members</th>";
         echo "<th style='border: 1px solid white;'>family_code</th></tr>";
         
         //echo "<br>";
@@ -95,9 +95,5 @@ include 'includes/db.inc.php';
       ?>
     </div>
 
-
-
-
-  <script src="java/signin.js" charset="utf-8"></script>
   </body>
 </html>

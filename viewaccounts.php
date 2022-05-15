@@ -40,7 +40,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.CSS" rel="stylesheet">
+    <link href="styles/adminpage.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -87,7 +87,5 @@ include 'includes/db.inc.php';
 
 
 
-
-  <script src="java/signin.js" charset="utf-8"></script>
   </body>
 </html>

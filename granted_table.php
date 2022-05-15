@@ -40,7 +40,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.CSS" rel="stylesheet">
+    <link href="styles/granted.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -71,13 +71,13 @@ include 'includes/db.inc.php';
       if ($RC > 0 ){
         echo "<table style='border: 1px solid white;'>";
         echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>qr_code</th>";
-        echo "<th style='border: 1px solid white;'>registration_no</th>";
+        echo "<th style='border: 1px solid white;'>register_no</th>";
         echo "<th style='border: 1px solid white;'>granted_date</th>";
         echo "<th style='border: 1px solid white;'>pick_up_date</th>";
         echo "<th style='border: 1px solid white;'>barangay_id</th>";
         echo "<th style='border: 1px solid white;'>family_code</th>";
         echo "<th style='border: 1px solid white;'>package_no</th>";
-        echo "<th style='border: 1px solid white;'>distribution_status</th></tr>";
+        echo "<th style='border: 1px solid white;'>dist_status</th></tr>";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
         echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['qr_code']."</td>";
@@ -95,9 +95,5 @@ include 'includes/db.inc.php';
       ?>
     </div>
 
-
-
-
-  <script src="java/signin.js" charset="utf-8"></script>
   </body>
 </html>

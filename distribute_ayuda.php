@@ -42,7 +42,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.CSS" rel="stylesheet">
+    <link href="styles/adminpage.CSS" rel="stylesheet">
 
 
   
@@ -138,6 +138,5 @@ else{
   <button class="w-100 btn btn-primary " type="submit">Confirm</button> <!-- PATRTIALLY COMPLETEDcmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED -->
 </form>
 </div>
-    <script src="java/signin.js" charset="utf-8"></script>
-  </body>
+</body>
 </html>

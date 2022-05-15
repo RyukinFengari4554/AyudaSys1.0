@@ -38,7 +38,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/viewaccounts.CSS" rel="stylesheet">
+    <link href="styles/adminpage.CSS" rel="stylesheet">
 
 </head>
   <body>
@@ -77,6 +77,5 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
 
 
-  <script src="java/signin.js" charset="utf-8"></script>
   </body>
 </html>

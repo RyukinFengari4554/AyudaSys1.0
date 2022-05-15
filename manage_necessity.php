@@ -39,7 +39,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/mn.CSS" rel="stylesheet">
+    <link href="styles/adminpage.CSS" rel="stylesheet">
 
 </head>
   <body>

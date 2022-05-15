@@ -75,6 +75,5 @@
 <br>
 <a href="index.html"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
 </div>
-    <script src="java/signin.js" charset="utf-8"></script>
-  </body>
+</body>
 </html>

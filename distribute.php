@@ -71,7 +71,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
   <div class="container">
         <div>
             <center>
-            <video  width="auto" height="auto" id="preview" width="100%"></video>
+            <video  width="auto" height="auto" id="preview"></video>
             </center>
         </div>
         <div>
