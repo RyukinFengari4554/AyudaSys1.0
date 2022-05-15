@@ -1,5 +1,14 @@
 <?php
-  include_once 'includes/db.inc.php';
+require 'includes/check_account.php';
+session_start();
+$account=Check($_SESSION['sun'],$_SESSION['sps']);
+
+if(empty($_SESSION['sun']) || $account=="login-failed"){
+  header("Location: signin.php");
+  exit();
+}
+
+include 'includes/db.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +45,7 @@
 </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="">AyudaSys </a>
+      <a class="navbar-brand brand-title" href="index.html">AyudaSys </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
