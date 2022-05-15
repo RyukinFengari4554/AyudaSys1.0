@@ -67,7 +67,7 @@
 </div>
 <div>
 
-  <button onclick="history.go(-3);" class="w-100 btn btn-primary " type="submit">Return to Registration</button>
+<a href="registration.html"><button class="w-100 btn btn-primary " type="submit">Return to Registration</button></a>
 
 
 </div>
