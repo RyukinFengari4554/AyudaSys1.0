@@ -58,6 +58,12 @@ switch ($httpCode) {
 			//echo "Status: ".$resp->status." Message:".$resp->message."\n";
 			if ( $resp->status == "success" ) {
 				//echo "OTP VERIFIED\n";
+				
+				//try otp for distribution COMMENTED ON MAY 15, 2021 
+				//try isset for admin/B.O. (qrcs qrcode-scanned) rekta distribute
+				//else isset for qr_code rekta distribute
+				//add failed_distribution due to wrong OTP entered.
+
 
 				$qr_code=$_SESSION["qrc"];
             	$reg_no=$_SESSION["regn"];
