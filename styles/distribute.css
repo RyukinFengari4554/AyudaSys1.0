@@ -69,3 +69,40 @@ body {
 .btn:hover {
   background-color: RoyalBlue;
 }
+@media (min-width: 320px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 5px 5px;
+    height: auto;
+  }
+}
+@media (min-width: 430px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 7px 7px;
+    height: auto;
+  }
+}
+@media (min-width: 768px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 10px 10px;
+    height: auto;
+  }
+
+}
+@media (min-width: 1024px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 15px 15px;
+    height: auto;
+  }
+}

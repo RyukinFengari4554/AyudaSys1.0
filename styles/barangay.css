@@ -2,12 +2,7 @@ html {
   font-size: 16px;
 
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
 
-}
 #title{
 
 }
@@ -66,4 +61,41 @@ body{
 .card-deck .card {
   min-width: 220px;
   margin-bottom: 5rem;
+}
+@media (min-width: 320px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 5px 5px;
+    height: auto;
+  }
+}
+@media (min-width: 430px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 7px 7px;
+    height: auto;
+  }
+}
+@media (min-width: 768px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 10px 10px;
+    height: auto;
+  }
+
+}
+@media (min-width: 1024px) {
+  .navbar{
+    height: auto;
+  }
+  .navbar-brand{
+    padding: 15px 15px;
+    height: auto;
+  }
 }
