@@ -9,7 +9,7 @@
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){
-        header("Location: ../adminpage.html");
+        header("Location: ../adminpage.php");
         exit();      
     }
     else{
@@ -17,7 +17,7 @@
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
         if ($RC > 0 ){
-            header("Location: ../barangay.html");
+            header("Location: ../barangay.php");
             exit();
         }
         else{

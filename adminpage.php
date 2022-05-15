@@ -1,3 +1,20 @@
+<?php
+require 'includes/check_account.php';
+session_start();
+$account=Check($_SESSION['sun'],$_SESSION['sps']);
+if(empty($_SESSION['sun'])){
+  header("Location: signin.php");
+  exit();
+}
+elseif($account=="barangay"){
+    header("Location: barangay.php");
+    exit();
+}
+elseif($account=="login-failed"){
+  header("Location: signin.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +78,7 @@
         <a  href="register_citizen.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Input Data of Citizens<br><br></button></a>
       </div>
       <div class="card  light-sm">
-        <a  href="monitor_database.html"> <button type="button" class="btn btn-lg btn-block btn-outline-primary">Monitor Database System<br><br></button></a>
+        <a  href="monitor_database.php"> <button type="button" class="btn btn-lg btn-block btn-outline-primary">Monitor Database System<br><br></button></a>
       </div>
       <div class="card  light-sm">
 
