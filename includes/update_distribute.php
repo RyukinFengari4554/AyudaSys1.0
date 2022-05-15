@@ -11,14 +11,14 @@
         if ($row['distribution_status']==0){
             $sql = "UPDATE granted SET distribution_status = 1 WHERE qr_code = '$qr_code_s';";
             $result = mysqli_query($conn, $sql);
-            header ('Location: ../index.html');
+            header ('Location: home_check.php');
         }
         else{
-            header ('Location: ../index.html');
+            header ('Location: home_check.php');
         }
 
 
     }
-    header ('Location: ../index.html');
+    header ('Location: home_check.php');
 
     

@@ -33,7 +33,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link links" href="index.html">Home</a>
+            <a class="nav-link links" href="includes/home_check.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link links" href="includes/logout.php">Log out</a>
