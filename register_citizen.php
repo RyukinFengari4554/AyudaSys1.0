@@ -57,7 +57,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
 
   <!-- Custom styles for this template -->
-  <link href="styles/registration.css" rel="stylesheet">
+  <link href="styles/registration.CSS" rel="stylesheet">
 </head>
 
 <body class="bg-light">

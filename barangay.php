@@ -60,7 +60,7 @@ elseif($account=="login-failed"){
   </nav>
   </section>
   <!-- Custom styles for this template -->
-  <link href="styles/adminpage.css" rel="stylesheet">
+  <link href="styles/adminpage.CSS" rel="stylesheet">
 </head>
 
 <body>
