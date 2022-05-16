@@ -64,30 +64,53 @@ switch ($httpCode) {
 				//else isset for qr_code rekta distribute
 				//add failed_distribution due to wrong OTP entered.
 
-
-				$qr_code=$_SESSION["qrc"];
-            	$reg_no=$_SESSION["regn"];
-				$start_date=$_SESSION["grd"];
-				$pud=$_SESSION["piud"];
-				$barangay_id=$_SESSION["baid"];
-				$fam_code=$_SESSION["famc"];
-				$package_no=$_SESSION["pano"];
-				$distribution_status=$_SESSION["dist"];
-				$sql = "insert into granted (qr_code, registration_no, granted_date, pick_up_date, barangay_id, family_code, package_no, distribution_status) values ('$qr_code', '$reg_no', '$start_date', '$pud', '$barangay_id', '$fam_code','$package_no', '$distribution_status');";
-            	$result = mysqli_query($conn, $sql);
-				header("Location: ../register_successfully.php");
+				if(isset($_SESSION["qrcs"])){
+					$qr_code_scanned=$_SESSION["qrcs"];
+					$sql = "UPDATE granted SET distribution_status = 1 WHERE qr_code = '$qr_code_scanned';";
+            		$result = mysqli_query($conn, $sql);
+					header("Location: ../distribute_ayuda.php");
+				}
+				else{
+					$qr_code=$_SESSION["qrc"];
+            		$reg_no=$_SESSION["regn"];
+					$start_date=$_SESSION["grd"];
+					$pud=$_SESSION["piud"];
+					$barangay_id=$_SESSION["baid"];
+					$fam_code=$_SESSION["famc"];
+					$package_no=$_SESSION["pano"];
+					$distribution_status=$_SESSION["dist"];
+					$sql = "insert into granted (qr_code, registration_no, granted_date, pick_up_date, barangay_id, family_code, package_no, distribution_status) values ('$qr_code', '$reg_no', '$start_date', '$pud', '$barangay_id', '$fam_code','$package_no', '$distribution_status');";
+            		$result = mysqli_query($conn, $sql);
+					header("Location: ../register_successfully.php");
+				}
+				
 			} else {
 			//echo "OTP Verification Failed\n";
-			header("Location: ../failed_verification.php");
+			if(isset($_SESSION["qrcs"])){
+				header("Location: ../failed_distribution.php");
+			}
+			else{
+				header("Location: ../failed_verification.php");
+			}
 			}	
 		} else {
 			//echo "OTP Verification Failed\n";
-			header("Location: ../failed_verification.php");
+			if(isset($_SESSION["qrcs"])){
+				header("Location: ../failed_distribution.php");
+			}
+			else{
+				header("Location: ../failed_verification.php");
+			}
 		}
 	break;
 	default:
 		echo 'Http Error: ' . $httpCode . ' : ' . curl_error($ch);
-		header("Location: ../failed_verification.php");
+		if(isset($_SESSION["qrcs"])){
+            header("Location: ../failed_distribution.php");
+        }
+        else{
+        	header("Location: ../failed_verification.php");
+        }
 	break;
 }
 

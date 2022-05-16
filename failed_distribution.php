@@ -50,8 +50,8 @@
   </head>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Failed Registration!</h1>
-  <p class="lead">Incorrect Information or Data Not Found! <br> Please try again!</p>
+  <h1 class="display-4">Failed Distribution!</h1>
+  <p class="lead">Incorrect OTP Code <br> Please try again!</p>
 </div>
 
   </div>
@@ -67,7 +67,7 @@
 </div>
 <div>
 
-<a href="registration.html"><button class="w-100 btn btn-primary " type="submit">Return to Registration</button></a>
+<a href="distribute.php"><button class="w-100 btn btn-primary " type="submit">Return to Distribution</button></a>
 
 
 </div>

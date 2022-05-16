@@ -64,12 +64,22 @@ switch ($httpCode) {
 			}**/
 		} else {
 			echo "Message sent Failed\n";	
+            if(isset($_SESSION["qrcs"])){
+                header("Location: ../failed_distribution.php");
+            }
+            else{
             header("Location: ../failed_verification.php");
+            }
 		}
 	break;
 	default:
 		echo 'Http Error: ' . $httpCode . ' : ' . curl_error($ch);
+        if(isset($_SESSION["qrcs"])){
+            header("Location: ../failed_distribution.php");
+        }
+        else{
         header("Location: ../failed_verification.php");
+        }
 	break;
 }
 
