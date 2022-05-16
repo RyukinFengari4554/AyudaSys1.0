@@ -84,6 +84,7 @@ include 'includes/db.inc.php';
           echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td></tr>";
         }
         echo "</table>";
+        echo "<div><br></div>";
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";

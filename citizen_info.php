@@ -98,6 +98,7 @@ include 'includes/db.inc.php';
         //echo "<br>";
         }
         echo "</table>";
+        echo "<div><br></div>";
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";

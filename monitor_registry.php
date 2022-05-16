@@ -64,7 +64,13 @@ include 'includes/db.inc.php';
     </div>
     <div>
       <?php
-      $sql = "SELECT * FROM registration;";
+       if($account=='admin'){
+        $sql = "SELECT * FROM registration;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+      }
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -86,6 +92,10 @@ include 'includes/db.inc.php';
         //echo "<br>";
         }
         echo "</table>";
+        echo "<div><br></div>";
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
       ?>
     </div>
