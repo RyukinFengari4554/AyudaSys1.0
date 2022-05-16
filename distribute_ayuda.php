@@ -76,8 +76,14 @@
 <div>
 <?php
 if(!empty($_POST['qrs']) || isset($_SESSION["qrcs"])){
+  if(empty($_POST['qrs'])){
+    $qr_code_scanned=$_SESSION["qrcs"];
+  }
+  else{
     $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
     $_SESSION["qrcs"]=$qr_code_scanned;
+    
+  }
     $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no INNER JOIN registration as r ON g.registration_no=r.registration_no WHERE g.qr_code = '$qr_code_scanned';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
@@ -127,10 +133,16 @@ if(!empty($_POST['qrs']) || isset($_SESSION["qrcs"])){
     }
     else{
       echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      echo "<div><br></div>";
+      echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
+        
     }
 }
 else{
     echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+    echo "<div><br></div>";
+    echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
+        
 }
 ?>
 

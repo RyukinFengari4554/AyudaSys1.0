@@ -68,6 +68,7 @@ switch ($httpCode) {
 					$qr_code_scanned=$_SESSION["qrcs"];
 					$sql = "UPDATE granted SET distribution_status = 1 WHERE qr_code = '$qr_code_scanned';";
             		$result = mysqli_query($conn, $sql);
+					//unset($_SESSION["qrcs"]);
 					header("Location: ../distribute_ayuda.php");
 				}
 				else{
