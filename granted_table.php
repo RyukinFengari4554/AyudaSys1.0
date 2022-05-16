@@ -65,7 +65,14 @@ include 'includes/db.inc.php';
     </div>
     <div>
       <?php
-      $sql = "SELECT * FROM granted;";
+      if($account=='admin'){
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv';";
+      }
+      
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -91,6 +98,9 @@ include 'includes/db.inc.php';
         //echo "<br>";
         }
         echo "</table>";
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
       ?>
     </div>
