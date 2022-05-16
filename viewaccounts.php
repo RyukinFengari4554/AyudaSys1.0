@@ -21,7 +21,7 @@ include 'includes/db.inc.php';
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
-    <title>AyudaSys Admin Signin</title>
+    <title>AyudaSys View Accounts</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
 
