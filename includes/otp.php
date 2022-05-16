@@ -37,13 +37,6 @@
                 <tr>
                   <td><select name="cc" id="authy-countries"  data-show-as="text"></select></td>
                   <td><input type="tel" id="phone_number" placeholder="Phone Number" name="pn" maxlength="10" value=<?php echo $vcn;?>></td>
-                  <!--
-                  <td><p type="tel" id="phone_number" name="pn" maxlength="10">
-                      <?php //echo $vcn;
-                      ?>
-                      </p>
-                      </td>
--->
                 </tr>
               </table>
             </div>

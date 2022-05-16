@@ -77,11 +77,13 @@
 if(!empty($_POST['qrs'])){
     $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
     $_SESSION["qrcs"]=$qr_code_scanned;
-    $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no WHERE g.qr_code = '$qr_code_scanned';";
+    $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no INNER JOIN registration as r ON g.registration_no=r.registration_no WHERE g.qr_code = '$qr_code_scanned';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){
       $row = mysqli_fetch_assoc($result);
+      $contact_number = $row['contact_number'];
+      $vcn= substr($contact_number, 1);
       echo "<table style='border: 1px solid white;'>";
       echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>LAST NAME:</td>";
       echo "<td style='border: 1px solid white;'>".$row['last_name']. "</td></tr>";
@@ -97,11 +99,18 @@ if(!empty($_POST['qrs'])){
       echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>DISTRIBUTION STATUS:</td>";
       if($row['distribution_status']==1){
         echo "<td style='border: 1px solid white;'>DELIVERED</td></tr>";
+        echo "</table><br><br>";
+        echo "$contact_number";
+        echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
       }
       else{
         echo "<td style='border: 1px solid white;'>UNDELIVERED</td></tr>";
+        echo "</table><br><br>";
+        echo "<button onclick='otp_dist()' class='w-100 btn btn-primary' type='submit'>Distribute (with OTP confirmation)</button><br>";
+        echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
+        
       }
-      echo "</table>";
+      
 
       /*
       echo "<p>".$row['last_name']."</p>";
@@ -134,9 +143,19 @@ else{
 </div>
 
 <br>
+
+<!--
 <form action="includes/update_distribute.php" method="POST" >
-  <button class="w-100 btn btn-primary " type="submit">Confirm</button> <!-- PATRTIALLY COMPLETEDcmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED -->
+  <button class="w-100 btn btn-primary " type="submit">Confirm</button>  PATRTIALLY COMPLETEDcmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED 
 </form>
+-->
 </div>
 </body>
+<script> 
+<?php  
+function otp_dist() {   
+  require_once 'otp.php';
+}   
+?>
+</script>   
 </html>
