@@ -85,6 +85,9 @@ include 'includes/db.inc.php';
         }
         echo "</table>";
       }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
     ?>
     </div>
 
