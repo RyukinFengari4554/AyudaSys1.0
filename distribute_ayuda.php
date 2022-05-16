@@ -100,7 +100,6 @@ if(!empty($_POST['qrs'])){
       if($row['distribution_status']==1){
         echo "<td style='border: 1px solid white;'>DELIVERED</td></tr>";
         echo "</table><br><br>";
-        echo "$contact_number";
         echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
       }
       else{
