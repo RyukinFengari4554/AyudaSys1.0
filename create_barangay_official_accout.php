@@ -74,15 +74,22 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   <form class="form1" action="includes/create_account.inc.php" method="POST">
     <div>
     <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
-        <label> Username: </label>
+        <label>Username: </label>
         <input type="text" class="form-control" name="boun" id="boun" placeholder="Enter Username"  required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
     </div>
     <br>
     <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
-        <label> First Password: </label>
+        <label>Password: </label>
         <input type="text" class="form-control" name="bops" id="bops" placeholder="Enter Password"  required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <br>
+    <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
+        <label>Barangay: </label>
+        <input type="text" class="form-control" name="bob" id="bob" placeholder="Enter Barangay"  required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
     </div>

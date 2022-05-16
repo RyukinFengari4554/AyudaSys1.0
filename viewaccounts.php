@@ -68,7 +68,13 @@ include 'includes/db.inc.php';
     <!--accounts of admin-->
     <div class='hi'>
     <?php
-      $sql = "SELECT * FROM barangay_officials;";
+      if($account=='admin'){
+        $sql = "SELECT * FROM barangay_officials;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM barangay_officials WHERE barangay = '$sbv';";
+      }
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){

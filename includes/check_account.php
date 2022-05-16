@@ -12,6 +12,8 @@ function Check($username, $password){
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
         if ($RC > 0 ){
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['sb']=$row['barangay'];
             return "barangay";
         }
         else{
