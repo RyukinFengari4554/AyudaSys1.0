@@ -10,7 +10,6 @@ body{
   background-image: url("https://i.imgur.com/Ez6rbmZ.jpg%22");
   background-size: cover;
   height:100%;
-  overflow: scroll;
 }
 input[type=number].no-spinner::-webkit-inner-spin-button,
    input[type=number]::-webkit-outer-spin-button {
@@ -67,15 +66,7 @@ html{
   color: white;
 }
 
-element {
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
-}
 
-element::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
 
 @media (min-width: 320px) {
   .navbar{
