@@ -79,9 +79,12 @@ include 'includes/db.inc.php';
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         echo "<table style='border: 1px solid white; margin: auto;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th></tr>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th>";
+        echo "<th style='border: 1px solid white;'>barangay</th></tr>";
         while($row = mysqli_fetch_assoc($result)){
-          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td></tr>";
+          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td>";
+          echo "<td style='border: 1px solid white;'>".$row['barangay']. "</td></tr>";
+          
         }
         echo "</table>";
         echo "<div><br></div>";
