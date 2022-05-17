@@ -34,9 +34,7 @@ html{
   height: 5rem;
 }
 
-#title{
 
-}
 .nav-item{
   padding: 0 18px;
 
@@ -68,6 +66,17 @@ html{
 .fontcolor1{
   color: white;
 }
+
+element {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+element::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
 @media (min-width: 320px) {
   .navbar{
     height: auto;
