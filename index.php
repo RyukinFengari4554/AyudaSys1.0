@@ -128,7 +128,7 @@
   <section id="d1">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="index.html">AyudaSys </a>
+      <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -137,7 +137,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link links" href="registration.html">Registration</a>
+            <a class="nav-link links" href="registration.php">Registration</a>
           </li>
           <!--
       <li class="nav-item">
@@ -159,7 +159,7 @@
     <div class="container">
       <div class="card-deck  text-center">
         <div class="card  light-sm">
-          <a href="registration.html"><button type="button" id="d1"
+          <a href="registration.php"><button type="button" id="d1"
               class="btn btn-lg btn-block btn-outline-primary">Registration</button></a>
         </div>
         <!--
@@ -176,7 +176,7 @@
   <section id="d2">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="index.html">AyudaSys </a>
+      <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -185,7 +185,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link links" href="registration.html">Pagpaparehistro</a>
+            <a class="nav-link links" href="registration.php">Pagpaparehistro</a>
           </li>
           <!--
           <li class="nav-item">
@@ -208,7 +208,7 @@
     <div class="container">
       <div class="card-deck  text-center">
         <div class="card  light-sm">
-          <a href="registration.html"><button type="button"
+          <a href="registration.php"><button type="button"
               class="btn btn-lg btn-block btn-outline-primary">Pagpaparehistro</button></a>
         </div>
         <!--
