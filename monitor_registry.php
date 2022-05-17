@@ -31,6 +31,7 @@ include 'includes/db.inc.php';
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -39,7 +40,9 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
+    <link href="styles/card.css" rel="stylesheet">
     <link href="styles/adminpage.css" rel="stylesheet">
+
 
 </head>
   <body>
@@ -74,24 +77,23 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>first_name</th>";
-        echo "<th style='border: 1px solid white;'>last_name</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th>";
-        echo "<th style='border: 1px solid white;'>verification_status</th>";
-        echo "<th style='border: 1px solid white;'>qr_code</th></tr>";
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
-        echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['verification_status']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['qr_code']. "</td></tr>";
+        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+        echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
+        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+        echo "<p class='text-secondary'> Verification Status: ".$row['verification_status']." </p> " ;
+        echo "<p class='text-secondary'> QR Code: ".$row['qr_code']." </p> " ;
+        echo "</div> </div>";
+
+
         //echo "<br>";
         }
-        echo "</table>";
+        echo "</div>";
+        echo "</div>";
         echo "<div><br></div>";
       }
       else{

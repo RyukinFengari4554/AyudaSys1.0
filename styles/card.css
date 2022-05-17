@@ -1,0 +1,38 @@
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 960px;
+  margin-bottom: .5rem;
+
+}
+
+.card-deck .card {
+
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  box-shadow: 10px 10px 5px lightblue;
+  background-image: url("https://i2.wp.com/files.123freevectors.com/wp-content/original/110341-beige-blurred-background-vector.jpg?w=800&q=95");
+
+}
+.card-header{
+font-weight: bold;
+
+}
+.card-body{
+
+}
+.primary{
+font-weight: 500;
+color: black;
+}
