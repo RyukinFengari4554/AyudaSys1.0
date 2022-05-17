@@ -59,7 +59,7 @@ if(!empty($_SESSION['sun'])){
             <a class="nav-link links" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link links" href="registration.php">Registration</a>
+            <a class="nav-link links" href="registration.php">Register</a>
           </li>
         </ul>
     </nav>

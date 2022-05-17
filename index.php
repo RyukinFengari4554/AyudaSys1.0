@@ -137,7 +137,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link links" href="registration.php">Registration</a>
+            <a class="nav-link links" href="registration.php">Regiter</a>
           </li>
           <!--
       <li class="nav-item">
@@ -160,7 +160,7 @@
       <div class="card-deck  text-center">
         <div class="card  light-sm">
           <a href="registration.php"><button type="button" id="d1"
-              class="btn btn-lg btn-block btn-outline-primary">Registration</button></a>
+              class="btn btn-lg btn-block btn-outline-primary">Register</button></a>
         </div>
         <!--
       <div class="card  light-sm">
@@ -168,8 +168,7 @@
       </div>
       commented on: May 15, 2022-->
         <div class="card  light-sm">
-          <a href="signin.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Login
-              Page</button></a>
+          <a href="signin.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Login</button></a>
         </div>
       </div>
   </section>
@@ -185,7 +184,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item">
-            <a class="nav-link links" href="registration.php">Pagpaparehistro</a>
+            <a class="nav-link links" href="registration.php">Magrehistro</a>
           </li>
           <!--
           <li class="nav-item">
@@ -193,7 +192,7 @@
           </li>
           commented on: May 15, 2022-->
           <li class="nav-item">
-            <a class="nav-link links" href="signin.php">Login</a>
+            <a class="nav-link links" href="signin.php">Mag-login</a>
           </li>
         </ul>
       </div>
@@ -209,7 +208,7 @@
       <div class="card-deck  text-center">
         <div class="card  light-sm">
           <a href="registration.php"><button type="button"
-              class="btn btn-lg btn-block btn-outline-primary">Pagpaparehistro</button></a>
+              class="btn btn-lg btn-block btn-outline-primary">Magrehistro</button></a>
         </div>
         <!--
           <div class="card  light-sm">
@@ -217,8 +216,7 @@
           </div>
           commented on: May 15, 2022-->
         <div class="card  light-sm">
-          <a href="signin.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Login
-              Page</button></a>
+          <a href="signin.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Mag-login</button></a>
         </div>
       </div>
   </section>
