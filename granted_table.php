@@ -40,7 +40,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/granted.CSS" rel="stylesheet">
+    <link href="styles/granted.css" rel="stylesheet">
 
 </head>
   <body>

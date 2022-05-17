@@ -30,7 +30,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/distribute.CSS" rel="stylesheet">
+    <link href="styles/distribute.css" rel="stylesheet">
 
 
   <body>

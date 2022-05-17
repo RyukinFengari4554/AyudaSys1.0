@@ -36,7 +36,7 @@
   <section id="title">
   </section>
   <!-- Custom styles for this template -->
-  <link href="styles/index.CSS" rel="stylesheet">
+  <link href="styles/index.css" rel="stylesheet">
   <style>
     .switch {
       position: fixed;

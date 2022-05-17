@@ -38,7 +38,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
 
     <!-- Custom styles for this template -->
-    <link href="styles/adminpage.CSS" rel="stylesheet">
+    <link href="styles/adminpage.css" rel="stylesheet">
 
 </head>
   <body>

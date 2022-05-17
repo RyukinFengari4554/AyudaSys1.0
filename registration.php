@@ -59,7 +59,7 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="styles/registration.CSS" rel="stylesheet">
+  <link href="styles/registration.css" rel="stylesheet">
   <style>
     .switch {
       position: fixed;
