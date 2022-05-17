@@ -74,7 +74,7 @@ if(!empty($_SESSION['sun'])){
       <label for="inputUsername" class="sr-only"></label>
       <input type="text" id="inputEmail" class="form-control" name="un" placeholder="Username" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Admin password" required="">
+      <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Password" required="">
       <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"signin.php?login=failed") == true){
