@@ -94,7 +94,7 @@
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
         if ($RC == 0 ){ // checking if inputted data are IN granted Table
-            if ($package=="Package A: Cash"){
+            if ($package=="Package A: Cash" ||$package=="Pakete A: Pera"){
                 $package_no=1;
             }
             else{
