@@ -39,6 +39,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
+    <link href="styles/card.css" rel="stylesheet">
     <link href="styles/adminpage.css" rel="stylesheet">
 
 </head>
@@ -75,13 +76,17 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>name</th>";
-        echo "<th style='border: 1px solid white;'>package_content</th></tr>";
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['name']."</td><td style='border: 1px solid white;'>". $row['package_content']. "</td></tr>";
-        //echo "<br>";
+        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+        echo "<p> Package Name: ".$row['name']." </p> " ;
+        echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='primary'> Package Content: ". $row['package_content']. "</p>  " ;
+        echo "</div> </div>";
+
+
+      //echo "<br>";
         }
         echo "</table>";
       }

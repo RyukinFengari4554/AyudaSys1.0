@@ -39,6 +39,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
+    <link href="styles/card.css" rel="stylesheet">
     <link href="styles/adminpage.css" rel="stylesheet">
 
 </head>
@@ -71,30 +72,26 @@ include 'includes/db.inc.php';
         $sbv =$_SESSION['sb'];
         $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv';";
       }
-      
+
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>first_name</th>";
-        echo "<th style='border: 1px solid white;'>last_name</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th>";
-        echo "<th style='border: 1px solid white;'>house_no</th>";
-        echo "<th style='border: 1px solid white;'>street</th>";
-        echo "<th style='border: 1px solid white;'>members</th>";
-        echo "<th style='border: 1px solid white;'>family_code</th></tr>";
-        
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
+
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
-        echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['house_no']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['street']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['no_of_members']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['family_code']. "</td></tr>";
+
+
+        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+        echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
+        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+        echo "<p class='text-secondary'> House No: ". $row['house_no']." </p> " ;
+        echo "<p class='text-secondary'> Street: ". $row['street']." </p> " ;
+        echo "<p class='text-secondary'> No. of members: ". $row['no_of_members']." </p> " ;
+        echo "<p class='text-secondary'> Family Code: ". $row['family_code']." </p> " ;
+        echo "</div> </div>";
         //echo "<br>";
         }
         echo "</table>";

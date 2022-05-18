@@ -40,6 +40,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
+    <link href="styles/card.css" rel="stylesheet">
     <link href="styles/adminpage.css" rel="stylesheet">
 
 </head>
@@ -78,13 +79,14 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white; margin: auto;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th></tr>";
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
         while($row = mysqli_fetch_assoc($result)){
-          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td>";
-          echo "<td style='border: 1px solid white;'>".$row['barangay']. "</td></tr>";
-          
+          echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+          echo "<p> Username: ".$row['username']." </p> " ;
+          echo "</div> <div class='card-body text-center'>" ;
+          echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+          echo "</div> </div>";
+
         }
         echo "</table>";
         echo "<div><br></div>";

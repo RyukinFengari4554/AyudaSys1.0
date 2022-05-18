@@ -40,6 +40,7 @@ include 'includes/db.inc.php';
 
 
     <!-- Custom styles for this template -->
+    <link href="styles/card.css" rel="stylesheet">
     <link href="styles/granted.css" rel="stylesheet">
 
 </head>
@@ -72,29 +73,25 @@ include 'includes/db.inc.php';
         $sbv =$_SESSION['sb'];
         $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv';";
       }
-      
+
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>qr_code</th>";
-        echo "<th style='border: 1px solid white;'>register_no</th>";
-        echo "<th style='border: 1px solid white;'>granted_date</th>";
-        echo "<th style='border: 1px solid white;'>pick_up_date</th>";
-        echo "<th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>family_code</th>";
-        echo "<th style='border: 1px solid white;'>package_no</th>";
-        echo "<th style='border: 1px solid white;'>dist_status</th></tr>";
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['qr_code']."</td>";
-        echo "<td style='border: 1px solid white;'>". $row['registration_no']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['granted_date']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['pick_up_date']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['barangay_id']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['family_code']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['package_no']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['distribution_status']. "</td></tr>";
+        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+        echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
+        echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
+        echo "<p class='text-secondary'> Granted Data: ". $row['granted_date']." </p> " ;
+        echo "<p class='text-secondary'> Pick up date: ". $row['pick_up_date']." </p> " ;
+        echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
+        echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
+        echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> " ;
+        echo "</div> </div>";
+
         //echo "<br>";
         }
         echo "</table>";
