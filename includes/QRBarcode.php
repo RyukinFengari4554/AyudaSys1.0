@@ -4,7 +4,7 @@
 class QRBarCode{
 
     
-    private $googleChartAPI = 'https://chart.apis.google.com/chart';
+    private $googleChartAPI = 'https://chart.googleapis.com/chart?';
     
     private $codeData;
 

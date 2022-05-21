@@ -64,10 +64,20 @@ include 'includes/db.inc.php';
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">View Accounts Page</h1>
       <p class="lead">The View accounts page allows the  monitoring of created accounts</p>
+      <p style="color: #ADD8E6;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500; ">View Database as: </p>
+      <select onchange="viewdb()" name="view" class="custom-select d-block w-100" id="vd" required>
+        <option selected="selected">Tiles</option>
+        <option >Table</option>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </select>
+      <br>
     </div>
 
     <!--accounts of admin-->
-    <div class='hi'>
+    <div class='hi' id="t1">
     <?php
       if($account=='admin'){
         $sql = "SELECT * FROM barangay_officials;";
@@ -88,6 +98,37 @@ include 'includes/db.inc.php';
           echo "</div> </div>";
 
         }
+        echo "</div>";
+        echo "</div>";
+        echo "<div><br></div>";
+
+
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+    ?>
+    </div>
+    <div class='hi' id="t2">
+      <?php
+      if($account=='admin'){
+        $sql = "SELECT * FROM barangay_officials;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM barangay_officials WHERE barangay = '$sbv';";
+      }
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<table style='border: 1px solid white; margin: auto;'>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th>";
+        echo "<th style='border: 1px solid white;'>barangay</th></tr>";
+        while($row = mysqli_fetch_assoc($result)){
+          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td>";
+          echo "<td style='border: 1px solid white;'>".$row['barangay']. "</td></tr>";
+
+        }
         echo "</table>";
         echo "<div><br></div>";
       }
@@ -95,10 +136,19 @@ include 'includes/db.inc.php';
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
     ?>
-    </div>
-
-
-
+      </div>
+      <script type="text/javascript">
+        document.getElementById("t2").style.display = "none"; //hide fil
+        function viewdb() {
+          if (document.getElementById("vd").value === "Tiles" ) {
+            document.getElementById("t1").style.display = "block";
+            document.getElementById("t2").style.display = "none";
+          } else {
+            document.getElementById("t1").style.display = "none";
+            document.getElementById("t2").style.display = "block";
+          }
+        }
+      </script>
 
 
 

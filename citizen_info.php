@@ -62,8 +62,16 @@ include 'includes/db.inc.php';
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Citizen Information Page</h1>
       <p class="lead">The Citizen Information Page allows for monitoring of the citizen information list</p>
+      <select onchange="viewdb()" name="view" class="custom-select d-block w-100" id="vd" required>
+        <option selected="selected">Tiles</option>
+        <option >Table</option>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </select>
+      <br>
+      </div>
     </div>
-    <div>
+    <div id="t1">
       <?php
       if($account=='admin'){
         $sql = "SELECT * FROM personal_information;";
@@ -94,7 +102,8 @@ include 'includes/db.inc.php';
         echo "</div> </div>";
         //echo "<br>";
         }
-        echo "</table>";
+        echo "</div>";
+        echo "</div>";
         echo "<div><br></div>";
       }
       else{
@@ -102,6 +111,65 @@ include 'includes/db.inc.php';
       }
       ?>
     </div>
+
+    <div id="t2">
+      <?php
+       if($account=='admin'){
+        $sql = "SELECT * FROM registration;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+      }
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<table style='border: 1px solid white;'>";
+       echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
+       echo "<th style='border: 1px solid white;'>first_name</th>";
+       echo "<th style='border: 1px solid white;'>last_name</th>";
+       echo "<th style='border: 1px solid white;'>barangay</th>";
+       echo "<th style='border: 1px solid white;'>house_no</th>";
+       echo "<th style='border: 1px solid white;'>street</th>";
+       echo "<th style='border: 1px solid white;'>members</th>";
+       
+        //echo "<br>";
+        while($row = mysqli_fetch_assoc($result)){
+          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
+        echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['house_no']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['street']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['no_of_members']. "</td>";
+
+        echo "</div> </div>";
+
+        //echo "<br>";
+        }
+
+        echo "</table>";
+        echo "<div><br></div>";
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+      ?>
+      </div>
+
+
+    <script type="text/javascript">
+      document.getElementById("t2").style.display = "none"; //hide fil
+      function viewdb() {
+        if (document.getElementById("vd").value === "Tiles" ) {
+          document.getElementById("t1").style.display = "block";
+          document.getElementById("t2").style.display = "none";
+        } else {
+          document.getElementById("t1").style.display = "none";
+          document.getElementById("t2").style.display = "block";
+        }
+      }
+    </script>
 
   </body>
 </html>

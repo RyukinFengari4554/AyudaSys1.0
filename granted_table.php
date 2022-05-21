@@ -63,8 +63,19 @@ include 'includes/db.inc.php';
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Granted Table Page</h1>
       <p class="lead">The Granted Table Page allows for monitoring of the Granted Table</p>
+      <p style="color: #ADD8E6;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500; ">View Database as: </p>
+      <select onchange="viewdb()" name="view" class="custom-select d-block w-100" id="vd" required>
+        <option selected="selected">Tiles</option>
+        <option >Table</option>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </select>
+      <br>
     </div>
-    <div>
+
+    <div id="t1">
       <?php
       if($account=='admin'){
         $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id;";
@@ -94,13 +105,70 @@ include 'includes/db.inc.php';
 
         //echo "<br>";
         }
-        echo "</table>";
+        echo "</div>";
+        echo "</div>";
+        echo "<div><br></div>";
+
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
       ?>
     </div>
+    <div id="t2">
+      <?php
+      if($account=='admin'){
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv';";
+      }
+
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<table style='border: 1px solid white;'>";
+        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>qr_code</th>";
+        echo "<th style='border: 1px solid white;'>register_no</th>";
+        echo "<th style='border: 1px solid white;'>granted_date</th>";
+        echo "<th style='border: 1px solid white;'>pick_up_date</th>";
+        echo "<th style='border: 1px solid white;'>barangay_id</th>";
+        echo "<th style='border: 1px solid white;'>family_code</th>";
+        echo "<th style='border: 1px solid white;'>package_no</th>";
+        echo "<th style='border: 1px solid white;'>dist_status</th></tr>";
+        //echo "<br>";
+        while($row = mysqli_fetch_assoc($result)){
+        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['qr_code']."</td>";
+        echo "<td style='border: 1px solid white;'>". $row['registration_no']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['granted_date']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['pick_up_date']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['barangay_id']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['family_code']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['package_no']. "</td>";
+        echo "<td style='border: 1px solid white;'>". $row['distribution_status']. "</td></tr>";
+        //echo "<br>";
+        }
+        echo "</table>";
+        echo "<div><br></div>";
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+      ?>
+      </div>
+      <script type="text/javascript">
+        document.getElementById("t2").style.display = "none"; //hide fil
+        function viewdb() {
+          if (document.getElementById("vd").value === "Tiles" ) {
+            document.getElementById("t1").style.display = "block";
+            document.getElementById("t2").style.display = "none";
+          } else {
+            document.getElementById("t1").style.display = "none";
+            document.getElementById("t2").style.display = "block";
+          }
+        }
+      </script>
 
   </body>
 </html>
