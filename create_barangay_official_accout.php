@@ -106,13 +106,11 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
   </form>
   <script>
-      ("body").on("submit", "form", function() {
-      (this).submit(function() {
-        return false;
+      const myForm = document.getElementbyID("myFor")
+      myForm.addEventListener("submit", (e) => {
+        e.preventDefault();
           });
-            return true;
-          });
-    </script>
+  </script>
 </body>
 
 </html>
