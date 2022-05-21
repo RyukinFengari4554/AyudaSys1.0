@@ -245,7 +245,7 @@
       </div>
       <br>
       <br>
-      <button class="w-100 btn btn-primary " type="submit">Submit Information</button>
+      <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
 
     </form>
   </section>
