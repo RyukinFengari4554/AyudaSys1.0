@@ -98,7 +98,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
       </div>
       <div class="card  light-sm">
         <a href="viewaccounts.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View Barangay
-            Official accounts</button></a>
+            <br>Official accounts</button></a>
       </div>
 
 
