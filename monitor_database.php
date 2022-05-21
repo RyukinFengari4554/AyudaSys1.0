@@ -83,11 +83,12 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
         <a href="citizen_info.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View
             <br>Citizen Info</button></a>
       </div>
+
       <div class="card  light-sm">
-        <div class="card  light-sm">
-          <a href="monitor_registry.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View
-              <br>Registry List </button></a>
-        </div>
+        <a href="monitor_registry.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View
+            <br>Registry List </button></a>
+      </div>
+      <div class="card  light-sm">
         <a href="granted_table.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View
             <br>Granted Table</button></a>
       </div>
@@ -103,6 +104,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
     </div>
   </div>
+
 
 
 </body>
