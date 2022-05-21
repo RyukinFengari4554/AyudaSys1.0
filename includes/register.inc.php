@@ -73,6 +73,18 @@
     $row = mysqli_fetch_assoc($result);
     $reg_no = $row['registration_no'];
     
+    include "QRBarcode.php";    // commented on May 22, 2022 QRCODE generator does not work on heroku
+    $qr = new QRBarCode();
+    /* create text QR code  */
+    $qr->text($qr_code);
+    /* display QR code image */
+     $qr->qrCode(250, 'images/AyudaQR');
+    
+    class QR{
+        public function returnQR(){
+            return $this->qr_code;
+        }
+    }
     
     //GRANTING PART 2:
     $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members;";
@@ -98,19 +110,7 @@
             $_SESSION["famc"]=$fam_code;
             $_SESSION["pano"]=$package_no;
             $_SESSION["dist"]=$distribution_status;
-            include "QRBarCode.php";    // commented on May 22, 2022 QRCODE generator does not work on heroku
-            $qr = new QRBarCode();
-            /* create text QR code  */
-            $qr->text($qr_code);
-            /* display QR code image */
-             $qr->qrCode(250, 'images/AyudaQR');
-            
-            class QR{
-                public function returnQR(){
-                    return $this->qr_code;
-                }
-            }
-            
+                      
             require_once 'otp.php';
             /* include QRBarCode class */
         
