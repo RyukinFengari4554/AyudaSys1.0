@@ -204,8 +204,7 @@
         </div>
         <div class="col-md-3 col-sm-12 was-validated">
           <label> House No: </label>
-          <input type="number" class="form-control no-spinner" name="rhn" id="rhn" pattern="/^-?\d+\.?\d*$/"
-            onKeyPress="if(this.value.length==4) return false;" placeholder="Enter your House Number" required>
+          <input type="text" class="form-control" name="rhn" id="rhn" placeholder="Enter your House Number" required>
           <div class="valid-feedback">Valid.</div>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
@@ -246,7 +245,7 @@
       </div>
       <br>
       <br>
-      <button class="w-100 btn btn-primary " type="submit">Submit Information</button>
+      <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
 
     </form>
   </section>
@@ -303,8 +302,7 @@
         </div>
         <div class="col-md-3 col-sm-12 was-validated">
           <label> Numero ng Bahay: </label>
-          <input type="number" class="form-control no-spinner" name="rhn" id="rhn" pattern="/^-?\d+\.?\d*$/"
-            onKeyPress="if(this.value.length==4) return false;" placeholder="Ilagay ang numero ng inyong bahay" required>
+          <input type="text" class="form-control" name="rhn" id="rhn" placeholder="Ilagay ang numero ng inyong bahay" required>
           <div class="valid-feedback">Wasto.</div>
           <div class="invalid-feedback">Mangyaring punan ang patlang na ito.</div>
         </div>

@@ -123,7 +123,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
       </div>
       <div class="col-lg-4 col-sm-12 was-validated">
         <label> House No: </label>
-        <input type="number" class="form-control no-spinner" name="rhn" id="rhn" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" placeholder="Enter the House Number"  required>
+        <input type="text" class="form-control" name="rhn" id="rhn" placeholder="Enter the House Number"  required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -143,7 +143,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
                   };
       ?>
     <br>
-    <button class="w-100 btn btn-primary " type="submit">Submit Information</button>
+    <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
 
   </form>
 
