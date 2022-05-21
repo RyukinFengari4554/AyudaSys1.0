@@ -114,9 +114,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
                   };
       ?>
     <br>
-    <button class="w-100 btn btn-primary " type="submit" id="btnSubmit">Create</button>
+    <button class="w-100 btn btn-primary " type="submit" onclick="this.disabled=true;this.value='Submitting...'; this.form.submit();">Create</button>
 
   </form>
+  <!--
   <script>
     $(document).ready(function () {
 
@@ -136,5 +137,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
       });
     });
   </script>
+  -->
 </body>
 </html>
