@@ -98,19 +98,19 @@
             $_SESSION["famc"]=$fam_code;
             $_SESSION["pano"]=$package_no;
             $_SESSION["dist"]=$distribution_status;
-            include "QRBarCode.php";
+            include "QRBarCode.php";    // commented on May 22, 2022 QRCODE generator does not work on heroku
             $qr = new QRBarCode();
             /* create text QR code  */
             $qr->text($qr_code);
             /* display QR code image */
              $qr->qrCode(250, 'images/AyudaQR');
-            /*
+            
             class QR{
                 public function returnQR(){
                     return $this->qr_code;
                 }
             }
-            */
+            
             require_once 'otp.php';
             /* include QRBarCode class */
         
