@@ -9,6 +9,7 @@
   <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
   <title>AyudaSys Home Page</title>
+  <link rel="shortcut icon" href="images/logo2.ico">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/pricing/">
   <!-- Google Fonts -->
@@ -128,7 +129,7 @@
   <section id="d1">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
+      <a class="navbar-brand brand-title" href="index.php"><img src="images/logow2.png" style="width: 15%; height: 15%;"></img>AyudaSys </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -175,7 +176,7 @@
   <section id="d2">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
+      <a class="navbar-brand brand-title" href="index.php"><img src="images/logow2.png" style="width: 15%; height: 15%;"></img>AyudaSys </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
