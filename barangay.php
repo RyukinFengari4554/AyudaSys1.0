@@ -78,15 +78,6 @@ elseif($account=="login-failed"){
             <a  href="monitor_database.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary"> Monitor Database System<br><br></button></a>
         </div>
         <div class="card  light-sm">
-            <a  href="viewaccounts.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View Barangay Official accounts</button></a>
-        </div>
-        <div class="card  light-sm">
-            <a  href="monitor_registry.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View <br>Registry List </button></a>
-        </div>
-        <div class="card light-sm">
-            <a  href="manage_necessity.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Show Ayuda <br>Packages List<List></List></button></a>
-        </div>
-        <div class="card  light-sm">
           <a href="distribute.php"><button type="button" class="btn btn-lg btn-block btn-outline-primary">Distribution<br> Page</button></a>
         </div>
 
