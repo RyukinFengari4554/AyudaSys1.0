@@ -66,7 +66,7 @@
     //INSERTING DATA INTO REGISTRATION TABLE
     $sql = "insert into registration (barangay_id, house_no, first_name, middle_name, last_name, no_of_members, email, contact_number, street, barangay, verification_status, package, qr_code) values ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$no_of_members', '$email', '$contact_number', '$street', '$barangay', '$v_s', '$package', '$qr_code');";
     $result = mysqli_query($conn, $sql);
-    $conn -> close();
+    
     //getting REGISTATION_NO from REGISTRATION TABLE
     $sql = "SELECT * FROM registration WHERE qr_code = '$qr_code';";
     $result = mysqli_query($conn, $sql);
