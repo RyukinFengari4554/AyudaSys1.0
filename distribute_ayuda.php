@@ -105,12 +105,12 @@ if(!empty($_POST['qrs']) || isset($_SESSION["qrcs"])){
       echo "<p class='text-secondary'> GRANTED DATE: ".$newDate." </p> " ;
       if($row['distribution_status']==1){
         echo "<p class='text-secondary'>DISTRIBUTION STATUS: DELIVERED</p>";
-        echo "</div></div><br><br>";
+        echo "</div></div></div></div><br><br>";
         echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
       }
       else{
         echo "<p class='text-secondary'>DISTRIBUTION STATUS: UNDELIVERED</p>";
-        echo "</div></div><br><br>";
+        echo "</div></div></div></div><br><br>";
         echo "<a href='includes/otp.php'><button class='w-100 btn btn-primary' type='submit'>Distribute (with OTP confirmation)</button></a>";
         echo "<div><br></div>";
         echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
