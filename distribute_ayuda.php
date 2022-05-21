@@ -8,8 +8,8 @@
     exit();
   }
   include 'includes/db.inc.php';
- 
-  
+
+
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +43,11 @@
 
 
     <!-- Custom styles for this template -->
+    <link href="styles/card.css" rel="stylesheet">
     <link href="styles/adminpage.css" rel="stylesheet">
 
 
-  
+
     <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +83,7 @@ if(!empty($_POST['qrs']) || isset($_SESSION["qrcs"])){
   else{
     $qr_code_scanned = mysqli_real_escape_string($conn, $_POST['qrs']);
     $_SESSION["qrcs"]=$qr_code_scanned;
-    
+
   }
     $sql = "SELECT * FROM personal_information AS p INNER JOIN granted AS g ON p.barangay_id=g.barangay_id INNER JOIN ayuda_package as a ON g.package_no=a.package_no INNER JOIN registration as r ON g.registration_no=r.registration_no WHERE g.qr_code = '$qr_code_scanned';";
     $result = mysqli_query($conn, $sql);
@@ -93,56 +94,45 @@ if(!empty($_POST['qrs']) || isset($_SESSION["qrcs"])){
       $vcn= substr($contact_number, 1);
       $_SESSION["cns"]=$contact_number;
       $_SESSION["vcns"]=$vcn;
-      echo "<table style='border: 1px solid white;'>";
-      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>LAST NAME:</td>";
-      echo "<td style='border: 1px solid white;'>".$row['last_name']. "</td></tr>";
-      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>BARANGAY ID:</td>";
-      echo "<td style='border: 1px solid white;'>".$row['barangay_id']. "</td></tr>";
-      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>PACKAGE:</td>";
-      echo "<td style='border: 1px solid white;'>".$row['package_content']. "</td></tr>";
-      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>NUMBER OF MEMBERS:</td>";
-      echo "<td style='border: 1px solid white;'>".$row['no_of_members']. "</td></tr>";
-      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>GRANTED DATE:</td>";
+      echo "<div class='container'> <div class='card-deck  text-center'> ";
+      echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+      echo "<p> BARANGAY ID: ".$row['barangay_id']." </p> " ;
+      echo "</div> <div class='card-body text-center'>" ;
+      echo "<p class='primary'> LAST NAME:  ".$row['last_name']. "</p>  " ;
+      echo "<p class='text-secondary'> PACKAGE: ".$row['package_content']." </p> " ;
+      echo "<p class='text-secondary'> NUMBER OF MEMBERS: ".$row['no_of_members']." </p> " ;
       $newDate = date("Y-F-d", strtotime($row['granted_date']));
-      echo "<td style='border: 1px solid white;'>".$newDate. "</td></tr>";
-      echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>DISTRIBUTION STATUS:</td>";
+      echo "<p class='text-secondary'> GRANTED DATE: ".$newDate." </p> " ;
       if($row['distribution_status']==1){
-        echo "<td style='border: 1px solid white;'>DELIVERED</td></tr>";
-        echo "</table><br><br>";
+        echo "<p class='text-secondary'>DISTRIBUTION STATUS: DELIVERED</p>";
+        echo "<br><br>";
         echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
       }
       else{
-        echo "<td style='border: 1px solid white;'>UNDELIVERED</td></tr>";
-        echo "</table><br><br>";
+        echo "<p class='text-secondary'>DISTRIBUTION STATUS: UNDELIVERED</p>";
+        echo "<br><br>";
         echo "<a href='includes/otp.php'><button class='w-100 btn btn-primary' type='submit'>Distribute (with OTP confirmation)</button></a>";
         echo "<div><br></div>";
         echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
-        
-      }
-      
 
-      /*
-      echo "<p>".$row['last_name']."</p>";
-      echo "<p>".$row['barangay_id']."</p>";
-      echo "<p>".$row['package_content']."</p>";
-      echo "<p>".$row['granted_date']."</p>"; // not sure if included
-      //echo "<p>".$row['distribution_status']."</p>"; // cmted april 27 2022  TODO gonna changed the granted table in the future with family_code
-      echo "<p>".$row['distribution_status']; // TODO if ds=0 then echo UNDELIVERED else DELIVERED ALSO CHANGE THE COLOR & LAYOUT
-    */
+      }
+
+      echo "</div> </div>";
+
 
     }
     else{
       echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       echo "<div><br></div>";
       echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
-        
+
     }
 }
 else{
     echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
     echo "<div><br></div>";
     echo "<a href='distribute.php'> <button class='w-100 btn btn-primary' type='submit'>Return to QR Code Scanning</button></a>";
-        
+
 }
 ?>
 
@@ -161,7 +151,7 @@ else{
 
 <!--
 <form action="includes/update_distribute.php" method="POST" >
-  <button class="w-100 btn btn-primary " type="submit">Confirm</button>  PATRTIALLY COMPLETEDcmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED 
+  <button class="w-100 btn btn-primary " type="submit">Confirm</button>  PATRTIALLY COMPLETEDcmn 27/04/2022 TODO confirm button changes the distribution status to DELIVERED
 </form>
 -->
 </div>
