@@ -104,12 +104,13 @@
             $qr->text($qr_code);
             /* display QR code image */
              $qr->qrCode(250, 'images/AyudaQR');
-    
+            /*
             class QR{
                 public function returnQR(){
                     return $this->qr_code;
                 }
             }
+            */
             require_once 'otp.php';
             /* include QRBarCode class */
         
