@@ -26,19 +26,31 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   <!-- Bootstrap core CSS -->
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+  </script>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,300;1,400&family=Ubuntu:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
 
   <section id="title">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,28 +83,28 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/create_account.inc.php" method="POST"  id ="myFor">
+  <form class="form1" action="includes/create_account.inc.php" method="POST" id="myFor">
     <div>
-    <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
+      <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
         <label>Username: </label>
-        <input type="text" class="form-control" name="boun" id="boun" placeholder="Enter Username"  required>
+        <input type="text" class="form-control" name="boun" id="boun" placeholder="Enter Username" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
-    </div>
-    <br>
-    <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
+      </div>
+      <br>
+      <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
         <label>Password: </label>
-        <input type="text" class="form-control" name="bops" id="bops" placeholder="Enter Password"  required>
+        <input type="text" class="form-control" name="bops" id="bops" placeholder="Enter Password" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
-    </div>
-    <br>
-    <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
+      </div>
+      <br>
+      <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
         <label>Barangay: </label>
-        <input type="text" class="form-control" name="bob" id="bob" placeholder="Enter Barangay"  required>
+        <input type="text" class="form-control" name="bob" id="bob" placeholder="Enter Barangay" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
-    </div>
+      </div>
     </div>
     <br>
     <?php
@@ -102,15 +114,27 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
                   };
       ?>
     <br>
-    <button class="w-100 btn btn-primary " type="submit" >Create</button>
+    <button class="w-100 btn btn-primary " type="submit" id="btnSubmit">Create</button>
 
   </form>
   <script>
-      const myForm = document.getElementbyID("myFor")
-      myForm.addEventListener("submit", (e) => {
+    $(document).ready(function () {
+
+      $("#myFor").submit(function (e) {
+
+        //stop submitting the form to see the disabled button effect
         e.preventDefault();
-          });
+
+        //disable the submit button
+        $("#btnSubmit").attr("disabled", true);
+
+        //disable a normal button
+        $("#btnTest").attr("disabled", true);
+
+        return true;
+
+      });
+    });
   </script>
 </body>
-
 </html>
