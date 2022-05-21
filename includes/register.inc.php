@@ -98,20 +98,21 @@
             $_SESSION["famc"]=$fam_code;
             $_SESSION["pano"]=$package_no;
             $_SESSION["dist"]=$distribution_status;
+            include "QRBarCode.php";
+            $qr = new QRBarCode();
+            /* create text QR code  */
+            $qr->text($qr_code);
+            /* display QR code image */
+             $qr->qrCode(250, 'images/AyudaQR');
+    
+            class QR{
+                public function returnQR(){
+                    return $this->qr_code;
+                }
+            }
             require_once 'otp.php';
             /* include QRBarCode class */
-        include "QRBarCode.php";
-        $qr = new QRBarCode();
-        /* create text QR code  */
-        $qr->text($qr_code);
-        /* display QR code image */
-         $qr->qrCode(250, 'images/AyudaQR');
-    
-        class QR{
-            public function returnQR(){
-                return $this->qr_code;
-            }
-        }
+        
             
         }
         else{
