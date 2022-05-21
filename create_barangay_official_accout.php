@@ -71,7 +71,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/create_account.inc.php" method="POST">
+  <form class="form1" action="includes/create_account.inc.php" method="POST"  id ="myFor">
     <div>
     <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
         <label>Username: </label>
@@ -105,7 +105,14 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " type="submit" >Create</button>
 
   </form>
-
+  <script>
+      ("body").on("submit", "form", function() {
+      (this).submit(function() {
+        return false;
+          });
+            return true;
+          });
+    </script>
 </body>
 
 </html>
