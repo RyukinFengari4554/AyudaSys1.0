@@ -343,7 +343,7 @@
       </div>
       <br>
       <br>
-      <button class="w-100 btn btn-primary " type="submit">Magsumite ng Impormasyon</button>
+      <button class="w-100 btn btn-primary " type="submit" onclick="this.disabled=true; this.form.submit();">Magsumite ng Impormasyon</button>
 
     </form>
   </section>
