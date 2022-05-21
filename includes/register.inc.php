@@ -34,11 +34,13 @@
     $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members;";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
-    //getting FAMILY_CODE from PERSONAL TABLE
-    $row = mysqli_fetch_assoc($result);
-    $fam_code = $row['family_code'];
-
-    if ($RC > 0 ){ // checking if inputted data are IN personal_info Table
+    
+    
+    if ($RC > 0 ){ 
+        //getting FAMILY_CODE from PERSONAL TABLE
+        $row = mysqli_fetch_assoc($result);
+        $fam_code = $row['family_code'];
+        // checking if inputted data are IN personal_info Table
         $sql = "SELECT * FROM granted WHERE family_code = '$fam_code';";
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
@@ -64,26 +66,14 @@
     //INSERTING DATA INTO REGISTRATION TABLE
     $sql = "insert into registration (barangay_id, house_no, first_name, middle_name, last_name, no_of_members, email, contact_number, street, barangay, verification_status, package, qr_code) values ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$no_of_members', '$email', '$contact_number', '$street', '$barangay', '$v_s', '$package', '$qr_code');";
     $result = mysqli_query($conn, $sql);
-    
+    $conn -> close();
     //getting REGISTATION_NO from REGISTRATION TABLE
     $sql = "SELECT * FROM registration WHERE qr_code = '$qr_code';";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $reg_no = $row['registration_no'];
     
-    /* include QRBarCode class */
-    include "QRBarCode.php";
-    $qr = new QRBarCode();
-    /* create text QR code  */
-    $qr->text($qr_code);
-    /* display QR code image */
-     $qr->qrCode(250, 'images/AyudaQR');
     
-    class QR{
-        public function returnQR(){
-         return $this->qr_code;
-        }
-    }
     //GRANTING PART 2:
     $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members;";
     $result = mysqli_query($conn, $sql);
@@ -109,6 +99,19 @@
             $_SESSION["pano"]=$package_no;
             $_SESSION["dist"]=$distribution_status;
             require_once 'otp.php';
+            /* include QRBarCode class */
+        include "QRBarCode.php";
+        $qr = new QRBarCode();
+        /* create text QR code  */
+        $qr->text($qr_code);
+        /* display QR code image */
+         $qr->qrCode(250, 'images/AyudaQR');
+    
+        class QR{
+            public function returnQR(){
+                return $this->qr_code;
+            }
+        }
             
         }
         else{
