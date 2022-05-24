@@ -114,13 +114,14 @@ include 'includes/db.inc.php';
 
     <div id="t2">
       <?php
-       if($account=='admin'){
-        $sql = "SELECT * FROM registration;";
+      if($account=='admin'){
+        $sql = "SELECT * FROM personal_information;";
       }
       else{
         $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+        $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv';";
       }
+
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -154,6 +155,7 @@ include 'includes/db.inc.php';
       }
       ?>
     </div>
+
 
 
     <script type="text/javascript">
