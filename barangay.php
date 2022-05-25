@@ -26,6 +26,7 @@ elseif($account=="login-failed"){
   <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
   <title>AyudaSys Barangay Page</title>
+  <link rel="shortcut icon" href="images/logo2.ico">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/pricing/">
   <!-- Google Fonts -->

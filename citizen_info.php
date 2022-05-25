@@ -21,6 +21,7 @@ include 'includes/db.inc.php';
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
     <title>AyudaSys Citizen Information</title>
+    <link rel="shortcut icon" href="images/logo2.ico">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
 
@@ -127,6 +128,9 @@ table{
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Citizen Information Page</h1>
       <p class="lead">The Citizen Information Page allows for monitoring of the citizen information list</p>
+      <p style="color: #ADD8E6;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500; ">View Database as: </p>
       <select onchange="viewdb()" name="view" class="custom-select d-block w-100" id="vd" required>
         <option selected="selected">Tiles</option>
         <option >Table</option>

@@ -20,6 +20,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
   <title>AyudaSys Creation of Barangay Official Account</title>
+  v
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/checkout/">
 
@@ -117,6 +118,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " type="submit" onclick="this.disabled=true; this.form.submit();">Create</button>
 
   </form>
-  
+
 </body>
 </html>

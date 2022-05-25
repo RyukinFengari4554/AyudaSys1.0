@@ -26,6 +26,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
   <title>AyudaSys Distribute Page</title>
+  <link rel="shortcut icon" href="images/logo2.ico">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/pricing/">
   <!-- Google Fonts -->
@@ -81,7 +82,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
             <br>
             <button class="w-100 btn btn-primary " type="submit">Submit</button>
           </form>
-        </div> 
+        </div>
   </div>
 
 
@@ -103,7 +104,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
     scanner.addListener('scan',function(c){
       document.getElementById('qrs').value=c;
-      
+
     });
 
     </script>

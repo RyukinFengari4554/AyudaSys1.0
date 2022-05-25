@@ -26,6 +26,7 @@ if(!empty($_SESSION['sun'])){
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
     <title>AyudaSys Signin</title>
+    <link rel="shortcut icon" href="images/logo2.ico">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
 
@@ -82,13 +83,13 @@ if(!empty($_SESSION['sun'])){
                   };
       ?>
       <div class="checkbox mb-3">
-    
+
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
-      
+
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
-     
+
     </form>
-    
+
   </body>
 </html>

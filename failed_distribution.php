@@ -9,6 +9,7 @@
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
     <title>AyudaSys Failed Distribution</title>
+    <link rel="shortcut icon" href="images/logo2.ico">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
     <!-- Bootstrap -->
@@ -49,8 +50,8 @@
   </nav>
   </head>
   <body>
-    
-  
+
+
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Failed Distribution!</h1>
