@@ -129,7 +129,7 @@
   <section id="d1">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand brand-title" href="index.php"><img src="images/logow2.png" style="width: 15%; height: 15%;"></img>AyudaSys </a>
+      <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -200,6 +200,7 @@
     </nav>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <img src="images/logow2.png" style="width: 25%; height: 25%;"></img>
       <h1 class="display-4">AyudaSys</h1>
       <p class="lead">AyudaSys ay isang Makabagong Sistema na Namamahala sa Barangay Ayuda na ginagamit upang tulungan
         ang mga opisyal ng barangay na tipunin ang mga pangunahing pangangailangan ng bawat sambahayan sa kani-kanilang
