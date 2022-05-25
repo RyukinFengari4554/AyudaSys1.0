@@ -45,6 +45,72 @@ include 'includes/db.inc.php';
 
 
 </head>
+<style>
+
+
+* {
+  font-family: sans-serif;
+  color: #0000000;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+
+
+}
+table{
+  color: black;
+}
+
+
+.content-table thead tr {
+  background-color: #009879;
+  color: violet;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: black;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.active-row  td {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+
+</style>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
@@ -64,9 +130,7 @@ include 'includes/db.inc.php';
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Monitor Registry Page</h1>
       <p class="lead">The Monitor Registry Page allows for monitoring of the database list </p>
-      <p style="color: #ADD8E6;
-      font-family: 'Ubuntu', sans-serif;
-      font-weight: 500; ">View Database as: </p>
+      <p style=" ">View Database as: </p>
       <select onchange="viewdb()" name="view" class="custom-select d-block w-100" id="vd" required>
         <option selected="selected">Tiles</option>
         <option >Table</option>
@@ -126,26 +190,37 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>first_name</th>";
-        echo "<th style='border: 1px solid white;'>last_name</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th>";
-        echo "<th style='border: 1px solid white;'>verification_status</th>";
-        echo "<th style='border: 1px solid white;'>qr_code</th></tr>";
+        $counter=0;
+        echo "<table class='content-table'>";
+        echo "<thead><tr ><th >barangay_id</th>";
+        echo "<th>first_name</th>";
+        echo "<th>last_name</th>";
+        echo "<th>barangay</th>";
+        echo "<th>verification_status</th>";
+        echo "<th>qr_code</th></tr></thead><tbody>";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
-          echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
-          echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
-          echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
-          echo "<td style='border: 1px solid white;'>". $row['verification_status']. "</td>";
-          echo "<td style='border: 1px solid white;'>". $row['qr_code']. "</td></tr>";
-
+          $counter=$counter+1;
+          if ($counter%2==0) {
+          echo "<tr class='active-row' ><td>".$row['barangay_id']."</td>";
+          echo "<td>". $row['first_name']. "</td>";
+          echo "<td>". $row['last_name']. "</td>";
+          echo "<td>". $row['barangay']. "</td>";
+          echo "<td>". $row['verification_status']. "</td>";
+          echo "<td>". $row['qr_code']. "</td></tr>";
+        }
+        else {
+          echo "<tr><td>".$row['barangay_id']."</td>";
+          echo "<td>". $row['first_name']. "</td>";
+          echo "<td>". $row['last_name']. "</td>";
+          echo "<td>". $row['barangay']. "</td>";
+          echo "<td>". $row['verification_status']. "</td>";
+          echo "<td>". $row['qr_code']. "</td></tr>";
+          }
 
         //echo "<br>";
         }
-        echo "</table>";
+        echo "</tbody></table>";
         echo "<div><br></div>";
       }
       else{

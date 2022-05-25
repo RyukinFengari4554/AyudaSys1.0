@@ -44,6 +44,71 @@ include 'includes/db.inc.php';
     <link href="styles/granted.css" rel="stylesheet">
 
 </head>
+<style>
+
+
+* {
+  font-family: sans-serif;
+  color: #0000000;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+
+
+}
+table{
+  color: black;
+}
+
+
+.content-table thead tr {
+  background-color: #009879;
+  color: violet;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: black;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.active-row  td {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+
+</style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
@@ -128,30 +193,47 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>qr_code</th>";
-        echo "<th style='border: 1px solid white;'>register_no</th>";
-        echo "<th style='border: 1px solid white;'>granted_date</th>";
-        echo "<th style='border: 1px solid white;'>pick_up_date</th>";
-        echo "<th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>family_code</th>";
-        echo "<th style='border: 1px solid white;'>package_no</th>";
-        echo "<th style='border: 1px solid white;'>dist_status</th></tr>";
+        $counter=0;
+        echo "<table class='content-table'>";
+        echo "<thead><tr ><th >qr_code</th>";
+        echo "<th>register_no</th>";
+        echo "<th>granted_date</th>";
+        echo "<th>pick_up_date</th>";
+        echo "<th>barangay_id</th>";
+        echo "<th>family_code</th>";
+        echo "<th>package_no</th>";
+        echo "<th>dist_status</th></tr></thead><tbody>";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['qr_code']."</td>";
-        echo "<td style='border: 1px solid white;'>". $row['registration_no']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['granted_date']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['pick_up_date']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['barangay_id']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['family_code']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['package_no']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['distribution_status']. "</td></tr>";
-        //echo "<br>";
-        }
-        echo "</table>";
-        echo "<div><br></div>";
+          $counter=$counter+1;
+          if ($counter%2==0) {
+        echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
+        echo "<td >". $row['registration_no']. "</td>";
+        echo "<td >". $row['granted_date']. "</td>";
+        echo "<td >". $row['pick_up_date']. "</td>";
+        echo "<td >". $row['barangay_id']. "</td>";
+        echo "<td >". $row['family_code']. "</td>";
+        echo "<td >". $row['package_no']. "</td>";
+        echo "<td >". $row['distribution_status']. "</td></tr>";
       }
+
+        else{
+          echo "<tr  ><td >".$row['qr_code']."</td>";
+          echo "<td >". $row['registration_no']. "</td>";
+          echo "<td >". $row['granted_date']. "</td>";
+          echo "<td >". $row['pick_up_date']. "</td>";
+          echo "<td >". $row['barangay_id']. "</td>";
+          echo "<td >". $row['family_code']. "</td>";
+          echo "<td >". $row['package_no']. "</td>";
+          echo "<td >". $row['distribution_status']. "</td></tr>";
+
+      }
+
+
+      }
+      echo "</tbody></table>";
+      echo "<div><br></div>";
+    }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }

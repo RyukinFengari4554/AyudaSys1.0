@@ -43,7 +43,72 @@ include 'includes/db.inc.php';
     <link href="styles/card.css" rel="stylesheet">
     <link href="styles/adminpage.css" rel="stylesheet">
 
-</head>
+
+</head><style>
+
+
+* {
+  font-family: sans-serif;
+  color: #0000000;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+
+
+}
+table{
+  color: black;
+}
+
+
+.content-table thead tr {
+  background-color: #009879;
+  color: violet;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: black;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.active-row  td {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+
+</style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
@@ -107,6 +172,7 @@ include 'includes/db.inc.php';
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
+
     ?>
     </div>
     <div class='hi' id="t2">
@@ -121,15 +187,24 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white; margin: auto;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>username</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th></tr>";
+        $counter=0;
+        echo "<table class='content-table'>";
+        echo "<thead><tr ><th >username</th>";
+        echo "<th>barangay</th></tr></thead><tbody>";
         while($row = mysqli_fetch_assoc($result)){
-          echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['username']. "</td>";
-          echo "<td style='border: 1px solid white;'>".$row['barangay']. "</td></tr>";
+          $counter=$counter+1;
+          if ($counter%2==0) {
+            echo "<tr class='active-row' ><td >".$row['username']. "</td>";
+            echo "<td >".$row['barangay']. "</td></tr>";
+          }
+          else {
+            echo "<tr><td>".$row['username']. "</td>";
+            echo "<td>".$row['barangay']. "</td></tr>";
+          }
+
 
         }
-        echo "</table>";
+        echo "</tbody></table>";
         echo "<div><br></div>";
       }
       else{

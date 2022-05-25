@@ -43,6 +43,71 @@ include 'includes/db.inc.php';
     <link href="styles/adminpage.css" rel="stylesheet">
 
 </head>
+<style>
+
+
+* {
+  font-family: sans-serif;
+  color: #0000000;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+
+
+}
+table{
+  color: black;
+}
+
+
+.content-table thead tr {
+  background-color: #009879;
+  color: violet;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: black;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.active-row  td {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+
+</style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
@@ -125,29 +190,44 @@ include 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<table style='border: 1px solid white;'>";
-        echo "<tr style='border: 1px solid white;'><th style='border: 1px solid white;'>barangay_id</th>";
-        echo "<th style='border: 1px solid white;'>first_name</th>";
-        echo "<th style='border: 1px solid white;'>last_name</th>";
-        echo "<th style='border: 1px solid white;'>barangay</th>";
-        echo "<th style='border: 1px solid white;'>house_no</th>";
-        echo "<th style='border: 1px solid white;'>street</th>";
-        echo "<th style='border: 1px solid white;'>members</th>";
-        echo "<th style='border: 1px solid white;'>family_code</th></tr>";
+        $counter=0;
+        echo "<table class='content-table'>";
+        echo "<thead><tr ><th >barangay_id</th>";
+        echo "<th>first_name</th>";
+        echo "<th>last_name</th>";
+        echo "<th>barangay</th>";
+        echo "<th>house_no</th>";
+        echo "<th>street</th>";
+        echo "<th>members</th>";
+        echo "<th>family_code</th></tr></thead><tbody>";
 
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
-        echo "<tr style='border: 1px solid white;'><td style='border: 1px solid white;'>".$row['barangay_id']."</td>";
-        echo "<td style='border: 1px solid white;'>". $row['first_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['last_name']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['barangay']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['house_no']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['street']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['no_of_members']. "</td>";
-        echo "<td style='border: 1px solid white;'>". $row['family_code']. "</td></tr>";
+        $counter=$counter+1;
+        if ($counter%2==0) {
+        echo "<tr class='active-row' ><td >".$row['barangay_id']."</td>";
+        echo "<td>". $row['first_name']. "</td>";
+        echo "<td>". $row['last_name']. "</td>";
+        echo "<td>". $row['barangay']. "</td>";
+        echo "<td>". $row['house_no']. "</td>";
+        echo "<td>". $row['street']. "</td>";
+        echo "<td>". $row['no_of_members']. "</td>";
+        echo "<td>". $row['family_code']. "</td></tr>";
+      }
         //echo "<br>";
+        else {
+          echo "<tr ><td >".$row['barangay_id']. "</td>";
+          echo "<td>". $row['first_name']. "</td>";
+          echo "<td>". $row['last_name']. "</td>";
+          echo "<td>". $row['barangay']. "</td>";
+          echo "<td>". $row['house_no']. "</td>";
+          echo "<td>". $row['street']. "</td>";
+          echo "<td>". $row['no_of_members']. "</td>";
+          echo "<td>". $row['family_code']. "</td></tr>";
         }
-        echo "</table>";
+
+        }
+        echo "</tbody></table>";
         echo "<div><br></div>";
       }
       else{
