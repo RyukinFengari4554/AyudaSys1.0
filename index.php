@@ -153,8 +153,8 @@
     </nav>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <img src="images/logow2.png" style="width: 30%; height: 30%; margin: 0;"></img>
-      <h1 class="display-4">AyudaSys</h1>
+    
+      <h1 class="display-4"><img src="images/logow2.png" style="width: 30%; height: 30%; margin: 0;"></img>AyudaSys</h1>
       <p class="lead" id="d1">AyudaSys is a newly Digitalized Barangay Ayuda Management System used to assist barangay
         officials to gather the basic necessities of every household in their respective barangay.</p>
     </div>
@@ -201,8 +201,8 @@
     </nav>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <img src="images/logow2.png" style="width: 30%; height: 30%; margin: 0;"></img>
-      <h1 class="display-4">AyudaSys</h1>
+    
+      <h1 class="display-4"><img src="images/logow2.png" style="width: 30%; height: 30%; margin: 0;"></img>AyudaSys</h1>
       <p class="lead">AyudaSys ay isang Makabagong Sistema na Namamahala sa Barangay Ayuda na ginagamit upang tulungan
         ang mga opisyal ng barangay na tipunin ang mga pangunahing pangangailangan ng bawat sambahayan sa kani-kanilang
         barangay.</p>
