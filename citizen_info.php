@@ -146,7 +146,7 @@ table{
       $results_per_page = 20;
       $start_from = ($page-1) * $results_per_page;
       if($account=='admin'){
-        $sql = "SELECT COUNT(barangay_id) AS total FROM FROM personal_information;";
+        $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information;";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
@@ -155,7 +155,7 @@ table{
       }
       else{
         $sbv =$_SESSION['sb'];
-        $sql = "SELECT COUNT(barangay_id) AS total FROM FROM personal_information WHERE barangay = '$sbv';";
+        $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
@@ -195,13 +195,25 @@ table{
     </div>
 
     <div id="t2">
-      <?php
+      if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+      $results_per_page = 20;
+      $start_from = ($page-1) * $results_per_page;
       if($account=='admin'){
-        $sql = "SELECT * FROM personal_information;";
+        $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information;";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+        
+        $sql = "SELECT * FROM personal_information ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
       }
       else{
         $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv';";
+        $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+       
+        $sql = "SELECT * FROM personal_information ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page." WHERE barangay = '$sbv';";
       }
 
       $result = mysqli_query($conn, $sql);
