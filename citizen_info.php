@@ -143,7 +143,7 @@ table{
     <div id="t1">
       <?php
       if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-      $results_per_page = 20;
+      $results_per_page = 30;
       $start_from = ($page-1) * $results_per_page;
       if($account=='admin'){
         $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information;";
@@ -197,7 +197,7 @@ table{
     <div id="t2">
       <?php
       if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-      $results_per_page = 20;
+      $results_per_page = 30;
       $start_from = ($page-1) * $results_per_page;
       if($account=='admin'){
         $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information;";
@@ -275,7 +275,7 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
             align-items: center;
             display: flex;' 
             class = 'btn-sm  btn-outline-primary'
-             href='citizen_info.php?page=".$i." '";
+            href='citizen_info.php?page=".$i." '";
             if ($i==$page)  echo " class='curPage'";
             echo ">".$i."</button> ";
 };
