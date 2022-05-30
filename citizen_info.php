@@ -269,7 +269,10 @@ table{
 for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
             echo "<button style='font-size: 24px;
             font-weight: bold;
-            margin: auto;' 
+            margin: auto;
+            text-align:center;
+            justify-content: center;
+            align-items: center;' 
             class = 'btn-sm  btn-outline-primary'
              href='citizen_info.php?page=".$i." '";
             if ($i==$page)  echo " class='curPage'";
