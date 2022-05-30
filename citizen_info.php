@@ -290,9 +290,9 @@ table{
 */
 echo "<table><tr>";
 for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
-  echo "<a href='citizen_info.php?page=".$i."' ";
+  echo "<td><a href='citizen_info.php?page=".$i."' ";
   if ($i==$page)  echo " class='curPage'";
-  echo "><button  class='btn-sm btn-outline-primary pages_b'>".$i."</button></a> ";
+  echo "><button  class='btn-sm btn-outline-primary pages_b'>".$i."</button></a></td>";
 };
 echo "</tr></table>";
 ?>
