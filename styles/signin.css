@@ -37,7 +37,7 @@ body {
   background-color: #f5f5f5;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url("https://i.imgur.com/Ez6rbmZ.jpg%22");
+  background-image: url("images/bg.jpg");
 }
 .hello{
   height: 10rem;
