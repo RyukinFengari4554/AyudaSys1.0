@@ -106,6 +106,14 @@ table{
     color: #009879;
 }
 
+.pages_b{
+  font-size: 24px; 
+  font-weight: bold; 
+  margin: auto; text-align:center; 
+  justify-content: center; 
+  align-items: center; 
+  display: flex;
+}
 
 
 </style>
@@ -283,9 +291,9 @@ table{
 echo "<table><tr>";
 for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
   echo "<button href='citizen_info.php?page=".$i."' ";
-  if ($i==$page)  echo " class='curPage btn-sm  btn-outline-primary'";
-  else echo " class='btn-sm  btn-outline-primary'";
-  echo " style='font-size: 24px; font-weight: bold; margin: auto; text-align:center; justify-content: center; align-items: center; display: flex;' >".$i."</button> ";
+  if ($i==$page)  echo " class='curPage btn-sm btn-outline-primary pages_b'";
+  else echo " class='btn-sm  btn-outline-primary pages_b'";
+  echo ">".$i."</button> ";
 };
 echo "</tr></table>";
 ?>
