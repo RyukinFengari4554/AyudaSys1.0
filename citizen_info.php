@@ -280,12 +280,14 @@ table{
             echo ">".$i."</button> ";
 };
 */
-
+echo "<table><tr>";
 for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
-  echo "<a href='citizen_info.php?page=".$i."'";
-  if ($i==$page)  echo " class='curPage'";
-  echo ">".$i."</a> ";
+  echo "<button href='citizen_info.php?page=".$i."' ";
+  if ($i==$page)  echo " class='curPage btn-sm  btn-outline-primary'";
+  else echo " class='btn-sm  btn-outline-primary'";
+  echo " style='font-size: 24px; font-weight: bold; margin: auto; text-align:center; justify-content: center; align-items: center; display: flex;' >".$i."</button> ";
 };
+echo "</tr></table>";
 ?>
 
 
