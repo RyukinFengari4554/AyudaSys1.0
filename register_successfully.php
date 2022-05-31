@@ -172,7 +172,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="window.print()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="printing()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
