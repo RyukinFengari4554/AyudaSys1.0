@@ -15,7 +15,7 @@ include 'includes/db.inc.php';
 
 <head>
     <!--<meta charset="utf-8"> -->
-    <meta charset="u+0080">
+    <meta charset="utf8mb4">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
