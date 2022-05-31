@@ -221,14 +221,14 @@
   </label>
 <?php
 function printing(){
-  try {
+  //try {
     //$command = escapeshellcmd('includes/print_command.py');
     $command = shell_exec('includes/printshell.sh');
-  }
-  catch (Exception $e) {
+  //}
+  //catch (Exception $e) {
     //$e->getMessage();
-    echo "window.print()";
-  }
+    //echo "window.print()";
+  //}
 }
 ?>
 </body>
