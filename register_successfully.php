@@ -222,7 +222,8 @@
 <?php
 function printing(){
   try {
-    $command = escapeshellcmd('includes/print_command.py');
+    //$command = escapeshellcmd('includes/print_command.py');
+    $command = shell_exec('includes/printshell.sh 2>&1 | tee -a /tmp/mylog 2>/dev/null >/dev/null &');
   }
   catch (Exception $e) {
     //$e->getMessage();
