@@ -223,7 +223,9 @@
 function printing(){
   //try {
     //$command = escapeshellcmd('includes/print_command.py');
-    require_once 'includes/printshell.sh';
+    //require_once 'includes/printshell.sh';
+
+    $command = escapeshellcmd('print_qr_printer.py');
   //}
   //catch (Exception $e) {
     //$e->getMessage();
