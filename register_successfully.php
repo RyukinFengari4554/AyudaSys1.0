@@ -204,7 +204,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="window.print()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="printing()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
@@ -219,7 +219,17 @@
       <span language='english' class="on">ENG</span>
     </div>
   </label>
-
+<?php
+function printing(){
+  try {
+    $command = escapeshellcmd('includes/print_command.py');
+  }
+  catch (Exception $e) {
+    //$e->getMessage();
+    echo "window.print()";
+  }
+}
+?>
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
