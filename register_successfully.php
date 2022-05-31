@@ -223,7 +223,7 @@
 function printing(){
   //try {
     //$command = escapeshellcmd('includes/print_command.py');
-    $command = shell_exec('includes/printshell.sh');
+    include_once('includes/printshell.sh');
   //}
   //catch (Exception $e) {
     //$e->getMessage();
