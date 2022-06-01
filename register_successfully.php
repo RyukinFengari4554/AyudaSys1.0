@@ -153,7 +153,7 @@
   <section id='d1'>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Sucessful Registration!</h1>
-      <p class="lead">Please take a picture of the QR Code or Click the Downlaod or Print Button. <br> This QR Code will
+      <p class="lead">Please take a picture of the QR Code or Click the Download or Print Button. <br> This QR Code will
         serve as
         your Queue Number for Ayuda Distribution.</p>
     </div>
@@ -186,7 +186,7 @@
   <section id='d2'>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
-      <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Downlaod o Print Button.<br> Ang QR Code na
+      <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.<br> Ang QR Code na
         ito ay magsisilbing iyong numero sa pila para sa pamamahagi ng Ayuda.</p>
     </div>
     <div class="container qrcode">
@@ -200,7 +200,7 @@
     </div>
     </div>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Notice:</h1>
+      <h1 class="display-4">Paalala:</h1>
       <p class="lead">Ang ayuda ay ipapamahagi isang linggo mula pagkarehistro.</p>
     </div>
     <div>
@@ -243,10 +243,8 @@
         $run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
         $out = shell_exec($run);
         */
-        /*$output = passthru('python test.py $qr_code');
-        $output = escapeshellcmd("test.py \"$qr_code\"");
-        //$run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\""); */
-        $output = exec("nohup sudo python test.py ".$qr_code);
+        
+        $output = passthru('python test.py $qr_code');
         echo 'alert('.$output.');';
     ?>
   }
