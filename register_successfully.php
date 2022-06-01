@@ -172,7 +172,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="printing()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="ther_pr()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -204,7 +204,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="printing()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="ther_pr()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
@@ -220,8 +220,8 @@
     </div>
   </label>
 <?php
-function printing(){
-  try {
+function ther_pr(){
+  
     //$command = escapeshellcmd('includes/print_command.py');
     //require_once 'includes/printshell.sh';
     $command = escapeshellcmd('includes/print_qr_printer.py');
@@ -229,11 +229,11 @@ function printing(){
     echo '<script type="text/javascript">';
     echo ' alert('.$str_output.')';  //not showing an alert box.
     echo '</script>';
-  }
-  catch (Exception $e) {
+  
+  
     //$e->getMessage();
-    echo "window.print()";
-  }
+    //echo "window.print()";
+  
 }
 ?>
 </body>
