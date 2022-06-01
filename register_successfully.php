@@ -239,16 +239,13 @@
   }
   function ther_pr(){
     <py-script>
-    from escpos.printer import Serial
+from escpos.printer import Serial
 from escpos import printer
 import os
 """ 9600 Baud, 8N1, Flow Control Enabled """
-
-
 cmd = 'sudo chmod 666 /dev/usb/lp0'
 os.system(cmd)
 p = printer.File("/dev/usb/lp0")
-
 p.set(
         align="center",
         font="a",
@@ -294,7 +291,6 @@ p.text("\n \n\n")
 p.text("                                ")
 p.text("                                ")
 p.text("\n \n\n")
-
     </py-script>
     //$command = escapeshellcmd('includes/print_qr_printer.py');
     //$str_output = shell_exec($command);
