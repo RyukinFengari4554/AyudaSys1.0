@@ -239,7 +239,8 @@
   }
   function tp(){
     <?PHP
-        $run = shell_exec("includes/print_qr_printer.py \"$qr_code\"");
+        $run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
+        $out = shell_exec($run);
         echo 'alert($run)';
     ?>
   }
