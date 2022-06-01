@@ -292,13 +292,6 @@ p.text("                                ")
 p.text("                                ")
 p.text("\n \n\n")
     </py-script>
-    //$command = escapeshellcmd('includes/print_qr_printer.py');
-    //$str_output = shell_exec($command);
-    //if(empty($str_output)){
-    //echo "";
-    //}
-    //require 'includes/print_qr_printer.py';
-    //window.print();
 	}
 </script>
 
