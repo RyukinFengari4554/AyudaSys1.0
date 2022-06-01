@@ -177,9 +177,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="<?PHP
-        echo shell_exec("includes/print_qr_printer.py \"$qr_code\"");
-        ?>">Print</button>
+      <button class="w-100 btn btn-primary " onclick="tp()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -211,9 +209,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="<?PHP
-        exec("includes/print_qr_printer.py \"$qr_code\"");
-        ?>">Print</button>
+      <button class="w-100 btn btn-primary " onclick="tp()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
@@ -240,6 +236,12 @@
       document.getElementById("d1").style.display = "none";
       document.getElementById("d2").style.display = "block";
     }
+  }
+  function tp(){
+    <?PHP
+        $run = shell_exec("includes/print_qr_printer.py \"$qr_code\"");
+        echo 'alert($run)';
+    ?>
   }
 </script>
 
