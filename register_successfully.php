@@ -246,7 +246,7 @@
         /*$output = passthru('python test.py $qr_code');
         $output = escapeshellcmd("test.py \"$qr_code\"");
         //$run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\""); */
-        exec("nohup sudo python test.py ".$qr_code);
+        $output = exec("nohup sudo python test.py ".$qr_code);
         echo 'alert('.$output.');';
     ?>
   }
