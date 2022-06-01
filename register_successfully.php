@@ -219,24 +219,7 @@
       <span language='english' class="on">ENG</span>
     </div>
   </label>
-<script type="text/javascript">
-function ther_pr(){
-  
-    //$command = escapeshellcmd('includes/print_command.py');
-    //require_once 'includes/printshell.sh';
-    /*
-    $command = escapeshellcmd('includes/print_qr_printer.py');
-    $str_output = shell_exec($command);
-    echo '<script type="text/javascript">';
-    echo ' alert('.$str_output.')';  //not showing an alert box.
-    echo '</script>';
-    `*/
-  
-    //$e->getMessage();
-    window.print();
-  
-}
-</script>
+
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
@@ -249,6 +232,9 @@ function ther_pr(){
       document.getElementById("d2").style.display = "block";
     }
   }
+  function ther_pr(){
+    alert("Hello")
+	}
 </script>
 
 </html>
