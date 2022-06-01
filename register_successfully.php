@@ -243,7 +243,7 @@
         $run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
         $out = shell_exec($run);
         */
-        $output = passthru('python print_qr_printer.py $qr_code');
+        $output = passthru('python test.py $qr_code');
         //$run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
         echo 'alert('.$output.');';
     ?>
