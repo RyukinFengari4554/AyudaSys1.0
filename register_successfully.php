@@ -233,7 +233,7 @@
     }
   }
   function ther_pr(){
-    alert("Hello")
+    window.print();
 	}
 </script>
 
