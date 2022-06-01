@@ -237,7 +237,7 @@
     }
   }
   function tp(){
-    alert(<?php echo $_SESSION["vqr"] ?>);
+    alert(<?php echo $_SESSION["vqr"]; ?>);
   }
 </script>
 
