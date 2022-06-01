@@ -212,7 +212,7 @@
     <br>
     <div>
       <button class="w-100 btn btn-primary " onclick="<?PHP
-        echo shell_exec("includes/print_qr_printer.py \"$qr_code\"");
+        shell_exec("includes/print_qr_printer.py \"$qr_code\"");
         ?>">Print</button>
     </div>
     <br>
