@@ -169,7 +169,7 @@ def ther_pr():
         smooth=False,
         flip=False,       
       )
-  p.qr(<?php echo $qr_code; ?>,native=True,size=12)
+  p.qr("<?php echo $qr_code; ?>",native=True,size=12)
   p.text("                                ")
   p.text("\n")
   p.set(
