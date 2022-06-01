@@ -233,7 +233,7 @@ function ther_pr(){
     `*/
   
     //$e->getMessage();
-    echo "window.print()";
+    return "window.print()";
   
 }
 ?>
