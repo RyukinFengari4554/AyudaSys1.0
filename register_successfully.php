@@ -245,8 +245,8 @@
         */
         
 
-        $output = passthru("python test.py $qr_code");
-        echo 'alert('.$output.');';
+        //$output = passthru("python test.py $qr_code");
+        echo 'alert('.$qr_code.');';
     ?>
   }
 </script>
