@@ -1,6 +1,5 @@
 <?php
   session_start();
-  $qr_code=$_SESSION["qrc"];
 ?>
 
 <!DOCTYPE html>
@@ -239,13 +238,7 @@
   }
   function tp(){
     <?PHP
-    /* does run the prompt but has a null output
-        $run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
-        $out = shell_exec($run);
-        */
-        
-
-        //$output = passthru("python test.py $qr_code");
+        $qr_code=$_SESSION["qrc"];
         echo 'alert('.$qr_code.');';
     ?>
   }
