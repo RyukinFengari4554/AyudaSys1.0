@@ -233,7 +233,12 @@
     }
   }
   function ther_pr(){
-    window.print();
+    <?php
+    $command = escapeshellcmd('includes/print_qr_printer.py');
+    $str_output = shell_exec($command);
+    echo 'alert('.$str_output.')';
+    ?>
+    //window.print();
 	}
 </script>
 
