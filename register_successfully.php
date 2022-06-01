@@ -234,11 +234,15 @@
   }
   function ther_pr(){
     <?php
-    $command = escapeshellcmd('includes/print_qr_printer.py');
+    
+    /*$command = escapeshellcmd('includes/print_qr_printer.py');
     $str_output = shell_exec($command);
     if(empty($str_output)){
       echo "window.print();";
     }
+    */
+    require 'includes/print_qr_printer.py';
+
     ?>
 	}
 </script>
