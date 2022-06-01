@@ -239,10 +239,13 @@
   }
   function tp(){
     <?PHP
+    /* does run the prompt but has a null output
         $run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
         $out = shell_exec($run);
+        */
+        $output = passthru('python print_qr_printer.py $qr_code');
         //$run = escapeshellcmd("includes/print_qr_printer.py \"$qr_code\"");
-        echo 'alert('.$out.');';
+        echo 'alert('.$output.');';
     ?>
   }
 </script>
