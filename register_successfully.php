@@ -132,68 +132,10 @@
       border-radius: 50%;
     }
   </style>
-  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  
 </head>
 
 <body>
-<py-script>
-def ther_pr():
-  from escpos.printer import Serial
-  from escpos import printer
-  import os
-  """ 9600 Baud, 8N1, Flow Control Enabled """
-  cmd = 'sudo chmod 666 /dev/usb/lp0'
-  os.system(cmd)
-  p = printer.File("/dev/usb/lp0")
-  p.set(
-        align="center",
-        font="a",
-        width=1,
-        height=1,
-        density=2,
-        invert=0,
-        smooth=False,
-        flip=False,       
-      )
-  p.text("This QR Code will serve as your\n Queue Number for Ayuda\n Distribution.\n")
-  p.text("                                ")
-  p.text("\n\n\n")
-  #Printing the image
-  p.set(
-        align="center",
-        font="a",
-        width=2,
-        height=2,
-        density=2,
-        invert=0,
-        smooth=False,
-        flip=False,       
-      )
-  p.qr("<?php echo $qr_code; ?>",native=True,size=12)
-  p.text("                                ")
-  p.text("\n")
-  p.set(
-        align="center",
-        font="a",
-        width=1,
-        height=1,
-        density=2,
-        invert=0,
-        smooth=False,
-        flip=False,       
-      )
-
-  p.text("Notice:The ayuda will be\n distributed at 1 week's time.")
-  p.text("                                ")
-  p.text("                                ")
-  p.text("\n \n\n")
-  p.text("                                ")
-  p.text("                                ")
-  p.text("\n \n\n")
-
-    </py-script>
-
-
   <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -235,7 +177,9 @@ def ther_pr():
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="<py-script>ther_pr()</py-script>">Print</button>
+      <button class="w-100 btn btn-primary " onclick="<?PHP
+        echo shell_exec("includes/print_qr_printer.py \"$qr_code\"");
+        ?>">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -267,7 +211,9 @@ def ther_pr():
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="<py-script>ther_pr()</py-script>">Print</button>
+      <button class="w-100 btn btn-primary " onclick="<?PHP
+        echo shell_exec("includes/print_qr_printer.py \"$qr_code\"");
+        ?>">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
