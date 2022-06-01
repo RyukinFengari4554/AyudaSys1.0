@@ -237,10 +237,7 @@
     }
   }
   function tp(){
-    <?PHP
-        $qr_code=$_SESSION["qrc"];
-        echo 'alert('.$qr_code.');';
-    ?>
+    alert(<?php echo $_SESSION["qrc"] ?>);
   }
 </script>
 
