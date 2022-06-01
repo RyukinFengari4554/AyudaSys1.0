@@ -8,7 +8,7 @@ ls /dev/usb*
 
 sudo chmod 666 /dev/usb/lp0
 
-echo -e "This is a test message.\\n\\n" > /dev/usb/lp0
+#echo -e "This is a test message.\\n\\n" > /dev/usb/lp0
 
 #!/bin/bash
 #exec > qr_code.ppm    # All echo statements will write here
