@@ -219,7 +219,7 @@
       <span language='english' class="on">ENG</span>
     </div>
   </label>
-<?php
+<script type="text/javascript">
 function ther_pr(){
   
     //$command = escapeshellcmd('includes/print_command.py');
@@ -233,10 +233,10 @@ function ther_pr(){
     `*/
   
     //$e->getMessage();
-    return "window.print()";
+    window.print();
   
 }
-?>
+</script>
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
