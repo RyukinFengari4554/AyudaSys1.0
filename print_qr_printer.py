@@ -4,6 +4,7 @@ import os
 import sys
 """ 9600 Baud, 8N1, Flow Control Enabled """
 aqr = sys.argv[1]
+print(aqr)
 cmd = 'sudo chmod 666 /dev/usb/lp0'
 os.system(cmd)
 p = printer.File("/dev/usb/lp0")
@@ -52,4 +53,4 @@ p.text("\n \n\n")
 p.text("                                ")
 p.text("                                ")
 p.text("\n \n\n")
-print("QR CODE PRINTED SUCCESSFULLY")
+
