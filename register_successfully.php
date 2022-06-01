@@ -236,9 +236,10 @@
     <?php
     $command = escapeshellcmd('includes/print_qr_printer.py');
     $str_output = shell_exec($command);
-    echo 'alert('.$str_output.')';
+    if(empty($str_output)){
+      echo "window.print();";
+    }
     ?>
-    //window.print();
 	}
 </script>
 
