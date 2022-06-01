@@ -221,16 +221,15 @@
   </label>
 <?php
 function printing(){
-  //try {
+  try {
     //$command = escapeshellcmd('includes/print_command.py');
     //require_once 'includes/printshell.sh';
-
-    $command = escapeshellcmd('print_qr_printer.py');
-  //}
-  //catch (Exception $e) {
+    $command = escapeshellcmd('includes/print_qr_printer.py');
+  }
+  catch (Exception $e) {
     //$e->getMessage();
-    //echo "window.print()";
-  //}
+    echo "window.print()";
+  }
 }
 ?>
 </body>
