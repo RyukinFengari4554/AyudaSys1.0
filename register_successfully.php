@@ -29,7 +29,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
     integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
   </script>
-
+  <!--<script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
 
   <!-- Bootstrap core CSS -->
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -244,7 +244,8 @@
         $out = shell_exec($run);
         */
         
-        $output = passthru('python test.py $qr_code');
+
+        $output = passthru("python test.py $qr_code");
         echo 'alert('.$output.');';
     ?>
   }
