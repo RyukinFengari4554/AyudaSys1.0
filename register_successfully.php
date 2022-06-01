@@ -136,95 +136,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link links" href="index.php">Home</a>
-        </li>
-
-      </ul>
-  </nav>
-  <section id='d1'>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Sucessful Registration!</h1>
-      <p class="lead">Please take a picture of the QR Code or Click the Downlaod or Print Button. <br> This QR Code will
-        serve as
-        your Queue Number for Ayuda Distribution.</p>
-    </div>
-    <div class="container qrcode">
-      <div class="card-deck  text-center">
-        <div class="card  light-sm">
-          <?php
-          echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
-        ?>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Notice:</h1>
-      <p class="lead">The ayuda will be distributed at 1 week's time.</p>
-    </div>
-    <div>
-      <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
-          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
-    </div>
-    <br>
-    <div>
-      <button class="w-100 btn btn-primary " onclick="ther_pr()">Print</button>
-    </div>
-    <br>
-    <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
-    </div>
-  </section>
-  <section id='d2'>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
-      <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Downlaod o Print Button.<br> Ang QR Code na
-        ito ay magsisilbing iyong numero sa pila para sa pamamahagi ng Ayuda.</p>
-    </div>
-    <div class="container qrcode">
-      <div class="card-deck  text-center">
-        <div class="card  light-sm">
-          <?php
-          echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
-        ?>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Notice:</h1>
-      <p class="lead">Ang ayuda ay ipapamahagi isang linggo mula pagkarehistro.</p>
-    </div>
-    <div>
-      <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
-          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
-    </div>
-    <br>
-    <div>
-      <button class="w-100 btn btn-primary " onclick="ther_pr()">Print</button>
-    </div>
-    <br>
-    <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
-    </div>
-  </section>
-
-
-  <label class="switch">
-    <input type="checkbox" id="myCheckbox" onchange="toggleCheck()" checked>
-    <div class="slider round">
-      <span language='filipino' class="off">FIL</span>
-      <span language='english' class="on">ENG</span>
-    </div>
-  </label>
-  <py-script>
+<py-script>
 def ther_pr():
   from escpos.printer import Serial
   from escpos import printer
@@ -278,7 +190,99 @@ def ther_pr():
   p.text("                                ")
   p.text("                                ")
   p.text("\n \n\n")
+
     </py-script>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand brand-title" href="index.php">AyudaSys </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link links" href="index.php">Home</a>
+        </li>
+
+      </ul>
+  </nav>
+  <section id='d1'>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Sucessful Registration!</h1>
+      <p class="lead">Please take a picture of the QR Code or Click the Downlaod or Print Button. <br> This QR Code will
+        serve as
+        your Queue Number for Ayuda Distribution.</p>
+    </div>
+    <div class="container qrcode">
+      <div class="card-deck  text-center">
+        <div class="card  light-sm">
+          <?php
+          echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
+        ?>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Notice:</h1>
+      <p class="lead">The ayuda will be distributed at 1 week's time.</p>
+    </div>
+    <div>
+      <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
+    </div>
+    <br>
+    <div>
+      <button class="w-100 btn btn-primary " onclick="<py-script>ther_pr()</py-script>">Print</button>
+    </div>
+    <br>
+    <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
+    </div>
+  </section>
+  <section id='d2'>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
+      <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Downlaod o Print Button.<br> Ang QR Code na
+        ito ay magsisilbing iyong numero sa pila para sa pamamahagi ng Ayuda.</p>
+    </div>
+    <div class="container qrcode">
+      <div class="card-deck  text-center">
+        <div class="card  light-sm">
+          <?php
+          echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
+        ?>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Notice:</h1>
+      <p class="lead">Ang ayuda ay ipapamahagi isang linggo mula pagkarehistro.</p>
+    </div>
+    <div>
+      <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
+    </div>
+    <br>
+    <div>
+      <button class="w-100 btn btn-primary " onclick="<py-script>ther_pr()</py-script>">Print</button>
+    </div>
+    <br>
+    <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
+    </div>
+  </section>
+
+
+  <label class="switch">
+    <input type="checkbox" id="myCheckbox" onchange="toggleCheck()" checked>
+    <div class="slider round">
+      <span language='filipino' class="off">FIL</span>
+      <span language='english' class="on">ENG</span>
+    </div>
+  </label>
+  
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
