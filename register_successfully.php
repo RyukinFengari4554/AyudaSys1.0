@@ -223,7 +223,13 @@
       <span language='english' class="on">ENG</span>
     </div>
   </label>
-  
+  <?php
+  function tp(){
+    $v_qr=$_SESSION["vqr"];
+    echo "alert(".$v_qr.");";
+  }
+  ?>
+  }
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
@@ -235,9 +241,6 @@
       document.getElementById("d1").style.display = "none";
       document.getElementById("d2").style.display = "block";
     }
-  }
-  function tp(){
-    alert(<?php echo $_SESSION["vqr"]; ?>);
   }
 </script>
 
