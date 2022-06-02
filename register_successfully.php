@@ -228,7 +228,6 @@
     </div>
   </label>
 
-  }
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
