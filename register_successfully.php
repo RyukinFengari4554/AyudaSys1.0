@@ -3,7 +3,7 @@
  
   function tp(){
     $v_qr="try";
-    $output = escapeshellcmd("test.py \'$v_qr\'");
+    $output = escapeshellcmd("python test.py \'$v_qr\'");
     echo $output;
      /* works for prompting qrcode
     $v_qr=$_SESSION["vqr"];
