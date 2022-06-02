@@ -2,7 +2,7 @@
   session_start();
  
   function tp(){
-    $v_qr="try";
+    $v_qr=$_SESSION["vqr"];
     $command = escapeshellcmd('python3 test.py '.$v_qr);
     $output = exec($command);
     echo $output;
