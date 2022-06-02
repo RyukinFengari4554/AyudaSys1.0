@@ -1,6 +1,9 @@
 <?php
   session_start();
-  
+  function tp(){
+    $v_qr=$_SESSION["vqr"];
+    echo $v_qr;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -177,7 +180,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="tp()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="ctp()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -209,7 +212,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="tp()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="ctp()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
@@ -238,8 +241,9 @@
       document.getElementById("d2").style.display = "block";
     }
   }
-  funtion tp(){
-    return alert('<?php echo $_SESSION['vqr']; ?>');
+  funtion ctp(){
+    var a="<?php tp(); ?>";
+    alert(a);
   }
 </script>
 
