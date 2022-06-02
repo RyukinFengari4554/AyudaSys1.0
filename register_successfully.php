@@ -228,6 +228,7 @@
     </div>
   </label>
 
+
 </body>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
@@ -240,7 +241,7 @@
       document.getElementById("d2").style.display = "block";
     }
   }
-  funtion ctp(){
+  function ctp(){
     alert("<?php tp(); ?>");
   }
 </script>
