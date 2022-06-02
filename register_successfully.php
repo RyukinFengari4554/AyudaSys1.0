@@ -3,7 +3,7 @@
  
   function tp(){
     $v_qr="try";
-    $output = passthru("test.py $v_qr");
+    $output = passthru("python test.py $v_qr");
     echo $output;
      /* works for prompting qrcode with session
     $v_qr=$_SESSION["vqr"];
