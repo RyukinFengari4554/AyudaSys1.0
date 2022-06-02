@@ -1,9 +1,16 @@
 <?php
   session_start();
+ 
   function tp(){
-    $v_qr=$_SESSION["vqr"];
+    //$v_qr=$_SESSION["vqr"];
+    $v_qr="try";
+    $output = passthru('python test.py $v_qr');
+    echo $output;
+     /* works for prompting qrcode
     echo $v_qr;
+    */
   }
+  
 ?>
 
 <!DOCTYPE html>
