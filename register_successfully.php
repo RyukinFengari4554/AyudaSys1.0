@@ -3,7 +3,7 @@
  
   function tp(){
     $v_qr=$_SESSION["vqr"];
-    $command = escapeshellcmd('python3 test.py '.$v_qr);
+    $command = escapeshellcmd('python3 print_qr_printer.py '.$v_qr);
     $output = exec($command);
     echo $output;
      /* works for prompting qrcode with session
