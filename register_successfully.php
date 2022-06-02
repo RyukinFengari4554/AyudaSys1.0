@@ -239,7 +239,7 @@
     }
   }
   funtion tp(){
-    <?php echo $_SESSION['vqr']; ?>
+    return <?php echo $_SESSION['vqr']; ?>
   }
 </script>
 
