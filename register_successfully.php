@@ -4,7 +4,8 @@
   function tp(){
     //$v_qr=$_SESSION["vqr"];
     $v_qr="try";
-    $output = passthru('python test.py $v_qr');
+    $output = escapeshellcmd("test.py \"$v_qr\"");
+    //$output = passthru('python test.py $v_qr'); does not work
     echo $output;
      /* works for prompting qrcode
     echo $v_qr;
