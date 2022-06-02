@@ -1,5 +1,6 @@
 <?php
   session_start();
+  
 ?>
 
 <!DOCTYPE html>
@@ -176,7 +177,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="tp()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="alert('<?php echo $_SESSION['vqr']; ?>')">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -223,12 +224,7 @@
       <span language='english' class="on">ENG</span>
     </div>
   </label>
-  <?php
-  function tp(){
-    $v_qr=$_SESSION["vqr"];
-    echo "alert(".$v_qr.");";
-  }
-  ?>
+
   }
 </body>
 <script type="text/javascript">
