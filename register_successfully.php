@@ -2,12 +2,11 @@
   session_start();
  
   function tp(){
-    //$v_qr=$_SESSION["vqr"];
     $v_qr="try";
     $output = escapeshellcmd("test.py \"$v_qr\"");
-    //$output = passthru('python test.py $v_qr'); does not work
     echo $output;
      /* works for prompting qrcode
+    $v_qr=$_SESSION["vqr"];
     echo $v_qr;
     */
   }
