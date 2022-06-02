@@ -242,7 +242,7 @@
     }
   }
   funtion ctp(){
-    var a="<?php tp(); ?>";
+    var a="<?php tp(); ?>"
     alert(a);
   }
 </script>
