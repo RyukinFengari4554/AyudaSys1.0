@@ -177,7 +177,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="alert('<?php echo $_SESSION['vqr']; ?>')">Print</button>
+      <button class="w-100 btn btn-primary " onclick="alert(tp())">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -237,6 +237,9 @@
       document.getElementById("d1").style.display = "none";
       document.getElementById("d2").style.display = "block";
     }
+  }
+  funtion tp(){
+    <?php echo $_SESSION['vqr']; ?>
   }
 </script>
 
