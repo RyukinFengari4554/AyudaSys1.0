@@ -177,7 +177,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="alert(tp())">Print</button>
+      <button class="w-100 btn btn-primary " onclick="tp()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -239,7 +239,7 @@
     }
   }
   funtion tp(){
-    return <?php echo $_SESSION['vqr']; ?>
+    alert("<?php echo $_SESSION['vqr']; ?>");
   }
 </script>
 
