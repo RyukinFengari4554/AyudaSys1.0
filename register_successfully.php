@@ -241,10 +241,9 @@
       document.getElementById("d2").style.display = "block";
     }
   }
-</script>
-<script type="text/javascript">
   funtion ctp(){
     alert("<?php tp(); ?>");
   }
 </script>
+
 </html>
