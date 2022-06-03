@@ -268,9 +268,7 @@
     $('body').empty().html(printcontent);
     window.print();
     $('body').html(restorepage);
-    if (el == "id='d2-print'"){
-      document.getElementById("d1").style.display = "block";
-    }
+    document.getElementById("d1").style.display = "block";
   }
 </script>
 
