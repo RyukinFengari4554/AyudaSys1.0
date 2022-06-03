@@ -42,7 +42,7 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="styles/distribute.css" rel="stylesheet">
+  <link href="styles/adminpage.css" rel="stylesheet">
   <style>
     .switch {
       position: fixed;
