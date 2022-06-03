@@ -159,9 +159,9 @@ img{
 }
 @media print {
   .display-4{
-    font-size: 5rem;
+    font-size: 15px;
   }
   .lead{
-    font-size: 5rem;
+    font-size: 15px;
   }
 }
