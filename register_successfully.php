@@ -191,7 +191,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="printContent(div id='d1-print')">Print</button>
+      <button class="w-100 btn btn-primary " onclick="printContent(d1-print)">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
