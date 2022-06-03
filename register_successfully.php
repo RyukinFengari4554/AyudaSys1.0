@@ -213,10 +213,11 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Paalala:</h1>
-      <p class="lead">Ang ayuda ay ipapamahagi isang linggo mula pagkarehistro.</p>
+    
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Paalala:</h1>
+        <p class="lead">Ang ayuda ay ipapamahagi isang linggo mula pagkarehistro.</p>
+      </div>
     </div>
     <div>
       <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
