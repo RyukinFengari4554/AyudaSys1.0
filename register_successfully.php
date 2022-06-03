@@ -198,12 +198,12 @@
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
     </div>
   </section>
-  <section class='tprint' id='d2'>
+  <section id='d2'>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center nprint">
         <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
         <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.</p>
     </div>
-    <div id='d2-print'>
+    <div class='tprint' id='d2-print'>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <p class="lead">Ang QR Code na ito ay magsisilbing iyong numero sa pila para sa pamamahagi ng Ayuda.</p>
       </div>
