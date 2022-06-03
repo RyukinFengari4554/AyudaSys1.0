@@ -160,10 +160,10 @@ img{
 @media print {
   .display-4{
     font-size: 45x;
-    font-weight: bolder;
+    font-family: 'Seymour One', sans-serif;
   }
   .lead{
     font-size: 45px;
-    font-weight: bolder;
+    font-family: 'Seymour One', sans-serif;
   }
 }
