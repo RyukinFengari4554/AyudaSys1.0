@@ -164,7 +164,7 @@
       </ul>
   </nav>
   <section id='d1'>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center nprint">
         <h1 class="display-4">Sucessful Registration!</h1>
         <p class="lead">Please take a picture of the QR Code or Click the Download or Print Button. </p>
     </div>
@@ -198,8 +198,8 @@
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
     </div>
   </section>
-  <section id='d2'>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <section class='tprint' id='d2'>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center nprint">
         <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
         <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.</p>
     </div>
