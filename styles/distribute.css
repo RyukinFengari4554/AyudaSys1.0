@@ -160,7 +160,7 @@ img{
 @media print {
   .display-4{
     font-family: 'Seymour One', sans-serif;
-    font-size: 45x;
+    font-size: 45px;
   }
   .lead{
     font-family: 'Seymour One', sans-serif;
