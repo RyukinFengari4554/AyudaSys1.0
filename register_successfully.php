@@ -198,20 +198,21 @@
     </div>
   </section>
   <section id='d2'>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
-      <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.<br> Ang QR Code na
+    <div id='d2-print'>
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
+        <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.<br> Ang QR Code na
         ito ay magsisilbing iyong numero sa pila para sa pamamahagi ng Ayuda.</p>
-    </div>
-    <div class="container qrcode">
-      <div class="card-deck  text-center">
-        <div class="card  light-sm">
-          <?php
-          echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
-        ?>
+      </div>
+      <div class="container qrcode">
+        <div class="card-deck  text-center">
+          <div class="card  light-sm">
+            <?php
+              echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
+            ?>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Paalala:</h1>
@@ -223,7 +224,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="window.print()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="printContent(id='d2-print')">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
