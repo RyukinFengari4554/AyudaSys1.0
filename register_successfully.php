@@ -170,7 +170,7 @@
     </div>
     <div class='tprint' id='d1-print'>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <p class="lead"> This QR Code willserve as your Queue Number for Ayuda Distribution.</p>   
+        <p class="lead"> This QR Code will serve as your Queue Number for Ayuda Distribution.</p>   
       </div>
       <div class="container qrcode">
         <div class="card-deck  text-center">
@@ -205,7 +205,7 @@
     </div>
     <div class='tprint' id='d2-print'>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <p class="lead">Ang QR Code na ito ay magsisilbing iyong numero sa pila para sa pamamahagi ng Ayuda.</p>
+        <p class="lead">Ang QR Code ay numero sa pila para sa pamamahagi ng Ayuda.</p>
       </div>
       <div class="container qrcode">
         <div class="card-deck  text-center">
@@ -219,7 +219,7 @@
     
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Paalala:</h1>
-        <p class="lead">Ang ayuda ay ipapamahagi isang linggo mula pagkarehistro.</p>
+        <p class="lead">Ipapamahagi ang ayuda sa sunod na linggo.</p>
       </div>
     </div>
     <div>
