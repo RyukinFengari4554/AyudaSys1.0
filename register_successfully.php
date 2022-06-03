@@ -162,16 +162,14 @@
       </ul>
   </nav>
   <section id='d1'>
-    <div id='d1-print'>
+    <div>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Sucessful Registration!</h1>
-        <p class="lead">Please take a picture of the QR Code or Click the Download or Print Button. <br> This QR Code
-          will
-          serve as
-          your Queue Number for Ayuda Distribution.
-        </p>
+        <p class="lead">Please take a picture of the QR Code or Click the Download or Print Button. </p>
+          <p class="lead" id='d1-print'> This QR Codewillserve as your Queue Number for Ayuda Distribution.</p>
+        
       </div>
-      <div class="container qrcode">
+      <div class="container qrcode" id='d1-print'>
         <div class="card-deck  text-center">
           <div class="card  light-sm">
             <?php
@@ -181,8 +179,8 @@
         </div>
       </div>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Notice:</h1>
-        <p class="lead">The ayuda will be distributed at 1 week's time.</p>
+        <h1 class="display-4" id='d1-print'>Notice:</h1>
+        <p class="lead" id='d1-print'>The ayuda will be distributed at 1 week's time.</p>
       </div>
     </div>
     <div>
