@@ -168,22 +168,22 @@
         <p class="lead">Please take a picture of the QR Code or Click the Download or Print Button. <br> This QR Code
           will
           serve as
-          your Queue Number for Ayuda Distribution.</p>
+          your Queue Number for Ayuda Distribution.
+        </p>
       </div>
       <div class="container qrcode">
         <div class="card-deck  text-center">
           <div class="card  light-sm">
             <?php
-          echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
-        ?>
+              echo "<center><img  position='center' class='qrcode' width='auto' src='includes/images/AyudaQR.png' alt='qrcode-img'></center>";
+            ?>
           </div>
         </div>
       </div>
-    </div>
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">Notice:</h1>
-      <p class="lead">The ayuda will be distributed at 1 week's time.</p>
-    </div>
+      <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Notice:</h1>
+        <p class="lead">The ayuda will be distributed at 1 week's time.</p>
+      </div>
     </div>
     <div>
       <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
