@@ -168,7 +168,7 @@
         <h1 class="display-4">Sucessful Registration!</h1>
         <p class="lead">Please take a picture of the QR Code or Click the Download or Print Button. </p>
     </div>
-    <div id='d1-print'>
+    <div class='tprint' id='d1-print'>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <p class="lead"> This QR Code willserve as your Queue Number for Ayuda Distribution.</p>   
       </div>

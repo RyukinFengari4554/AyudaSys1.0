@@ -40,7 +40,7 @@ body {
   background-color: black;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url("../images/bg2.png");
+  background-image: url("../images/bg.png");
 
 }
 .hello{
@@ -77,6 +77,11 @@ img{
 .w-100{
   width: auto;
   height: auto;
+}
+.tprint{
+  background-color: white;
+  font-family: 'Seymour One', sans-serif;
+  font-size: 45px;
 }
 @media (min-width: 320px) {
   .navbar{
