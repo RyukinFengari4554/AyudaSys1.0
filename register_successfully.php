@@ -188,7 +188,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="ctp()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="window.print()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
@@ -220,7 +220,7 @@
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="ctp()">Print</button>
+      <button class="w-100 btn btn-primary " onclick="window.print()">Print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>
