@@ -1,3 +1,3 @@
-import sys
-aqr = sys.argv[1]
+with open('qr.txt','r') as file:
+    aqr = file.read()
 print(aqr)

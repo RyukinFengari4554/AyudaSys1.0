@@ -188,7 +188,12 @@
     </div>
     <div>
       <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
-          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download QR code as image</button></a>
+    </div>
+    <br>
+    <div>
+      <a download="qr.txt" href="qr.txt" title="QR_Code"><button
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download the QR code</button></a>
     </div>
     <br>
     <div>
@@ -224,11 +229,16 @@
     </div>
     <div>
       <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
-          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download</button></a>
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>I-download ang larawan ng QR code</button></a>
     </div>
     <br>
     <div>
-      <button class="w-100 btn btn-primary " onclick="printContent(id='d2-print')">Print</button>
+      <a download="qr.txt" href="qr.txt" title="QR_Code"><button
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>I-download ang QR code</button></a>
+    </div>
+    <br>
+    <div>
+      <button class="w-100 btn btn-primary " onclick="printContent(id='d2-print')">I-print</button>
     </div>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit">Bumalik sa Home</button></a>

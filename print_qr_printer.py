@@ -1,10 +1,9 @@
 from escpos.printer import Serial
 from escpos import printer
 import os
-import sys
 """ 9600 Baud, 8N1, Flow Control Enabled """
-aqr = sys.argv[1]
-print(aqr)
+with open('qr.txt','r') as file:
+    aqr = file.read()
 cmd = 'sudo chmod 666 /dev/usb/lp0'
 os.system(cmd)
 p = printer.File("/dev/usb/lp0")
@@ -32,7 +31,7 @@ p.set(
         smooth=False,
         flip=False,       
       )
-p.qr("%s"%aqr,native=True,size=12)
+p.qr(aqr,native=True,size=12)
 p.text("                                ")
 p.text("\n")
 p.set(
