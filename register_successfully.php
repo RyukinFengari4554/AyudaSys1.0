@@ -11,7 +11,7 @@
     echo $v_qr;
     */
   }
-  
+  file_put_contents('qr.txt', $_SESSION["vqr"]);
 ?>
 
 <!DOCTYPE html>

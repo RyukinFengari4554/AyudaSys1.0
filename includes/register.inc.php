@@ -85,7 +85,7 @@
             return $this->qr_code;
         }
     }
-    file_put_contents('../qr.txt', $qr_code);
+    
     //GRANTING PART 2:
     $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members;";
     $result = mysqli_query($conn, $sql);
