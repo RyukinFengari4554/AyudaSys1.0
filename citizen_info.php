@@ -168,7 +168,7 @@ table{
         $row = $result->fetch_assoc();
         $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
        
-        $sql = "SELECT * FROM personal_information ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page." WHERE barangay = '$sbv';";
+        $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
       }
 
       $result = mysqli_query($conn, $sql);
@@ -222,7 +222,7 @@ table{
         $row = $result->fetch_assoc();
         $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
        
-        $sql = "SELECT * FROM personal_information ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page." WHERE barangay = '$sbv';";
+        $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
       }
 
       $result = mysqli_query($conn, $sql);
