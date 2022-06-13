@@ -80,9 +80,10 @@ switch ($httpCode) {
 					$fam_code=$_SESSION["famc"];
 					$package_no=$_SESSION["pano"];
 					$distribution_status=$_SESSION["dist"];
+					$_SESSION["vqr"]=$qr_code;
 					$sql = "insert into granted (qr_code, registration_no, granted_date, pick_up_date, barangay_id, family_code, package_no, distribution_status) values ('$qr_code', '$reg_no', '$start_date', '$pud', '$barangay_id', '$fam_code','$package_no', '$distribution_status');";
             		$result = mysqli_query($conn, $sql);
-					$_SESSION["vqr"]=$qr_code;
+					
 					header("Location: ../register_successfully.php");
 				}
 				
