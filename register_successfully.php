@@ -186,19 +186,21 @@
         <p class="lead">The ayuda will be distributed at 1 week's time.</p>
         <br>
         <br>
-        
+
       </div>
     </div>
     <div>
       <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
-          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download QR code as image</button></a>
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download the QR code</button></a>
     </div>
     <br>
+    <!--
     <div>
       <a download="qr.txt" href="qr.txt" title="QR_Code"><button
           class="w-100 btn btn-primary "><i class="fa fa-download"></i>Download the QR code</button></a>
     </div>
     <br>
+  -->
     <div>
       <button class="w-100 btn btn-primary " onclick="printContent(id='d1-print')">Print</button>
     </div>
@@ -210,6 +212,8 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center nprint">
         <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
         <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.</p>
+        <br>
+        <br>
     </div>
     <div class='tprint' id='d2-print'>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -232,14 +236,16 @@
     </div>
     <div>
       <a download="AyudaQR.png" href="./includes/images/AyudaQR.png" title="QR_Code"><button
-          class="w-100 btn btn-primary "><i class="fa fa-download"></i>I-download ang larawan ng QR code</button></a>
+          class="w-100 btn btn-primary "><i class="fa fa-download"></i>I-download ang QR code</button></a>
     </div>
     <br>
+    <!--
     <div>
       <a download="qr.txt" href="qr.txt" title="QR_Code"><button
           class="w-100 btn btn-primary "><i class="fa fa-download"></i>I-download ang QR code</button></a>
     </div>
     <br>
+  -->
     <div>
       <button class="w-100 btn btn-primary " onclick="printContent(id='d2-print')">I-print</button>
     </div>
