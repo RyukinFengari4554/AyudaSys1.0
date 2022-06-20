@@ -68,6 +68,15 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
       <h2>Registration Page</h2>
       <p class="lead">Properly Input the correct Data for citizens for the Ayuda System.</p>
+      <?php
+    $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  if (strpos($fulUrl,"register_citizen.php?register=success") == true){
+                    echo "<p style='color: green; margin: auto;'>Citizen Registration Success</p>";
+                  };
+                  if (strpos($fulUrl,"register_citizen.php?register=failed") == true){
+                    echo "<p style='color: red;margin: auto;'>Citizen Registration Failed</p>";
+                  };
+      ?>
     </div>
 
   </div>
@@ -137,15 +146,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     </div>
 
     <br>
-    <?php
-    $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                  if (strpos($fulUrl,"register_citizen.php?register=success") == true){
-                    echo "<p style='color: green'>Citizen Registration Success</p>";
-                  };
-                  if (strpos($fulUrl,"register_citizen.php?register=failed") == true){
-                    echo "<p style='color: red'>Citizen Registration Failed</p>";
-                  };
-      ?>
     <br>
     <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
 
