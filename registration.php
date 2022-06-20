@@ -160,7 +160,7 @@
 
     </div>
     <!-- Custom styles for this template -->
-    <form class="form1" action="includes/register.inc.php" method="POST">
+    <form class="form1" action="includes/register.inc.php" method="POST" onSubmit="document.getElementById('myBtn1').disabled=true;">
       <div class="row">
         <div class="col-md-3 col-sm-12 was-validated">
           <label> Barangay ID: </label>
@@ -246,7 +246,7 @@
       </div>
       <br>
       <br>
-      <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
+      <button class="w-100 btn btn-primary " id='myBtn1' type="submit">Submit Information</button>
 
     </form>
   </section>
@@ -258,7 +258,7 @@
       </div>
     </div>
     <!-- Custom styles for this template -->
-    <form class="form1" action="includes/register.inc.php" method="POST">
+    <form class="form1" action="includes/register.inc.php" method="POST" onSubmit="document.getElementById('myBtn2').disabled=true;">
       <div class="row">
         <div class="col-md-3 col-sm-12 was-validated">
           <label> Barangay ID: </label>
@@ -344,7 +344,7 @@
       </div>
       <br>
       <br>
-      <button class="w-100 btn btn-primary " type="submit" onclick="this.disabled=true; this.form.submit();">Magsumite ng Impormasyon</button>
+      <button class="w-100 btn btn-primary " id='myBtn2' type="submit">Magsumite ng Impormasyon</button>
 
     </form>
   </section>

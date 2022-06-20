@@ -26,7 +26,7 @@
                 </div>
             </div>
         </header>
-        <form action="verify.php" accept-charset="UTF-8" method="POST">
+        <form action="verify.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
             <div class="container">
                 <p style="color: white; text-align:center; font-size: 7.5rem;"><?php echo $contact_number;?> </p>
                 <p class="channel" id="channel" name="ch" value="sms" style="visibility: hidden"></p>
@@ -35,7 +35,7 @@
                     <option value="6" selected>6</option>
                     <option value="8">8</option>
                 </select>
-                <button name="button" type="submit">SEND SMS</button>
+                <button name="button" id="myBtn" type="submit">SEND SMS</button>
                 <table class="center" style="visibility: hidden">
                 <tr>
                   <td><select name="cc" id="authy-countries"  data-show-as="text"></select></td>
