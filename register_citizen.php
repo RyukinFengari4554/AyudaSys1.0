@@ -141,10 +141,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     <?php
     $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"register_citizen.php?register=success") == true){
-                    echo "<h2 style='color: green; margin: auto;'>Citizen Registration Success</h2>";
+                    echo "<center><h2 style='color: green; margin: auto;'>Citizen Registration Success</h2></center>";
                   };
                   if (strpos($fulUrl,"register_citizen.php?register=failed") == true){
-                    echo "<h2 style='color: red;margin: auto;'>Citizen Registration Failed</h2>";
+                    echo "<center><h2 style='color: red;margin: auto;'>Citizen Registration Failed</h2></center>";
                   };
       ?>
     <br>
