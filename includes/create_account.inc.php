@@ -6,10 +6,16 @@
     
 
 
-
-    $sql = "insert into barangay_officials (username, password, barangay) values ('$user_n', '$pas', '$brngy');";
+    $sql = "SELECT * FROM barangay_officials WHERE username=$user_n AND barangay=$brngy;";
     $result = mysqli_query($conn, $sql);
-    
-
-    header("Location: ../create_barangay_official_accout.php?creation=success");
+    $RC = mysqli_num_rows($result);
+    if ($RC > 0 ){ 
+        header("Location: ../create_barangay_official_accout.php?creation=failed");
+    }
+    else{
+        $sql = "insert into barangay_officials (username, password, barangay) values ('$user_n', '$pas', '$brngy');";
+        $result = mysqli_query($conn, $sql);
+        header("Location: ../create_barangay_official_accout.php?creation=success");
+    }
+   
 ?>

@@ -113,6 +113,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
                   if (strpos($fulUrl,"create_barangay_official_accout.php?creation=success") == true){
                     echo "<p style='color: green'> Account Successfully Created</p>";
                   };
+                  if (strpos($fulUrl,"create_barangay_official_accout.php?creation=failed") == true){
+                    echo "<p style='color: red'> Failed Account Creation</p>";
+                  };
       ?>
     <br>
     <button class="w-100 btn btn-primary " type="submit" onclick="this.disabled=true; this.form.submit();">Create</button>
