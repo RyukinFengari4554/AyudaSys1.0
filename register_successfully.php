@@ -212,8 +212,6 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center nprint">
         <h1 class="display-4">Nakompleto mo na ang Pagpaparehistro!</h1>
         <p class="lead">Mangyaring kumuha ng larawan ng QR Code o I-click ang Download o Print Button.</p>
-        <br>
-        <br>
     </div>
     <div class='tprint' id='d2-print'>
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -232,6 +230,8 @@
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Paalala:</h1>
         <p class="lead">Ipapamahagi ang ayuda sa sunod na linggo.</p>
+        <br>
+        <br>
       </div>
     </div>
     <div>
