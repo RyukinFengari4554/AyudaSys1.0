@@ -184,6 +184,9 @@
       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Notice:</h1>
         <p class="lead">The ayuda will be distributed at 1 week's time.</p>
+        <br>
+        <br>
+        
       </div>
     </div>
     <div>
