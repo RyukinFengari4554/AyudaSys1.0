@@ -111,10 +111,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"create_barangay_official_accout.php?creation=success") == true){
-                    echo "<p style='color: green'> Account Successfully Created</p>";
+                    echo "<center><h2 style='color: green;margin: auto;'> Account Successfully Created</h2></center>";
                   };
                   if (strpos($fulUrl,"create_barangay_official_accout.php?creation=failed") == true){
-                    echo "<p style='color: red'> Failed Account Creation</p>";
+                    echo "<center><h2 style='color: red;margin: auto;'> Failed Account Creation</h2></center>";
                   };
       ?>
     <br>
