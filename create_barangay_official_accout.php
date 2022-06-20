@@ -119,16 +119,22 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn" type="submit" onclick="myFunction();">Create</button>
+    <button class="w-100 btn btn-primary " id="myBtn" onclick="_doActionNoSpam();" type="submit">Create</button>
 
   </form>
   <script type="text/javascript">
-  const btn = document.getElementById("myBtn")
-function myFunction() {
-  btn.disabled = true;
-  setTimeout(()=>{
-    btn.disabled = false;}, 5000)
-}
+  var timerId;
+
+function _doActionNoSpam() {
+    //Reset Timeout if function is called before it ends
+    if (!(timerId == null)) {
+        clearTimeout(timerId);
+    }
+    timerId = setTimeout(function () {
+        //Place code that you don't want to get spammed here
+    }, 400); //400ms Timeout
+    //Place code that can be spammed here (UI updates, etc)
+};
   </script>
 
 </body>
