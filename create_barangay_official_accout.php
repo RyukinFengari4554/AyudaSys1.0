@@ -80,6 +80,15 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
       <h2>Creation of Barangay Official Account</h2>
       <p class="lead">Properly Input the correct Data for a Barangay Official Account.</p>
+      <?php
+      $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  if (strpos($fulUrl,"create_barangay_official_accout.php?creation=success") == true){
+                    echo "<center><h2 style='color: green;margin: auto;'> Account Successfully Created</h2></center>";
+                  };
+                  if (strpos($fulUrl,"create_barangay_official_accout.php?creation=failed") == true){
+                    echo "<center><h2 style='color: red;margin: auto;'> Account Creation Failed</h2></center>";
+                  };
+      ?>
     </div>
 
   </div>
@@ -108,15 +117,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
       </div>
     </div>
     <br>
-    <?php
-      $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                  if (strpos($fulUrl,"create_barangay_official_accout.php?creation=success") == true){
-                    echo "<center><h2 style='color: green;margin: auto;'> Account Successfully Created</h2></center>";
-                  };
-                  if (strpos($fulUrl,"create_barangay_official_accout.php?creation=failed") == true){
-                    echo "<center><h2 style='color: red;margin: auto;'> Account Creation Failed</h2></center>";
-                  };
-      ?>
+    
     <br>
     <button class="w-100 btn btn-primary " type="submit" onclick="this.disabled=true; this.form.submit();">Create</button>
 
