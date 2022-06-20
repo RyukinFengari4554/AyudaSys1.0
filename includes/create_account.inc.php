@@ -13,7 +13,7 @@
         header("Location: ../create_barangay_official_accout.php?creation=failed");
     }
     else{
-        $sql = "insert into barangay_officials (username, password, barangay) values ('$user_n', '$pas', '$brngy');";
+        $sql = "INSERT INTO barangay_officials (username, password, barangay) VALUES ('$user_n', '$pas', '$brngy');";
         $result = mysqli_query($conn, $sql);
         header("Location: ../create_barangay_official_accout.php?creation=success");
     }
