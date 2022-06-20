@@ -12,10 +12,15 @@
     $barangay = mysqli_real_escape_string($conn, $_POST['rb']);
 
 
-
-    $sql = "insert into personal_information (barangay_id, house_no, first_name, middle_name, last_name, family_code, no_of_members, street, barangay) values ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$family_code', '$no_of_members', '$street', '$barangay');";
+    $sql = "SELECT * FROM personal_information WHERE barangay_id='$barangay_id';";
     $result = mysqli_query($conn, $sql);
-    
-
+    $RC = mysqli_num_rows($result);
+    if ($RC > 0 ){ 
+        header("Location: ../register_citizen.php?register=failed");
+    }
+    else{
+    $sql = "INSERT INTO personal_information (barangay_id, house_no, first_name, middle_name, last_name, family_code, no_of_members, street, barangay) VALUES ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$family_code', '$no_of_members', '$street', '$barangay');";
+    $result = mysqli_query($conn, $sql);
     header("Location: ../register_citizen.php?register=success");
+    }
 ?>

@@ -142,6 +142,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
                   if (strpos($fulUrl,"register_citizen.php?register=success") == true){
                     echo "<p style='color: green'>Citizen Registration Success</p>";
                   };
+                  if (strpos($fulUrl,"register_citizen.php?register=failed") == true){
+                    echo "<p style='color: red'>Citizen Registration Failed</p>";
+                  };
       ?>
     <br>
     <button class="w-100 btn btn-primary " type="submit"  onclick="this.disabled=true; this.form.submit();">Submit Information</button>
