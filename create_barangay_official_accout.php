@@ -119,9 +119,17 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " type="submit" >Create</button>
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit" >Create</button>
 
   </form>
+  <script type="text/javascript">
+  const btn = document.getElementById("myBtn")
+function myFunction() {
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.disabled = false;}, 5000)
+}
+  </script>
 
 </body>
 </html>
