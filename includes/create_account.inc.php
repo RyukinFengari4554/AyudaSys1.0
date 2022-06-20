@@ -6,7 +6,7 @@
     
 
 
-    $sql = "SELECT * FROM barangay_officials WHERE username=$user_n AND barangay=$brngy;";
+    $sql = "SELECT * FROM barangay_officials WHERE username='$user_n' AND barangay='$brngy';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){ 
