@@ -46,7 +46,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 //return response instead of outputting
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
+$uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 // check the HTTP Status code
@@ -93,6 +93,8 @@ switch ($httpCode) {
 				header("Location: ../failed_distribution.php");
 			}
 			else{
+				$sql = "UPDATE registration SET verification_status = 'Denied' WHERE registration_no = '$uregn';";
+                $result = mysqli_query($conn, $sql);
 				header("Location: ../failed_verification.php");
 			}
 			}	
@@ -102,6 +104,8 @@ switch ($httpCode) {
 				header("Location: ../failed_distribution.php");
 			}
 			else{
+				$sql = "UPDATE registration SET verification_status = 'Denied' WHERE registration_no = '$uregn';";
+                $result = mysqli_query($conn, $sql);
 				header("Location: ../failed_verification.php");
 			}
 		}
@@ -112,6 +116,8 @@ switch ($httpCode) {
             header("Location: ../failed_distribution.php");
         }
         else{
+			$sql = "UPDATE registration SET verification_status = 'Denied' WHERE registration_no = '$uregn';";
+            $result = mysqli_query($conn, $sql);
         	header("Location: ../failed_verification.php");
         }
 	break;
