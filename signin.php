@@ -79,7 +79,7 @@ if(!empty($_SESSION['sun'])){
       <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"signin.php?login=failed") == true){
-                    echo "<p style='color: red'> Incorrect Email or Password</p>";
+                    echo "<p style='color: red'> Incorrect Username or Password</p>";
                   };
       ?>
       <div class="checkbox mb-3">
