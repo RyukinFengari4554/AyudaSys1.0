@@ -6,7 +6,13 @@
     
 
 
-    $sql = "SELECT * FROM barangay_officials WHERE username='$user_n' AND barangay='$brngy';";
+    $sql = "SELECT * FROM admin WHERE username='$user_n' AND password='$pas';";
+    $result = mysqli_query($conn, $sql);
+    $RC = mysqli_num_rows($result);
+    if($RC > 0){
+        header("Location: ../create_barangay_official_accout.php?creation=failed");
+    }
+    $sql = "SELECT * FROM barangay_officials WHERE username='$user_n' AND password='$pas' AND barangay='$brngy';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){ 
