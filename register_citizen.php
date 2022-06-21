@@ -126,9 +126,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     </div>
     <br>
     <div class="row">
-      <div class="col-lg-4 col-sm-12 was-validated">
+      <div class="col-lg-4 col-sm-12 was-validated" <?php if($account=='barangay'){ echo 'hidden';}?>>
         <label> Barangay: </label>
-        <input type="text" class="form-control" name="rb" id="rb" placeholder="Enter the Barangay"  required>
+        <input type="text" class="form-control" name="rb" id="rb" placeholder="Enter the Barangay" <?php if($account=='barangay'){ $sbr=$_SESSION['sb'];echo "value='$sbr'";}?>  required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
