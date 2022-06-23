@@ -73,8 +73,8 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
   </nav>
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Monitor Registry Page</h1>
-    <p class="lead">The Monitor Registry Page allows for monitoring of the database list</p>
+    <h1 class="display-4">Monitor Database Page</h1>
+    <p class="lead">The Monitor Database Page allows for monitoring of the database tables</p>
   </div>
 
 
