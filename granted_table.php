@@ -42,8 +42,8 @@ if($account=='barangay'){
   echo "barangay: ".$sbv;
   // count Granted	Accounts
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE barangay = '$sbv';";
-  $result = $conn->query($sql);
-  $row = $result->fetch_assoc();
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
   $rgra = $row["total"]; 
   echo "Granted: ".$rgra;
   // count registrants
