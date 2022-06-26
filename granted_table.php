@@ -59,13 +59,13 @@ if($account=='barangay'){
   $rureg = $row["total"] - $rgra;
   echo "Unreg: ".$rureg;
   // count Distributed
-  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 1 AND barangay = '$sbv';";
+  $sql = "SELECT COUNT(DISTINCT g.barangay_id) AS total FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE g.distribution_status = 1 AND p.barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rdist = $row["total"];
   echo "Dist: ".$rdist;
   // count Undistributed
-  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 0 AND barangay = '$sbv';";
+  $sql = "SELECT COUNT(DISTINCT g.barangay_id) AS total FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE g.distribution_status = 0 AND p.barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rudist = $row["total"];
