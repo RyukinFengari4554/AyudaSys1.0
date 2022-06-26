@@ -39,37 +39,31 @@ if($account=='admin'){
 }
 if($account=='barangay'){
   $sbv =$_SESSION['sb'];  
-  echo "barangay: ".$sbv;
   // count Granted	Accounts
   $sql = "SELECT COUNT(DISTINCT g.barangay_id) AS total FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rgra = $row["total"]; 
-  echo "Granted: ".$rgra;
   // count registrants
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM registration WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rreg = $row["total"];
-  echo "reg: ".$rreg;
   // count unregistered
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rureg = $row["total"] - $rgra;
-  echo "Unreg: ".$rureg;
   // count Distributed
   $sql = "SELECT COUNT(DISTINCT g.barangay_id) AS total FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE g.distribution_status = 1 AND p.barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rdist = $row["total"];
-  echo "Dist: ".$rdist;
   // count Undistributed
   $sql = "SELECT COUNT(DISTINCT g.barangay_id) AS total FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE g.distribution_status = 0 AND p.barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rudist = $row["total"];
-  echo "Undist: ".$rudist;
 }
 ?>
 
