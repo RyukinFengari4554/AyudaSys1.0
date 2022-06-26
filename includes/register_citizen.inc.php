@@ -10,6 +10,8 @@
     $no_of_members = mysqli_real_escape_string($conn, $_POST['rnom']);
     $street = mysqli_real_escape_string($conn, $_POST['rs']);
     $barangay = mysqli_real_escape_string($conn, $_POST['rb']);
+    $regby = mysqli_real_escape_string($conn, $_POST['rrb']);
+
 
 
     $sql = "SELECT * FROM personal_information WHERE barangay_id='$barangay_id';";
@@ -19,7 +21,7 @@
         header("Location: ../register_citizen.php?register=failed");
     }
     else{
-    $sql = "INSERT INTO personal_information (barangay_id, house_no, first_name, middle_name, last_name, family_code, no_of_members, street, barangay) VALUES ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$family_code', '$no_of_members', '$street', '$barangay');";
+    $sql = "INSERT INTO personal_information (barangay_id, house_no, first_name, middle_name, last_name, family_code, no_of_members, street, barangay, username) VALUES ('$barangay_id', '$house_no', '$first_name', '$middle_name', '$last_name', '$family_code', '$no_of_members', '$street', '$barangay', '$regby');";
     $result = mysqli_query($conn, $sql);
     header("Location: ../register_citizen.php?register=success");
     }

@@ -144,6 +144,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
+      <div class="col-lg-4 col-sm-12" hidden>
+        <label> Registered By: </label>
+        <input type="text" class="form-control" name="rrb" id="rrb" <?php $sunrb=$_SESSION['sun'];echo "value='$sunrb'";?>  required>
+      </div>
     </div>
 
     <br>
