@@ -144,11 +144,11 @@ table{
     <div id="t1">
       <?php
       if($account=='admin'){
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id;";
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY granted_date ASC;";
       }
       else{
         $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv';";
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv' ORDER BY granted_date ASC;";
       }
 
       $result = mysqli_query($conn, $sql);
@@ -184,11 +184,11 @@ table{
     <div id="t2">
       <?php
       if($account=='admin'){
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY granted_date DESC;";
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY granted_date ASC;";
       }
       else{
         $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv' ORDER BY granted_date DESC;";
+        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv' ORDER BY granted_date ASC;";
       }
 
       $result = mysqli_query($conn, $sql);
