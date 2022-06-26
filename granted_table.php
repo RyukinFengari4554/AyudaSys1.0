@@ -302,7 +302,7 @@ table{
         <div class='card-header' ><p> AYUDA REPORT </p></div>
         <div class='card-body text-center'>
           <p class='text-secondary'> Granted	Accounts: <?php echo $rgra ?> </p>
-          <p class='text-secondary'> Registtrants: <?php echo $rreg ?> </p>
+          <p class='text-secondary'> Registrants: <?php echo $rreg ?> </p>
           <p class='text-secondary'> Unregistered Accounts: <?php echo $rureg ?> </p>
           <p class='text-secondary'> Distributed Ayuda: <?php echo $rdist ?> </p>
           <p class='text-secondary'> Undistributed Ayuda: <?php echo $rudist ?> </p>
