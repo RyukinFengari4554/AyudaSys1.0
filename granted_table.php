@@ -9,6 +9,70 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 }
 
 include 'includes/db.inc.php';
+
+if($account=='admin'){
+  // count Granted	Accounts
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted;";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rgra = $row["total"]; 
+  // count Denied Registrants
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM registration WHERE verification_status = 'Denied';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rdr = $row["total"];
+  // count registered
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM registration;";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rreg = $row["total"];
+  // count unregistered
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM personal_information;";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rureg = $row["total"] - $reg;
+  // count Distributed
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 1;";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rdist = $row["total"];
+  // count Undistributed
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 0;";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rudist = $row["total"];
+}
+else{
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE barangay = '$sbv';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rgra = $row["total"]; 
+  // count Denied Registrants
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM registration WHERE verification_status = 'Denied' AND barangay = '$sbv';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rdr = $row["total"];
+  // count registered
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM registration WHERE barangay = '$sbv';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rreg = $row["total"];
+  // count unregistered
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rureg = $row["total"] - $reg;
+  // count Distributed
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 1 AND barangay = '$sbv';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rdist = $row["total"];
+  // count Undistributed
+  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 0 AND barangay = '$sbv';";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $rudist = $row["total"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -239,7 +303,24 @@ table{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
       ?>
+  </div>
+  <br>
+  <br>
+  <div class='container'> 
+    <div class='card-deck  text-center'>
+      <div class='card lg-4  light-sm'>  
+        <div class='card-header' ><p> AYUDA REPORT </p></div>
+        <div class='card-body text-center'>
+          <p class='text-secondary'> Granted	Accounts: <?php echo $rgra ?> </p>
+          <p class='text-secondary'> Denied Registrants: <?php echo $rdr ?> </p>
+          <p class='text-secondary'> Registered: <?php echo $rreg ?> </p>
+          <p class='text-secondary'> Unregistered: <?php echo $rureg ?> </p>
+          <p class='text-secondary'> Distributed: <?php echo $rdist ?> </p>
+          <p class='text-secondary'> Undistributed: <?php echo $rudist ?> </p>
+        </div>
       </div>
+    </div>
+  </div>
       <script type="text/javascript">
         document.getElementById("t2").style.display = "none"; //hide fil
         function viewdb() {
