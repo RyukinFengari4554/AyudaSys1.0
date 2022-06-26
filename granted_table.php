@@ -38,6 +38,7 @@ if($account=='admin'){
   $rudist = $row["total"];
 }
 if($account=='barangay'){
+  echo "barangay: ".$sbv;
   $sbv =$_SESSION['sb'];  
   // count Granted	Accounts
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE barangay = '$sbv';";
