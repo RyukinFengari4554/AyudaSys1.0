@@ -42,7 +42,7 @@ if($account=='barangay'){
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rgra = $row["total"]; 
-  // count registered
+  // count registrants
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM registration WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
@@ -51,7 +51,7 @@ if($account=='barangay'){
   $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
-  $rureg = $row["total"] - $rreg;
+  $rureg = $row["total"] - $rgra;
   // count Distributed
   $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 1 AND barangay = '$sbv';";
   $result = $conn->query($sql);
