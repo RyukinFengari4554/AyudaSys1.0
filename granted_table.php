@@ -12,7 +12,7 @@ include 'includes/db.inc.php';
 
 if($account=='admin'){
   // count Granted	Accounts
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted;";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted;";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rgra = $row["total"]; 
@@ -22,24 +22,25 @@ if($account=='admin'){
   $row = $result->fetch_assoc();
   $rreg = $row["total"];
   // count unregistered
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM personal_information;";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM personal_information;";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rureg = $row["total"] - $rgra;
   // count Distributed
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 1;";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 1;";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rdist = $row["total"];
   // count Undistributed
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 0;";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 0;";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rudist = $row["total"];
 }
 if($account=='barangay'){
-  $sbv =$_SESSION['sb'];
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE barangay = '$sbv';";
+  $sbv =$_SESSION['sb'];  
+  // count Granted	Accounts
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rgra = $row["total"]; 
@@ -49,17 +50,17 @@ if($account=='barangay'){
   $row = $result->fetch_assoc();
   $rreg = $row["total"];
   // count unregistered
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rureg = $row["total"] - $rgra;
   // count Distributed
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 1 AND barangay = '$sbv';";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 1 AND barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rdist = $row["total"];
   // count Undistributed
-  $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE distribution_status = 0 AND barangay = '$sbv';";
+  $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 0 AND barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rudist = $row["total"];
