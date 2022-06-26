@@ -188,7 +188,8 @@ table{
         echo "<p class='text-secondary'> House No: ". $row['house_no']." </p> " ;
         echo "<p class='text-secondary'> Street: ". $row['street']." </p> " ;
         echo "<p class='text-secondary'> No. of members: ". $row['no_of_members']." </p> " ;
-        echo "<p class='text-secondary'> Family Code: ". $row['family_code']." </p> " ;
+        echo "<p class='text-secondary'> Family Code: ". $row['family_code']." </p> ";
+        echo "<p class='text-secondary'> Registered By: ". $row['username']." </p> " ;
         echo "</div> </div>";
         //echo "<br>";
         }
@@ -237,7 +238,8 @@ table{
         echo "<th>house_no</th>";
         echo "<th>street</th>";
         echo "<th>members</th>";
-        echo "<th>family_code</th></tr></thead><tbody>";
+        echo "<th>family_code</th>";
+        echo "<th>registered_by</th></tr></thead><tbody>";
 
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
@@ -250,7 +252,8 @@ table{
         echo "<td>". $row['house_no']. "</td>";
         echo "<td>". $row['street']. "</td>";
         echo "<td>". $row['no_of_members']. "</td>";
-        echo "<td>". $row['family_code']. "</td></tr>";
+        echo "<td>". $row['family_code']. "</td>";
+        echo "<td>". $row['username']. "</td></tr>";
       }
         //echo "<br>";
         else {
@@ -261,7 +264,8 @@ table{
           echo "<td>". $row['house_no']. "</td>";
           echo "<td>". $row['street']. "</td>";
           echo "<td>". $row['no_of_members']. "</td>";
-          echo "<td>". $row['family_code']. "</td></tr>";
+          echo "<td>". $row['family_code']. "</td>";
+          echo "<td>". $row['username']. "</td></tr>";
         }
 
         }
