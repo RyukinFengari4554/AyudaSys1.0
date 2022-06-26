@@ -45,26 +45,31 @@ if($account=='barangay'){
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rgra = $row["total"]; 
+  echo "Granted: ".$rgra;
   // count registrants
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM registration WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rreg = $row["total"];
+  echo "reg: ".$rreg;
   // count unregistered
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rureg = $row["total"] - $rgra;
+  echo "Unreg: ".$rureg;
   // count Distributed
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 1 AND barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rdist = $row["total"];
+  echo "Dist: ".$rdist;
   // count Undistributed
   $sql = "SELECT COUNT(DISTINCT barangay_id) AS total FROM granted WHERE distribution_status = 0 AND barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   $rudist = $row["total"];
+  echo "Undist: ".$rudist;
 }
 ?>
 
