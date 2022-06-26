@@ -38,6 +38,7 @@ if($account=='admin'){
   $rudist = $row["total"];
 }
 if($account=='barangay'){
+  $sbv =$_SESSION['sb'];
   $sql = "SELECT DISTINCT COUNT(barangay_id) AS total FROM granted WHERE barangay = '$sbv';";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
