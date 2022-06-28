@@ -81,11 +81,12 @@ curl_close($ch);
                         <h1 class="site-title">
                             </h1>
                         <h2 class="site-description">Phone Verification OTP</h2>
+                        <?php echo '<h2>'.$output.'</h2>'; ?>
                         </div>
                 </div>
             </div>
         </header>
-        <?php echo '<p style="color: white;">'.$output.'<p>'; ?>
+        
         <form action="resultsep.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
           <div class="container">
               <h2 class="site-description" style="color: white; font-size: 2rem;">Enter the OTP code:</h2>
