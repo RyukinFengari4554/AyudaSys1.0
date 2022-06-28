@@ -34,6 +34,7 @@ $uregn=$_SESSION['regn'];
 $returns = curl_exec($ch);
 
 echo $returns.'\n';
+$resp = json_decode($returns);
 echo $$resp[0]->code;
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
