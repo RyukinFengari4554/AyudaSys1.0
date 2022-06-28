@@ -3,7 +3,7 @@ session_start();
 include_once 'db.inc.php';
 ?>
 <?php
-if(isset($_POST['button1'])){
+
 //input from the form
 $otp_code=filter_input(INPUT_POST,'otp');
 print_r($_SESSION);
@@ -101,5 +101,5 @@ switch ($httpCode) {
 //close cURL resource
 curl_close($ch);
 exit();
-}
+
 ?>
