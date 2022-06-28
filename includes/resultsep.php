@@ -33,8 +33,10 @@ $uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 
+echo $returns;
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+/*
 switch ($httpCode) {
 	case 200: 
 		$resp = json_decode($returns);
@@ -94,7 +96,7 @@ switch ($httpCode) {
         }
 	break;
 }
-
+*/
 //close cURL resource
 curl_close($ch);
 exit();
