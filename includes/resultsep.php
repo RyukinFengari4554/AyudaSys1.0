@@ -10,7 +10,7 @@ print_r($_SESSION);
 $phone_number=$_SESSION["phonenumber"];
 
 echo $phone_number;
-$mi=$_SESSION['mi']-1;
+$mi=$_SESSION['mi'];
 //API URL
 require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
