@@ -1,7 +1,6 @@
 <?php
 session_start();
-?>
-<?php
+
 //input from the form
 //$country_code=filter_input(INPUT_POST,'cc');
 $phone_number=filter_input(INPUT_POST,'pn');
@@ -31,14 +30,12 @@ curl_setopt( $ch, CURLOPT_POSTFIELDS, http_build_query( $parameters ) );
 
 // Receive response from server
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-$output = curl_exec( $ch );
 
 
 $uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 
-echo $output;
 
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -63,8 +60,8 @@ switch ($httpCode) {
 //close cURL resource
 curl_close($ch);
 
+?>
 
-/*
 
 <!DOCTYPE html>
 <html>
@@ -102,5 +99,3 @@ curl_close($ch);
     </body>
 </html>
 
-*/
-?>

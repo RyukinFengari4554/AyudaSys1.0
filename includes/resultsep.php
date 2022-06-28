@@ -29,13 +29,10 @@ curl_setopt( $ch, CURLOPT_URL,$url);
 // Receive response from server
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 
-$output = curl_exec( $ch );
-
 $uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 
-echo $output;
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 switch ($httpCode) {
