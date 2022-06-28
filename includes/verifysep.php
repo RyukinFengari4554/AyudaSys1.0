@@ -2,7 +2,6 @@
 session_start();
 ?>
 <?php
-if(isset($_POST['button'])){
 //input from the form
 //$country_code=filter_input(INPUT_POST,'cc');
 $phone_number=filter_input(INPUT_POST,'pn');
@@ -63,7 +62,7 @@ switch ($httpCode) {
 
 //close cURL resource
 curl_close($ch);
-}
+
 
 /*
 
