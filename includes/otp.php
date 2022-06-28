@@ -26,7 +26,7 @@
                 </div>
             </div>
         </header>
-        <form action="verify.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
+        <form action="verifysep.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
             <div class="container">
                 <p style="color: white; text-align:center; font-size: 7.5rem;"><?php echo $contact_number;?> </p>
                 <p class="channel" id="channel" name="ch" value="sms" style="visibility: hidden"></p>
@@ -39,7 +39,7 @@
                 <table class="center" style="visibility: hidden">
                 <tr>
                   <td><select name="cc" id="authy-countries"  data-show-as="text"></select></td>
-                  <td><input type="tel" id="phone_number" placeholder="Phone Number" name="pn" maxlength="10" value=<?php echo $vcn;?>></td>
+                  <td><input type="tel" id="phone_number" placeholder="Phone Number" name="pn" maxlength="10" value=<?php echo $contact_number;//echo $vcn; //for Tiniyo ?>></td>
                 </tr>
               </table>
             </div>
