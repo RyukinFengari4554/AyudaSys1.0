@@ -80,7 +80,7 @@ curl_close($ch);
                     <div class="site-header-content">
                         <h1 class="site-title">
                             </h1>
-                        <h2 class="site-description">Phone Verification OTP</h2>
+                        <h2 class="site-description">Phone HELLO Verification OTP</h2>
                         <?php echo '<h2>'.$output.'</h2>'; ?>
                         </div>
                 </div>
