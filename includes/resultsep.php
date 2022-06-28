@@ -35,14 +35,16 @@ $returns = curl_exec($ch);
 
 echo $returns.'\n';
 $resp = json_decode($returns);
-echo $resp[0]->code;
+$a= $resp[0]->message;
+
+$a= str_replace("Your AyudaSys OTP code is ","",$a);
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-/*
+
 switch ($httpCode) {
 	case 200: 
 		$resp = json_decode($returns);
-		if ($resp[0]->code == $otp_code) {
+		if ($a == $otp_code) {
 			//echo "Status: ".$resp->status." Message:".$resp->message."\n";
 			
 			//echo "OTP VERIFIED\n";
@@ -98,7 +100,7 @@ switch ($httpCode) {
         }
 	break;
 }
-*/
+
 //close cURL resource
 curl_close($ch);
 exit();
