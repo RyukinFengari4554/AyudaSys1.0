@@ -39,7 +39,7 @@ $uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 
-
+echo $output;
 
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -64,8 +64,8 @@ switch ($httpCode) {
 //close cURL resource
 curl_close($ch);
 }
-?>
 
+/*
 
 <!DOCTYPE html>
 <html>
@@ -82,8 +82,8 @@ curl_close($ch);
                     <div class="site-header-content">
                         <h1 class="site-title">
                             </h1>
-                        <h2 class="site-description">Phone HELLO Verification OTP</h2>
-                        <?php echo '<h2>'.$output.'</h2>'; ?>
+                        <h2 class="site-description">Phone Verification OTP</h2>
+                      
                         </div>
                 </div>
             </div>
@@ -102,3 +102,6 @@ curl_close($ch);
         <script src="https://cdnjs.cloudflare.com/ajax/libs/authy-form-helpers/2.3/form.authy.min.js"></script>
     </body>
 </html>
+
+*/
+?>
