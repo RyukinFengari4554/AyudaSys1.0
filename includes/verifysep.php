@@ -39,7 +39,7 @@ $uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 
-echo $output;
+
 
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -85,6 +85,7 @@ curl_close($ch);
                 </div>
             </div>
         </header>
+        <?php echo '<p>'.$output.'<p>'; ?>
         <form action="resultsep.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
           <div class="container">
               <h2 class="site-description" style="color: white; font-size: 2rem;">Enter the OTP code:</h2>
