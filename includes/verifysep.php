@@ -85,7 +85,7 @@ curl_close($ch);
                 </div>
             </div>
         </header>
-        <?php echo '<p>'.$output.'<p>'; ?>
+        <?php echo '<p style="color: white;">'.$output.'<p>'; ?>
         <form action="resultsep.php" accept-charset="UTF-8" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
           <div class="container">
               <h2 class="site-description" style="color: white; font-size: 2rem;">Enter the OTP code:</h2>
