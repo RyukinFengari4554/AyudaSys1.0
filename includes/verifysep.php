@@ -39,6 +39,7 @@ $uregn=$_SESSION['regn'];
 //execute the POST request
 $returns = curl_exec($ch);
 
+echo $output;
 
 // check the HTTP Status code
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
