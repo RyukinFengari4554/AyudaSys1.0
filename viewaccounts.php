@@ -168,13 +168,10 @@ table{
           echo "</div> <div class='card-body text-center'>" ;
           echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
           echo "</div> </div>";
-
         }
         echo "</div>";
         echo "</div>";
         echo "<div><br></div>";
-
-
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
@@ -182,7 +179,7 @@ table{
 
     
     echo "</div>";
-    "<div class='hi' id='t2'>";
+    echo "<div class='hi' id='t2'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
