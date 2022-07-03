@@ -141,97 +141,181 @@ table{
         <div class="invalid-feedback">Please fill out this field.</div>
       </select>
       <br>
+      <form action='monitor_registry.php' method='post'>
+        <input type='text' name='search' placeholder='Search Database'/>
+        <input type='submit' value='Search' />
+      </form>
     </div>
 
-
-
-    <div id="t1">
-      <?php
-       if($account=='admin'){
-        $sql = "SELECT * FROM registration;";
+<?php
+    if (isset($_POST['search'])){
+      $conn -> close();
+      $searchq = $_POST['search'];
+      include 'includes/db.inc.php';
+      if($account=='admin'){
+          $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM registration WHERE barangay_id LIKE '%$searchq%' OR CONCAT(first_name,' ', last_name) LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR verification_status LIKE '%$searchq%' OR qr_code LIKE '%$searchq%' ORDER BY barangay_id ASC;";
       }
       else{
-        $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+          $sbv =$_SESSION['sb'];
+          $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM registration WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR CONCAT(first_name,' ', last_name) LIKE '%$searchq%' OR verification_status LIKE '%$searchq%' OR qr_code LIKE '%$searchq%') ORDER BY barangay_id ASC;";
       }
-      $result = mysqli_query($conn, $sql);
+      echo "<div id='t1'>";
+      $result = mysqli_query($conn, $sql) or die(mysql_error());
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         echo "<div class='container'> <div class='card-deck  text-center'> ";
-        //echo "<br>";
-        while($row = mysqli_fetch_assoc($result)){
-        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
-        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
-        echo "</div> <div class='card-body text-center'>" ;
-        echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
-        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
-        echo "<p class='text-secondary'> Verification Status: ".$row['verification_status']." </p> " ;
-        echo "<p class='text-secondary'> QR Code: ".$row['qr_code']." </p> " ;
-        echo "</div> </div>";
-
-
-        //echo "<br>";
-        }
-        echo "</div>";
-        echo "</div>";
-        echo "<div><br></div>";
-      }
-      else{
-        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
-      }
-      ?>
-    </div>
-    <div id="t2">
-      <?php
-       if($account=='admin'){
-        $sql = "SELECT * FROM registration;";
-      }
-      else{
-        $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
-      }
-      $result = mysqli_query($conn, $sql);
-      $RC = mysqli_num_rows($result);
-      if ($RC > 0 ){
-        $counter=0;
-        echo "<table class='content-table'>";
-        echo "<thead><tr ><th >barangay_id</th>";
-        echo "<th>first_name</th>";
-        echo "<th>last_name</th>";
-        echo "<th>barangay</th>";
-        echo "<th>verification_status</th>";
-        echo "<th>qr_code</th></tr></thead><tbody>";
-        //echo "<br>";
-        while($row = mysqli_fetch_assoc($result)){
-          $counter=$counter+1;
-          if ($counter%2==0) {
-          echo "<tr class='active-row' ><td>".$row['barangay_id']."</td>";
-          echo "<td>". $row['first_name']. "</td>";
-          echo "<td>". $row['last_name']. "</td>";
-          echo "<td>". $row['barangay']. "</td>";
-          echo "<td>". $row['verification_status']. "</td>";
-          echo "<td>". $row['qr_code']. "</td></tr>";
-        }
-        else {
-          echo "<tr><td>".$row['barangay_id']."</td>";
-          echo "<td>". $row['first_name']. "</td>";
-          echo "<td>". $row['last_name']. "</td>";
-          echo "<td>". $row['barangay']. "</td>";
-          echo "<td>". $row['verification_status']. "</td>";
-          echo "<td>". $row['qr_code']. "</td></tr>";
+          while($row = mysqli_fetch_assoc($result)){
+          echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+          echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+          echo "</div> <div class='card-body text-center'>" ;
+          echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
+          echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+          echo "<p class='text-secondary'> Verification Status: ".$row['verification_status']." </p> " ;
+          echo "<p class='text-secondary'> QR Code: ".$row['qr_code']." </p> " ;
+          echo "</div> </div>";
           }
-
-        //echo "<br>";
+          echo "</div>";
+          echo "</div>";
+          echo "<div><br></div>";
         }
-        echo "</tbody></table>";
-        echo "<div><br></div>";
-      }
-      else{
-        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
-      }
-      ?>
-      </div>
+        else{
+          echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+        }
+        echo "</div>";
+        if($account=='admin'){
+          $sql = "SELECT * FROM registration;";
+        }
+        else{
+          $sbv =$_SESSION['sb'];
+          $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+        }
+        echo "<div id='t2'>";
+        $result = mysqli_query($conn, $sql);
+        $RC = mysqli_num_rows($result);
+        if ($RC > 0 ){
+          $counter=0;
+          echo "<table class='content-table'>";
+          echo "<thead><tr ><th >barangay_id</th>";
+          echo "<th>first_name</th>";
+          echo "<th>last_name</th>";
+          echo "<th>barangay</th>";
+          echo "<th>verification_status</th>";
+          echo "<th>qr_code</th></tr></thead><tbody>";
+          while($row = mysqli_fetch_assoc($result)){
+            $counter=$counter+1;
+            if ($counter%2==0) {
+            echo "<tr class='active-row' ><td>".$row['barangay_id']."</td>";
+            echo "<td>". $row['first_name']. "</td>";
+            echo "<td>". $row['last_name']. "</td>";
+            echo "<td>". $row['barangay']. "</td>";
+            echo "<td>". $row['verification_status']. "</td>";
+            echo "<td>". $row['qr_code']. "</td></tr>";
+          }
+          else {
+            echo "<tr><td>".$row['barangay_id']."</td>";
+            echo "<td>". $row['first_name']. "</td>";
+            echo "<td>". $row['last_name']. "</td>";
+            echo "<td>". $row['barangay']. "</td>";
+            echo "<td>". $row['verification_status']. "</td>";
+            echo "<td>". $row['qr_code']. "</td></tr>";
+            }
 
+          //echo "<br>";
+          }
+          echo "</tbody></table>";
+          echo "<div><br></div>";
+        }
+        else{
+          echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+        }
+        echo '</div>';
+      
+      }else{
+        if($account=='admin'){
+          $sql = "SELECT * FROM registration;";
+        }
+        else{
+          $sbv =$_SESSION['sb'];
+          $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+        }
+        echo "<div id='t1'>";
+        $result = mysqli_query($conn, $sql);
+        $RC = mysqli_num_rows($result);
+        if ($RC > 0 ){
+          echo "<div class='container'> <div class='card-deck  text-center'> ";
+          //echo "<br>";
+          while($row = mysqli_fetch_assoc($result)){
+          echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+          echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+          echo "</div> <div class='card-body text-center'>" ;
+          echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
+          echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+          echo "<p class='text-secondary'> Verification Status: ".$row['verification_status']." </p> " ;
+          echo "<p class='text-secondary'> QR Code: ".$row['qr_code']." </p> " ;
+          echo "</div> </div>";
+
+
+          //echo "<br>";
+          }
+          echo "</div>";
+          echo "</div>";
+          echo "<div><br></div>";
+        }
+        else{
+          echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+        }
+        
+        echo "</div>";
+        if($account=='admin'){
+          $sql = "SELECT * FROM registration;";
+        }
+        else{
+          $sbv =$_SESSION['sb'];
+          $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
+        }
+        echo "<div id='t2'>";
+        $result = mysqli_query($conn, $sql);
+        $RC = mysqli_num_rows($result);
+        if ($RC > 0 ){
+          $counter=0;
+          echo "<table class='content-table'>";
+          echo "<thead><tr ><th >barangay_id</th>";
+          echo "<th>first_name</th>";
+          echo "<th>last_name</th>";
+          echo "<th>barangay</th>";
+          echo "<th>verification_status</th>";
+          echo "<th>qr_code</th></tr></thead><tbody>";
+          //echo "<br>";
+          while($row = mysqli_fetch_assoc($result)){
+            $counter=$counter+1;
+            if ($counter%2==0) {
+            echo "<tr class='active-row' ><td>".$row['barangay_id']."</td>";
+            echo "<td>". $row['first_name']. "</td>";
+            echo "<td>". $row['last_name']. "</td>";
+            echo "<td>". $row['barangay']. "</td>";
+            echo "<td>". $row['verification_status']. "</td>";
+            echo "<td>". $row['qr_code']. "</td></tr>";
+          }
+          else {
+            echo "<tr><td>".$row['barangay_id']."</td>";
+            echo "<td>". $row['first_name']. "</td>";
+            echo "<td>". $row['last_name']. "</td>";
+            echo "<td>". $row['barangay']. "</td>";
+            echo "<td>". $row['verification_status']. "</td>";
+            echo "<td>". $row['qr_code']. "</td></tr>";
+            }
+
+          //echo "<br>";
+          }
+          echo "</tbody></table>";
+          echo "<div><br></div>";
+        }
+        else{
+          echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+        }
+        echo '</div>';
+    }
+      ?>
 
     <script type="text/javascript">
       document.getElementById("t2").style.display = "none"; //hide fil
