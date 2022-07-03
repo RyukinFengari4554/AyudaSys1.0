@@ -85,7 +85,7 @@ if(!empty($_SESSION['sun'])){
                   };
                   if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
                     echo "<p id='clock' style='color: red'>TIME</p>";
-                    countdown('clock', 1, 0);
+                    setInterval(UpdateTime(), 1000);
                     $_SESSION['attempt']=0;
                   };
       ?>
@@ -98,7 +98,23 @@ if(!empty($_SESSION['sun'])){
 
     </form>
     <script type="text/javascript">
-        function countdown(element, minutes, seconds) {
+      var interval =60;
+      function updateTime(){
+        document.getElementById('submitbtn').disabled=true;
+        interval --;
+        if(interval == 0)
+        {
+            document.getElementById('submitbtn').disabled=false;
+            var interval = 60;
+        }
+        else
+        {
+            $(clock).html(interval + " seconds left");
+        }
+      }
+      
+      /*
+      function countdown(element, minutes, seconds) {
           
         // set time for the particular countdown
         var time = minutes*60 + seconds;
@@ -126,7 +142,7 @@ if(!empty($_SESSION['sun'])){
         el.innerHTML = text;
         time--;
     }, 1000);
-  }
+  }*/
       </script>
 
   </body>
