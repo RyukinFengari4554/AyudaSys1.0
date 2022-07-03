@@ -22,10 +22,10 @@
             exit();
         }
         else{
-            header("Location: ../signin.php?login=failed");
             $att=$_SESSION['attempt'];
             $att= $att+1;
             $_SESSION['attempt'] =  $att;
+            header("Location: ../signin.php?login=failed");
             exit();
         }
     }
