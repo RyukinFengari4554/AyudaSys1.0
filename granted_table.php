@@ -206,7 +206,7 @@ table{
       include 'includes/db.inc.php';
       $searchq = mysqli_real_escape_string($conn,$searchq = $_POST['search']);
     if($account=='admin'){
-      $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE g.barangay_id LIKE '%$searchq%' OR CONCAT(p.first_name,' ', p.last_name) LIKE '%$searchq%' OR p.barangay LIKE '%$searchq%' OR g.distribution_status LIKE '%$searchq%' ORDER BY g.granted_date ASC;";
+      $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE CONCAT(p.first_name,' ', p.last_name) LIKE '%$searchq%' OR p.barangay LIKE '%$searchq%' OR g.distribution_status LIKE '%$searchq%' ORDER BY g.granted_date ASC;";
     }
     else{
       $sbv =$_SESSION['sb'];
@@ -228,11 +228,7 @@ table{
         echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
         echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
         echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
-        if($row['distribution_status']==1){
-          echo "<p class='text-secondary'> Distribution Status: DISTRIBUTED </p> " ;
-        }else{
-          echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
-        }
+        echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> ";
         echo "</div> </div>";
         }
         echo "</div>";
@@ -271,11 +267,7 @@ table{
         echo "<td >". $row['barangay_id']. "</td>";
         echo "<td >". $row['family_code']. "</td>";
         echo "<td >". $row['package_no']. "</td>";
-        if($row['distribution_status']==1){
-          echo "<td > DISTRIBUTED </td></tr>";
-        }else{
-          echo "<td > UNDELIVERED </td></tr>";
-        }
+        echo "<td >". $row['distribution_status']. "</td></tr>";
       }
 
         else{
@@ -287,11 +279,7 @@ table{
           echo "<td >". $row['barangay_id']. "</td>";
           echo "<td >". $row['family_code']. "</td>";
           echo "<td >". $row['package_no']. "</td>";
-          if($row['distribution_status']==1){
-          echo "<td > DISTRIBUTED </td></tr>";
-        }else{
-          echo "<td > UNDELIVERED </td></tr>";
-        }
+          echo "<td >". $row['distribution_status']. "</td></tr>";
       }
       }
       echo "</tbody></table>";
@@ -325,11 +313,7 @@ table{
         echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
         echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
         echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
-        if($row['distribution_status']==1){
-          echo "<p class='text-secondary'> Distribution Status: DISTRIBUTED </p> " ;
-        }else{
-          echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
-        }
+        echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> ";
         echo "</div> </div>";
         }
         echo "</div>";
@@ -368,11 +352,7 @@ table{
         echo "<td >". $row['barangay_id']. "</td>";
         echo "<td >". $row['family_code']. "</td>";
         echo "<td >". $row['package_no']. "</td>";
-        if($row['distribution_status']==1){
-          echo "<td > DISTRIBUTED </td></tr>";
-        }else{
-          echo "<td > UNDELIVERED </td></tr>";
-        }
+        echo "<td >". $row['distribution_status']. "</td></tr>";
       }
 
         else{
@@ -384,11 +364,7 @@ table{
           echo "<td >". $row['barangay_id']. "</td>";
           echo "<td >". $row['family_code']. "</td>";
           echo "<td >". $row['package_no']. "</td>";
-          if($row['distribution_status']==1){
-          echo "<td > DISTRIBUTED </td></tr>";
-        }else{
-          echo "<td > UNDELIVERED </td></tr>";
-        }
+          echo "<td >". $row['distribution_status']. "</td></tr>";
       }
       }
       echo "</tbody></table>";
