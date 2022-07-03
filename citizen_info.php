@@ -12,32 +12,16 @@ include 'includes/db.inc.php';
 
 if (isset($_POST['search'])){
   $searchq = $_POST['search'];
-  if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
         $results_per_page = 30;
         $start_from = ($page-1) * $results_per_page;
         if($account=='admin'){
-          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR
-          first_name LIKE '%$searchq%' OR
-          last_name LIKE '%$searchq%' OR
-          barangay LIKE '%$searchq%' OR
-          house_no LIKE '%$searchq%' OR
-          street LIKE '%$searchq%' OR
-          members LIKE '%$searchq%' OR
-          family_code LIKE '%$searchq%' OR
-          registered_by LIKE '%$searchq%';";
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%';";
           $result = $conn->query($sql);
           $row = $result->fetch_assoc();
           $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
           
-          $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR
-          first_name LIKE '%$searchq%' OR
-          last_name LIKE '%$searchq%' OR
-          barangay LIKE '%$searchq%' OR
-          house_no LIKE '%$searchq%' OR
-          street LIKE '%$searchq%' OR
-          members LIKE '%$searchq%' OR
-          family_code LIKE '%$searchq%' OR
-          registered_by LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+          $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
         }
         else{
           $sbv =$_SESSION['sb'];
