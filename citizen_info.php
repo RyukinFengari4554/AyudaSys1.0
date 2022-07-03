@@ -161,6 +161,7 @@ ini_set('display_errors', 1);
       if($account=='admin'){
           $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%';";
           echo 'SQL 1';
+          include 'includes/db.inc.php';
           $result = mysqli_query($conn, $sql);
           echo 'SQL 2';
           $row = mysqli_fetch_assoc($result);
