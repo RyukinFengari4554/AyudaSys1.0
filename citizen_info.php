@@ -163,10 +163,11 @@ ini_set('display_errors', 1);
           $sbv =$_SESSION['sb'];
           $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%') ORDER BY barangay_id ASC;";
         }
+        echo "<div id='t1'>";
       $result = mysqli_query($conn, $sql) or die(mysql_error());
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo "<div id='t1'><div class='container'> <div class='card-deck  text-center'> ";
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
         echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
@@ -189,11 +190,13 @@ ini_set('display_errors', 1);
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
+      echo '</div>';
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
+      echo "<div id='t2'>";
       if ($RC > 0 ){
         $counter=0;
-        echo "<div id='t2'><table class='content-table'>";
+        echo "<table class='content-table'>";
         echo "<thead><tr ><th >barangay_id</th>";
         echo "<th>first_name</th>";
         echo "<th>last_name</th>";
@@ -233,11 +236,12 @@ ini_set('display_errors', 1);
 
         }
         echo "</tbody></table>";
-        echo "<div><br></div></div>";
+        echo "<div><br></div>";
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
+      echo '</div>';
     }
     else{      
         if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
