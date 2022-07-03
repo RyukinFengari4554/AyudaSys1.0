@@ -140,7 +140,7 @@ table{
         <div class="invalid-feedback">Please fill out this field.</div>
       </select>
       <br>
-      <form action='citizen_info.php' method='post'>
+      <form action='viewaccounts.php' method='post'>
         <input type='text' name='search' placeholder='Search Database'/>
         <input type='submit' value='Search' />
       </form>
