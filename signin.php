@@ -12,7 +12,7 @@ if(!empty($_SESSION['sun'])){
     header("Location: adminpage.php");
   exit();
   }
-  if($_SESSION['attempt'] == 0){
+  if($_SESSION['attempt'] == 3){
     header('Location: signin.php?login=failed&attempt=3');
     die();
   }
@@ -82,12 +82,8 @@ if(!empty($_SESSION['sun'])){
       <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Password" required="">
       <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                  if (strpos($fulUrl,"signin.php") == true){
-                    $_SESSION['attempt']=3;
-                  };
                   if (strpos($fulUrl,"signin.php?login=failed") == true){
-                    $_SESSION['attempt'] -= 1;
-                    $ra =$_SESSION['attempt'];
+                    $ra =3-$_SESSION['attempt'];
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt: ".$ra."</p>";
                   };
                   if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
