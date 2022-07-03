@@ -383,7 +383,6 @@ ini_set('display_errors', 1);
             echo ">".$i."</button> ";
 };
 */
-if (!isset($_POST['search'])){
 echo "<table><tr>";
 for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
   echo "<td><a href='citizen_info.php?page=".$i."' ";
@@ -391,7 +390,7 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
   echo "><button  class='btn-sm btn-outline-primary pages_b'>".$i."</button></a></td>";
 };
 echo "</tr></table>";
-}
+
 ?>
 
 
