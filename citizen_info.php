@@ -208,7 +208,79 @@ if (isset($_POST['search'])){
       </form>
       </div>
     </div>
-    <?php if (!isset($_POST['search'])){      
+    <?php if (isset($_POST['search'])){
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<div id='t1'><div class='container'> <div class='card-deck  text-center'> ";
+        //echo "<br>";
+        while($row = mysqli_fetch_assoc($result)){
+        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+        echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
+        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+        echo "<p class='text-secondary'> House No: ". $row['house_no']." </p> " ;
+        echo "<p class='text-secondary'> Street: ". $row['street']." </p> " ;
+        echo "<p class='text-secondary'> No. of members: ". $row['no_of_members']." </p> " ;
+        echo "<p class='text-secondary'> Family Code: ". $row['family_code']." </p> ";
+        echo "<p class='text-secondary'> Registered By: ". $row['username']." </p> " ;
+        echo "</div> </div>";
+        //echo "<br>";
+        }
+        echo "</div>";
+        echo "</div>";
+        echo "<div><br></div></div>";
+        
+        $counter=0;
+        echo "<div id='t2'><table class='content-table'>";
+        echo "<thead><tr ><th >barangay_id</th>";
+        echo "<th>first_name</th>";
+        echo "<th>last_name</th>";
+        echo "<th>barangay</th>";
+        echo "<th>house_no</th>";
+        echo "<th>street</th>";
+        echo "<th>members</th>";
+        echo "<th>family_code</th>";
+        echo "<th>registered_by</th></tr></thead><tbody>";
+
+        //echo "<br>";
+        while($row = mysqli_fetch_assoc($result)){
+        $counter=$counter+1;
+        if ($counter%2==0) {
+        echo "<tr class='active-row' ><td >".$row['barangay_id']."</td>";
+        echo "<td>". $row['first_name']. "</td>";
+        echo "<td>". $row['last_name']. "</td>";
+        echo "<td>". $row['barangay']. "</td>";
+        echo "<td>". $row['house_no']. "</td>";
+        echo "<td>". $row['street']. "</td>";
+        echo "<td>". $row['no_of_members']. "</td>";
+        echo "<td>". $row['family_code']. "</td>";
+        echo "<td>". $row['username']. "</td></tr>";
+      }
+        //echo "<br>";
+        else {
+          echo "<tr ><td >".$row['barangay_id']. "</td>";
+          echo "<td>". $row['first_name']. "</td>";
+          echo "<td>". $row['last_name']. "</td>";
+          echo "<td>". $row['barangay']. "</td>";
+          echo "<td>". $row['house_no']. "</td>";
+          echo "<td>". $row['street']. "</td>";
+          echo "<td>". $row['no_of_members']. "</td>";
+          echo "<td>". $row['family_code']. "</td>";
+          echo "<td>". $row['username']. "</td></tr>";
+        }
+
+        }
+        echo "</tbody></table>";
+        echo "<div><br></div></div>";
+
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+    }
+    else{      
         if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
         $results_per_page = 30;
         $start_from = ($page-1) * $results_per_page;
