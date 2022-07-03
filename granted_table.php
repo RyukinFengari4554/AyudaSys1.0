@@ -195,37 +195,45 @@ table{
         <div class="invalid-feedback">Please fill out this field.</div>
       </select>
       <br>
+      <form action='granted_table.php' method='post'>
+        <input type='text' name='search' placeholder='Search Database'/>
+        <input type='submit' value='Search' />
+      </form>
     </div>
-
-    <div id="t1">
-      <?php
-      if($account=='admin'){
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY granted_date ASC;";
-      }
-      else{
-        $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv' ORDER BY granted_date ASC;";
-      }
-
+    <?php
+    if (isset($_POST['search'])){
+      $conn -> close();
+      include 'includes/db.inc.php';
+      $searchq = mysqli_real_escape_string($conn,$searchq = $_POST['search']);
+    if($account=='admin'){
+      $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE g.barangay_id LIKE '%$searchq%' OR CONCAT(p.first_name,' ', p.last_name) LIKE '%$searchq%' OR p.barangay LIKE '%$searchq%' OR g.distribution_status LIKE '%$searchq%' ORDER BY g.granted_date ASC;";
+    }
+    else{
+      $sbv =$_SESSION['sb'];
+      $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND (g.barangay_id LIKE '%$searchq%' OR CONCAT(p.first_name,' ', p.last_name) LIKE '%$searchq%' OR g.distribution_status LIKE '%$searchq%') ORDER BY g.granted_date ASC;";
+    }
+    echo "<div id='t1'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         echo "<div class='container'> <div class='card-deck  text-center'> ";
-        //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
         echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
         echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
         echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
         echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
         echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
-        echo "<p class='text-secondary'> Granted Data: ". $row['granted_date']." </p> " ;
-        echo "<p class='text-secondary'> Pick up date: ". $row['pick_up_date']." </p> " ;
+        echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
+        echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
         echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
         echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
-        echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> " ;
+        if($row['distribution_status']==1){
+          echo "<p class='text-secondary'> Distribution Status: DISTRIBUTED </p> " ;
+        }else{
+          echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
+        }
         echo "</div> </div>";
-
-        //echo "<br>";
         }
         echo "</div>";
         echo "</div>";
@@ -235,24 +243,15 @@ table{
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
-      ?>
-    </div>
-    <div id="t2">
-      <?php
-      if($account=='admin'){
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY granted_date ASC;";
-      }
-      else{
-        $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE barangay = '$sbv' ORDER BY granted_date ASC;";
-      }
-
+    echo "</div>";
+    echo "<div id='t2'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         $counter=0;
         echo "<table class='content-table'>";
         echo "<thead><tr ><th >qr_code</th>";
+        echo "<th>Name</th>";
         echo "<th>register_no</th>";
         echo "<th>granted_date</th>";
         echo "<th>pick_up_date</th>";
@@ -265,28 +264,35 @@ table{
           $counter=$counter+1;
           if ($counter%2==0) {
         echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
+        echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
         echo "<td >". $row['registration_no']. "</td>";
         echo "<td >". $row['granted_date']. "</td>";
         echo "<td >". $row['pick_up_date']. "</td>";
         echo "<td >". $row['barangay_id']. "</td>";
         echo "<td >". $row['family_code']. "</td>";
         echo "<td >". $row['package_no']. "</td>";
-        echo "<td >". $row['distribution_status']. "</td></tr>";
+        if($row['distribution_status']==1){
+          echo "<td > DISTRIBUTED </td></tr>";
+        }else{
+          echo "<td > UNDELIVERED </td></tr>";
+        }
       }
 
         else{
           echo "<tr  ><td >".$row['qr_code']."</td>";
+          echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
           echo "<td >". $row['registration_no']. "</td>";
           echo "<td >". $row['granted_date']. "</td>";
           echo "<td >". $row['pick_up_date']. "</td>";
           echo "<td >". $row['barangay_id']. "</td>";
           echo "<td >". $row['family_code']. "</td>";
           echo "<td >". $row['package_no']. "</td>";
-          echo "<td >". $row['distribution_status']. "</td></tr>";
-
+          if($row['distribution_status']==1){
+          echo "<td > DISTRIBUTED </td></tr>";
+        }else{
+          echo "<td > UNDELIVERED </td></tr>";
+        }
       }
-
-
       }
       echo "</tbody></table>";
       echo "<div><br></div>";
@@ -294,6 +300,105 @@ table{
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
+      echo "</div>";
+  }else{
+    if($account=='admin'){
+      $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY g.granted_date ASC;";
+    }
+    else{
+      $sbv =$_SESSION['sb'];
+      $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' ORDER BY g.granted_date ASC;";
+    }
+    echo "<div id='t1'>";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
+        while($row = mysqli_fetch_assoc($result)){
+        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+        echo "</div> <div class='card-body text-center'>" ;
+        echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
+        echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
+        echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
+        echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
+        echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
+        echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
+        echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
+        if($row['distribution_status']==1){
+          echo "<p class='text-secondary'> Distribution Status: DISTRIBUTED </p> " ;
+        }else{
+          echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
+        }
+        echo "</div> </div>";
+        }
+        echo "</div>";
+        echo "</div>";
+        echo "<div><br></div>";
+
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+    echo "</div>";
+    echo "<div id='t2'>";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        $counter=0;
+        echo "<table class='content-table'>";
+        echo "<thead><tr ><th >qr_code</th>";
+        echo "<th>Name</th>";
+        echo "<th>register_no</th>";
+        echo "<th>granted_date</th>";
+        echo "<th>pick_up_date</th>";
+        echo "<th>barangay_id</th>";
+        echo "<th>family_code</th>";
+        echo "<th>package_no</th>";
+        echo "<th>dist_status</th></tr></thead><tbody>";
+        //echo "<br>";
+        while($row = mysqli_fetch_assoc($result)){
+          $counter=$counter+1;
+          if ($counter%2==0) {
+        echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
+        echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
+        echo "<td >". $row['registration_no']. "</td>";
+        echo "<td >". $row['granted_date']. "</td>";
+        echo "<td >". $row['pick_up_date']. "</td>";
+        echo "<td >". $row['barangay_id']. "</td>";
+        echo "<td >". $row['family_code']. "</td>";
+        echo "<td >". $row['package_no']. "</td>";
+        if($row['distribution_status']==1){
+          echo "<td > DISTRIBUTED </td></tr>";
+        }else{
+          echo "<td > UNDELIVERED </td></tr>";
+        }
+      }
+
+        else{
+          echo "<tr  ><td >".$row['qr_code']."</td>";
+          echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
+          echo "<td >". $row['registration_no']. "</td>";
+          echo "<td >". $row['granted_date']. "</td>";
+          echo "<td >". $row['pick_up_date']. "</td>";
+          echo "<td >". $row['barangay_id']. "</td>";
+          echo "<td >". $row['family_code']. "</td>";
+          echo "<td >". $row['package_no']. "</td>";
+          if($row['distribution_status']==1){
+          echo "<td > DISTRIBUTED </td></tr>";
+        }else{
+          echo "<td > UNDELIVERED </td></tr>";
+        }
+      }
+      }
+      echo "</tbody></table>";
+      echo "<div><br></div>";
+    }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+      echo "</div>";
+    }
       ?>
   </div>
   <br>
