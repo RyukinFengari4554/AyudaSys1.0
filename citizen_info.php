@@ -157,11 +157,11 @@ ini_set('display_errors', 1);
       $searchq = $_POST['search'];
       include 'includes/db.inc.php';
       if($account=='admin'){
-          $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%' ORDER BY barangay_id ASC;";
+          $sql = "SELECT *, CONCAT(first_name,' ', last_name) AS name FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%' ORDER BY barangay_id ASC;";
         }
         else{
           $sbv =$_SESSION['sb'];
-          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%') ORDER BY barangay_id ASC;";
+          $sql = "SELECT *, CONCAT(first_name,' ', last_name) AS name FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%') ORDER BY barangay_id ASC;";
         }
         echo "<div id='t1'>";
       $result = mysqli_query($conn, $sql) or die(mysql_error());
