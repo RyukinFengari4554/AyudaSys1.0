@@ -185,7 +185,13 @@ ini_set('display_errors', 1);
         echo "</div>";
         echo "</div>";
         echo "<div><br></div></div>";
-
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
         $counter=0;
         echo "<div id='t2'><table class='content-table'>";
         echo "<thead><tr ><th >barangay_id</th>";
@@ -228,7 +234,6 @@ ini_set('display_errors', 1);
         }
         echo "</tbody></table>";
         echo "<div><br></div></div>";
-
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
