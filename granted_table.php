@@ -389,7 +389,7 @@ table{
   <br>
   <div class='container' > 
     <div class="card-deck  text-center ">
-      <div class='card lg-4  light-sm' style="background-image: url('../images/bg3.jpg');">  
+      <div class='card lg-4  light-sm' style="background-image: url('../images/bg4.jpg');">  
         <div class='card-header' ><p> AYUDA REPORT </p></div>
         <div class='card-body text-center'>
           <p class='text-secondary'> Registrants: <?php echo $rreg ?> </p>
