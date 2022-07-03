@@ -84,9 +84,8 @@ if(!empty($_SESSION['sun'])){
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                   };
                   if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
-                    echo "<p style='color: red'> Incorrect Username or Password</p>";
-                    echo "<p id='clock' style='color: red'></p>";
-                    countdown('clock','submitbtn', 3, 0);
+                    echo "<p id='clock' style='color: red'>TIME</p>";
+                    countdown('clock','submitbtn', 1, 0);
                     $_SESSION['attempt']=0;
                   };
       ?>
@@ -112,7 +111,7 @@ if(!empty($_SESSION['sun'])){
             el.disabled = false;
             clearInterval(interval);
             setTimeout(function() {
-              countdown('clock','submitbtn', 3, 0);
+              countdown('clock','submitbtn', 1, 0);
             }, 2000);
         }
         var minutes = Math.floor( time / 60 );
