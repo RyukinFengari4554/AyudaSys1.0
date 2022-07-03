@@ -175,10 +175,8 @@ ini_set('display_errors', 1);
 
           $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%') ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
         }
-      echo 1;
       $result = mysqli_query($conn, $sql) or die(mysql_error());
       $RC = mysqli_num_rows($result);
-      echo 3;
       if ($RC > 0 ){
         echo 4;
         echo "<div id='t1'><div class='container'> <div class='card-deck  text-center'> ";
