@@ -41,30 +41,28 @@ if (isset($_POST['search'])){
         }
         else{
           $sbv =$_SESSION['sb'];
-          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv' AND (
-          barangay_id LIKE '%$searchq%' OR
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv' AND 
+          (barangay_id LIKE '%$searchq%' OR
           first_name LIKE '%$searchq%' OR
           last_name LIKE '%$searchq%' OR
           house_no LIKE '%$searchq%' OR
           street LIKE '%$searchq%' OR
           members LIKE '%$searchq%' OR
           family_code LIKE '%$searchq%' OR
-          registered_by LIKE '%$searchq%'
-          );";
+          registered_by LIKE '%$searchq%');";
           $result = $conn->query($sql);
           $row = $result->fetch_assoc();
           $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
         
-          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (
-            barangay_id LIKE '%$searchq%' OR
+          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND 
+            (barangay_id LIKE '%$searchq%' OR
             first_name LIKE '%$searchq%' OR
             last_name LIKE '%$searchq%' OR
             house_no LIKE '%$searchq%' OR
             street LIKE '%$searchq%' OR
             members LIKE '%$searchq%' OR
             family_code LIKE '%$searchq%' OR
-            registered_by LIKE '%$searchq%'
-            ) ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+            registered_by LIKE '%$searchq%') ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
         }
 
 }
@@ -231,7 +229,7 @@ if (isset($_POST['search'])){
         echo "</div>";
         echo "</div>";
         echo "<div><br></div></div>";
-        
+
         $counter=0;
         echo "<div id='t2'><table class='content-table'>";
         echo "<thead><tr ><th >barangay_id</th>";
