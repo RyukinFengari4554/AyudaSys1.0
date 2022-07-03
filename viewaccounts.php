@@ -242,7 +242,7 @@ table{
 
     
     echo "</div>";
-    "<div class='hi' id='t2'>";
+    echo "<div class='hi' id='t2'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
