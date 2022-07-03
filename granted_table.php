@@ -210,7 +210,7 @@ table{
     }
     else{
       $sbv =$_SESSION['sb'];
-      $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND (g.barangay_id LIKE '%$searchq%' OR CONCAT(p.first_name,' ', p.last_name) LIKE '%$searchq%' OR g.distribution_status LIKE '%$searchq%') ORDER BY g.granted_date ASC;";
+      $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND (CONCAT(p.first_name,' ', p.last_name) LIKE '%$searchq%' OR g.distribution_status LIKE '%$searchq%') ORDER BY g.granted_date ASC;";
     }
     echo "<div id='t1'>";
       $result = mysqli_query($conn, $sql);
