@@ -86,7 +86,8 @@ if(!empty($_SESSION['sun'])){
                     $_SESSION['attempt']=0;
                   };
                   if (strpos($fulUrl,"signin.php?login=failed") == true){
-                    $ra=3-$_SESSION['attempt'];
+                    $att=$_SESSION['attempt'];
+                    $ra=3-$att;
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt: ".$ra."</p>";
                   };
                   if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
