@@ -83,11 +83,9 @@ if(!empty($_SESSION['sun'])){
                     $ra =3-$_SESSION['attempt'];
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                   };
-                  /*
-                  if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
+                  if (strpos($fulUrl,"attempt=3") == true){
                     $_SESSION['attempt']=0;
                   };
-                  */
       ?>
       <div class="checkbox mb-3">
 
@@ -121,7 +119,6 @@ if(!empty($_SESSION['sun'])){
         if (distance < 0) {
           clearInterval(x);
           document.getElementById('submitbtn').disabled=false;
-          <?php $_SESSION['attempt']=0; ?>
         }
       }, 1000);
     }
