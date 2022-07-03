@@ -12,10 +12,8 @@ include 'includes/db.inc.php';
 
 if (isset($_POST['search'])){
   $searchq = $_POST['search'];
-  echo 'SQL 4';
   if($account=='admin'){
     $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
-    echo 'SQL 5';
   }
   else{
     $sbv =$_SESSION['sb'];
@@ -162,10 +160,15 @@ if (isset($_POST['search'])){
       </form>
       </div>
     </div>
-    <?php if (isset($_POST['search'])){
+    <?php 
+    if (isset($_POST['search'])){
+      echo 1;
       $result = mysqli_query($conn, $sql);
+      echo 2;
       $RC = mysqli_num_rows($result);
+      echo 3;
       if ($RC > 0 ){
+        echo 4;
         echo "<div id='t1'><div class='container'> <div class='card-deck  text-center'> ";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
