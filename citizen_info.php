@@ -159,7 +159,7 @@ ini_set('display_errors', 1);
       $results_per_page = 30;
       $start_from = ($page-1) * $results_per_page;
       if($account=='admin'){
-          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%';";
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%';";
           echo 'SQL 1';
           include 'includes/db.inc.php';
           $result = mysqli_query($conn, $sql);
@@ -168,17 +168,17 @@ ini_set('display_errors', 1);
           echo 'SQL 3';
           $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results 
           echo 'SQL 4';
-          $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+          $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
           echo 'SQL 5';
         }
         else{
           $sbv =$_SESSION['sb'];
-          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%');";
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%');";
           $result = mysqli_query($conn, $sql);
           $row = mysqli_fetch_assoc($result);
           $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
 
-          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%') ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%') ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
         }
       echo 1;
       $result = mysqli_query($conn, $sql) or die(mysql_error());
