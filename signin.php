@@ -108,6 +108,7 @@ if(!empty($_SESSION['sun'])){
         var el1 = document.getElementById(element1);
         // if the time is 0 then end the counter
         if(time == 0) {
+          el1.innerHTML = "count downd complete";
             el=false;
             clearInterval(interval);
             setTimeout(function() {
