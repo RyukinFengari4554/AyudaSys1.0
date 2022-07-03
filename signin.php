@@ -122,6 +122,7 @@ if(!empty($_SESSION['sun'])){
         el1.innerHTML = text;
         time--;
     }, 1000);
+  }
       </script>
 
   </body>
