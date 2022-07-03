@@ -151,6 +151,7 @@ include 'includes/db.inc.php';
     </div>
     <?php 
     if (isset($_POST['search'])){
+      $conn -> close();
       $searchq = $_POST['search'];
       if($account=='admin'){
         $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
@@ -160,7 +161,7 @@ include 'includes/db.inc.php';
         $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (barangay_id LIKE '%$searchq%' OR first_name LIKE '%$searchq%' OR last_name LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR registered_by LIKE '%$searchq%') ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
       }
       echo 1;
-      include_once 'includes/db.inc.php';
+      //include_once 'includes/db.inc.php';
       $result = mysqli_query($conn, $sql);
       echo 2;
       $RC = mysqli_num_rows($result);
