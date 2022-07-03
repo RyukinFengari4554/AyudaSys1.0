@@ -31,7 +31,7 @@
     $qr_code = generateRandomString();
     // GRANTING PART 1:
     $vcn= substr($contact_number, 1); //VERYFING OTP NUMBER TESTING FOR PARSING
-    $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members;";
+    $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members AND barangay = '$barangay';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     
@@ -87,7 +87,7 @@
     }
     
     //GRANTING PART 2:
-    $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members;";
+    $sql = "SELECT * FROM personal_information WHERE barangay_id = '$barangay_id' AND first_name = '$first_name' AND middle_name = '$middle_name' AND last_name = '$last_name' AND no_of_members = $no_of_members AND barangay = '$barangay';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){ // checking if inputted data are IN personal_info Table

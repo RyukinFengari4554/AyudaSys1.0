@@ -388,7 +388,7 @@ table{
   <br>
   <br>
   <div class='container'> 
-    <div class='card-deck  text-center'>
+    <div class="card-deck  text-center " style="background-image: url('../images/bg2.png')";>
       <div class='card lg-4  light-sm'>  
         <div class='card-header' ><p> AYUDA REPORT </p></div>
         <div class='card-body text-center'>
