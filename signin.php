@@ -108,12 +108,9 @@ if(!empty($_SESSION['sun'])){
         var el1 = document.getElementById(element1);
         // if the time is 0 then end the counter
         if(time == 0) {
-          el1.innerHTML = "count downd complete";
+          el1.innerHTML = "count down complete";
             el=false;
             clearInterval(interval);
-            setTimeout(function() {
-              countdown('clock','submitbtn', 1, 0);
-            }, 2000);
         }
         var minutes = Math.floor( time / 60 );
         if (minutes < 10) minutes = "0" + minutes;
