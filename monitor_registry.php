@@ -182,13 +182,6 @@ table{
           echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
         }
         echo "</div>";
-        if($account=='admin'){
-          $sql = "SELECT * FROM registration;";
-        }
-        else{
-          $sbv =$_SESSION['sb'];
-          $sql = "SELECT * FROM registration WHERE barangay = '$sbv';";
-        }
         echo "<div id='t2'>";
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
