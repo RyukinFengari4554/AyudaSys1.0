@@ -12,6 +12,12 @@ if(!empty($_SESSION['sun'])){
     header("Location: adminpage.php");
   exit();
   }
+  if($_SESSION['attempt'] < 3){
+    continue_as_normal();
+  }
+  else{
+    send_client_to('signin.php?login=failed&attempt=3');
+  }
 }
 ?>
 
@@ -78,8 +84,17 @@ if(!empty($_SESSION['sun'])){
       <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Password" required="">
       <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  if (strpos($fulUrl,"signin.php") == true){
+                    $_SESSION['attempt']=0;
+                  };
                   if (strpos($fulUrl,"signin.php?login=failed") == true){
                     echo "<p style='color: red'> Incorrect Username or Password</p>";
+                  };
+                  if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
+                    echo "<p style='color: red'> Incorrect Username or Password</p>";
+                    echo "<p id='clock' style='color: red'></p>";
+                    countdown('clock','submitbtn', 3, 0);
+                    $_SESSION['attempt']=0;
                   };
       ?>
       <div class="checkbox mb-3">
@@ -90,6 +105,32 @@ if(!empty($_SESSION['sun'])){
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
 
     </form>
+    <script type="text/javascript">
+        function countdown(element1, element2, minutes, seconds) {
+          
+        // set time for the particular countdown
+        var time = minutes*60 + seconds;
+        var interval = setInterval(function() {
+        var el = document.getElementById(element2);
+        el.disabled = true;
+        var el1 = document.getElementById(element1);
+        // if the time is 0 then end the counter
+        if(time == 0) {
+            el.disabled = false;
+            clearInterval(interval);
+            setTimeout(function() {
+              countdown('clock','submitbtn', 3, 0);
+            }, 2000);
+        }
+        var minutes = Math.floor( time / 60 );
+        if (minutes < 10) minutes = "0" + minutes;
+        var seconds = time % 60;
+        if (seconds < 10) seconds = "0" + seconds; 
+        var text = minutes + ':' + seconds;
+        el1.innerHTML = text;
+        time--;
+    }, 1000);
+      </script>
 
   </body>
 </html>

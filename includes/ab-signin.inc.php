@@ -5,6 +5,7 @@
     session_start();
     $_SESSION["sun"]=$username;
     $_SESSION["sps"]=$password;
+   
     $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password';";
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
@@ -22,6 +23,7 @@
         }
         else{
             header("Location: ../signin.php?login=failed");
+            $_SESSION['attempt'] += 1;
             exit();
         }
     }
