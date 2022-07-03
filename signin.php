@@ -84,7 +84,7 @@ if(!empty($_SESSION['sun'])){
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                   };
                   if (strpos($fulUrl,"signin.php?login=failed&attempt=3") == true){
-                    echo "<p id='clock' style='color: red'></p>";
+                    echo "<p id='clock' style='color: red'>TIME</p>";
                     cd();
                     $_SESSION['attempt']=0;
                   };
