@@ -162,7 +162,7 @@ include 'includes/db.inc.php';
       }
       echo 1;
       //include_once 'includes/db.inc.php';
-      $result = mysqli_query($conn, $sql);
+      $result = mysqli_query($conn, $sql) or die(mysql_error());
       echo 2;
       $RC = mysqli_num_rows($result);
       echo 3;
