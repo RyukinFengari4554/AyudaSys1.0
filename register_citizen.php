@@ -67,7 +67,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     <div class="py-5 text-center">
 
       <h2>Registration Page</h2>
-      <p class="lead">Properly Input the correct Data for citizens for the Ayuda System.</p>
+      <p class="lead">Properly Input the correct Data for citizens for the Barangay Record.</p>
       <?php
     $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"register_citizen.php?register=success") == true){
