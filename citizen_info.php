@@ -156,7 +156,6 @@ ini_set('display_errors', 1);
       $conn -> close();
       include 'includes/db.inc.php';
       $searchq = mysqli_real_escape_string($conn,$_POST['search']);
-      
       if($account=='admin'){
           $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR CONCAT(first_name,' ', last_name) LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR house_no LIKE '%$searchq%' OR street LIKE '%$searchq%' OR no_of_members LIKE '%$searchq%' OR family_code LIKE '%$searchq%' OR username LIKE '%$searchq%' ORDER BY barangay_id ASC;";
         }

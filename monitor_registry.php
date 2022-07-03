@@ -150,8 +150,8 @@ table{
 <?php
     if (isset($_POST['search'])){
       $conn -> close();
-      $searchq = $_POST['search'];
       include 'includes/db.inc.php';
+      $searchq = mysqli_real_escape_string($conn,$searchq = $_POST['search']);
       if($account=='admin'){
           $sql = "SELECT *, CONCAT(first_name,' ', last_name) FROM registration WHERE barangay_id LIKE '%$searchq%' OR CONCAT(first_name,' ', last_name) LIKE '%$searchq%' OR barangay LIKE '%$searchq%' OR verification_status LIKE '%$searchq%' OR qr_code LIKE '%$searchq%' ORDER BY barangay_id ASC;";
       }
