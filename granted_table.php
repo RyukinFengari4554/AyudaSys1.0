@@ -222,6 +222,7 @@ table{
         echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
         echo "</div> <div class='card-body text-center'>" ;
         echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
+        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
         echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
         echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
         echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
@@ -248,6 +249,7 @@ table{
         echo "<table class='content-table'>";
         echo "<thead><tr ><th >qr_code</th>";
         echo "<th>Name</th>";
+        echo "<th>Barangay</th>";
         echo "<th>register_no</th>";
         echo "<th>granted_date</th>";
         echo "<th>pick_up_date</th>";
@@ -261,6 +263,7 @@ table{
           if ($counter%2==0) {
         echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
         echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
+        echo "<td >". $row['barangay']. "</td>";
         echo "<td >". $row['registration_no']. "</td>";
         echo "<td >". $row['granted_date']. "</td>";
         echo "<td >". $row['pick_up_date']. "</td>";
@@ -273,6 +276,7 @@ table{
         else{
           echo "<tr  ><td >".$row['qr_code']."</td>";
           echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
+          echo "<td >". $row['barangay']. "</td>";
           echo "<td >". $row['registration_no']. "</td>";
           echo "<td >". $row['granted_date']. "</td>";
           echo "<td >". $row['pick_up_date']. "</td>";
@@ -307,6 +311,7 @@ table{
         echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
         echo "</div> <div class='card-body text-center'>" ;
         echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
+        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
         echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
         echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
         echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
@@ -333,6 +338,7 @@ table{
         echo "<table class='content-table'>";
         echo "<thead><tr ><th >qr_code</th>";
         echo "<th>Name</th>";
+        echo "<th>Barangay</th>";
         echo "<th>register_no</th>";
         echo "<th>granted_date</th>";
         echo "<th>pick_up_date</th>";
@@ -346,6 +352,7 @@ table{
           if ($counter%2==0) {
         echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
         echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
+        echo "<td >". $row['barangay']. "</td>";
         echo "<td >". $row['registration_no']. "</td>";
         echo "<td >". $row['granted_date']. "</td>";
         echo "<td >". $row['pick_up_date']. "</td>";
@@ -358,6 +365,7 @@ table{
         else{
           echo "<tr  ><td >".$row['qr_code']."</td>";
           echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
+          echo "<td >". $row['barangay']. "</td>";
           echo "<td >". $row['registration_no']. "</td>";
           echo "<td >". $row['granted_date']. "</td>";
           echo "<td >". $row['pick_up_date']. "</td>";
