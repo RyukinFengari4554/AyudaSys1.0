@@ -178,7 +178,6 @@ ini_set('display_errors', 1);
       $result = mysqli_query($conn, $sql) or die(mysql_error());
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
-        echo 4;
         echo "<div id='t1'><div class='container'> <div class='card-deck  text-center'> ";
         //echo "<br>";
         while($row = mysqli_fetch_assoc($result)){
