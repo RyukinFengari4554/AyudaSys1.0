@@ -12,10 +12,7 @@ if(!empty($_SESSION['sun'])){
     header("Location: adminpage.php");
   exit();
   }
-  if($_SESSION['attempt'] == 3){
-    header('Location: signin.php?login=failed&attempt=3');
-    die();
-  }
+  
 }
 ?>
 

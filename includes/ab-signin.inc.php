@@ -23,7 +23,12 @@
         }
         else{
             $_SESSION['attempt'] +=  1;
+            if($_SESSION['attempt'] == 3){
+                header('Location: signin.php?login=failed&attempt=3');
+              }
+            else{
             header("Location: ../signin.php?login=failed");
+            }
             exit();
         }
     }
