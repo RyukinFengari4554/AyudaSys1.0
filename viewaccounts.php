@@ -140,18 +140,24 @@ table{
         <div class="invalid-feedback">Please fill out this field.</div>
       </select>
       <br>
+      <form action='citizen_info.php' method='post'>
+        <input type='text' name='search' placeholder='Search Database'/>
+        <input type='submit' value='Search' />
+      </form>
     </div>
-
-    <!--accounts of admin-->
-    <div class='hi' id="t1">
     <?php
+    if (isset($_POST['search'])){
+      $conn -> close();
+      include 'includes/db.inc.php';
+      $searchq = mysqli_real_escape_string($conn,$searchq = $_POST['search']);
       if($account=='admin'){
-        $sql = "SELECT * FROM barangay_officials;";
+        $sql = "SELECT * FROM barangay_officials WHERE username LIKE '%$searchq%' OR barangay LIKE '%$searchq%';";
       }
       else{
         $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM barangay_officials WHERE barangay = '$sbv';";
+        $sql = "SELECT * FROM barangay_officials WHERE barangay = '$sbv' AND username LIKE '%$searchq%';";
       }
+      echo "<div class='hi' id='t1'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -174,17 +180,9 @@ table{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
 
-    ?>
-    </div>
-    <div class='hi' id="t2">
-      <?php
-      if($account=='admin'){
-        $sql = "SELECT * FROM barangay_officials;";
-      }
-      else{
-        $sbv =$_SESSION['sb'];
-        $sql = "SELECT * FROM barangay_officials WHERE barangay = '$sbv';";
-      }
+    
+    echo "</div>";
+    "<div class='hi' id='t2'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -211,6 +209,71 @@ table{
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
+      echo "</div>";
+
+    }else{
+      if($account=='admin'){
+        $sql = "SELECT * FROM barangay_officials;";
+      }
+      else{
+        $sbv =$_SESSION['sb'];
+        $sql = "SELECT * FROM barangay_officials WHERE barangay = '$sbv';";
+      }
+    //accounts of admin
+    echo "<div class='hi' id='t1'>";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        echo "<div class='container'> <div class='card-deck  text-center'> ";
+        while($row = mysqli_fetch_assoc($result)){
+          echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+          echo "<p> Username: ".$row['username']." </p> " ;
+          echo "</div> <div class='card-body text-center'>" ;
+          echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+          echo "</div> </div>";
+
+        }
+        echo "</div>";
+        echo "</div>";
+        echo "<div><br></div>";
+
+
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+
+    
+    echo "</div>";
+    "<div class='hi' id='t2'>";
+      $result = mysqli_query($conn, $sql);
+      $RC = mysqli_num_rows($result);
+      if ($RC > 0 ){
+        $counter=0;
+        echo "<table class='content-table'>";
+        echo "<thead><tr ><th >username</th>";
+        echo "<th>barangay</th></tr></thead><tbody>";
+        while($row = mysqli_fetch_assoc($result)){
+          $counter=$counter+1;
+          if ($counter%2==0) {
+            echo "<tr class='active-row' ><td >".$row['username']. "</td>";
+            echo "<td >".$row['barangay']. "</td></tr>";
+          }
+          else {
+            echo "<tr><td>".$row['username']. "</td>";
+            echo "<td>".$row['barangay']. "</td></tr>";
+          }
+
+
+        }
+        echo "</tbody></table>";
+        echo "<div><br></div>";
+      }
+      else{
+        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+      }
+      echo "</div>";
+    }
     ?>
       </div>
       <script type="text/javascript">
