@@ -9,6 +9,65 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 }
 
 include 'includes/db.inc.php';
+
+if (isset($_POST['search'])){
+  $searchq = $_POST['search'];
+  if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+        $results_per_page = 30;
+        $start_from = ($page-1) * $results_per_page;
+        if($account=='admin'){
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR
+          first_name LIKE '%$searchq%' OR
+          last_name LIKE '%$searchq%' OR
+          barangay LIKE '%$searchq%' OR
+          house_no LIKE '%$searchq%' OR
+          street LIKE '%$searchq%' OR
+          members LIKE '%$searchq%' OR
+          family_code LIKE '%$searchq%' OR
+          registered_by LIKE '%$searchq%';";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+          
+          $sql = "SELECT * FROM personal_information WHERE barangay_id LIKE '%$searchq%' OR
+          first_name LIKE '%$searchq%' OR
+          last_name LIKE '%$searchq%' OR
+          barangay LIKE '%$searchq%' OR
+          house_no LIKE '%$searchq%' OR
+          street LIKE '%$searchq%' OR
+          members LIKE '%$searchq%' OR
+          family_code LIKE '%$searchq%' OR
+          registered_by LIKE '%$searchq%' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+        }
+        else{
+          $sbv =$_SESSION['sb'];
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv' AND (
+          barangay_id LIKE '%$searchq%' OR
+          first_name LIKE '%$searchq%' OR
+          last_name LIKE '%$searchq%' OR
+          house_no LIKE '%$searchq%' OR
+          street LIKE '%$searchq%' OR
+          members LIKE '%$searchq%' OR
+          family_code LIKE '%$searchq%' OR
+          registered_by LIKE '%$searchq%'
+          );";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+        
+          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' AND (
+            barangay_id LIKE '%$searchq%' OR
+            first_name LIKE '%$searchq%' OR
+            last_name LIKE '%$searchq%' OR
+            house_no LIKE '%$searchq%' OR
+            street LIKE '%$searchq%' OR
+            members LIKE '%$searchq%' OR
+            family_code LIKE '%$searchq%' OR
+            registered_by LIKE '%$searchq%'
+            ) ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+        }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,76 +104,73 @@ include 'includes/db.inc.php';
 
 </head>
 <style>
+  * {
+    font-family: sans-serif;
+    color: #0000000;
+  }
+
+  .content-table {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: white;
 
 
-* {
-  font-family: sans-serif;
-  color: #0000000;
-}
-
-.content-table {
-  border-collapse: collapse;
-  margin: auto;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  background-color: white;
+  }
+  table{
+    color: black;
+  }
 
 
-}
-table{
-  color: black;
-}
+  .content-table thead tr {
+    background-color: #009879;
+    color: violet;
+    text-align: left;
+    font-weight: bold;
 
+  }
 
-.content-table thead tr {
-  background-color: #009879;
-  color: violet;
-  text-align: left;
-  font-weight: bold;
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+    color: black;
+  }
 
-}
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    color: black;
+  }
 
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-  color: black;
-}
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
 
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-  color: black;
-}
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
 
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
-
-.active-row  td {
+  .content-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
-}
+  }
 
-.pages_b{
-  font-size: 24px; 
-  font-weight: bold; 
-  margin: auto; text-align:center; 
-  justify-content: center; 
-  align-items: center; 
-  display: flex;
-}
+  .active-row  td {
+      font-weight: bold;
+      color: #009879;
+  }
 
+  .pages_b{
+    font-size: 24px; 
+    font-weight: bold; 
+    margin: auto; text-align:center; 
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+  }
 
 </style>
   <body>
@@ -146,65 +202,64 @@ table{
         <div class="invalid-feedback">Please fill out this field.</div>
       </select>
       <br>
+      <form action='citizen_info.php' method='post'>
+        <input type='text' name='search' placeholder='Search Database'/>
+        <input type='submit' value='Search' />
+      </form>
       </div>
     </div>
-    <div id="t1">
-      <?php
-      if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-      $results_per_page = 30;
-      $start_from = ($page-1) * $results_per_page;
-      if($account=='admin'){
-        $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information;";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
-        
-        $sql = "SELECT * FROM personal_information ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
-      }
-      else{
-        $sbv =$_SESSION['sb'];
-        $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
-       
-        $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
-      }
-
-      $result = mysqli_query($conn, $sql);
-      $RC = mysqli_num_rows($result);
-      if ($RC > 0 ){
-        echo "<div class='container'> <div class='card-deck  text-center'> ";
-
-        //echo "<br>";
-        while($row = mysqli_fetch_assoc($result)){
-
-
-        echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
-        echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
-        echo "</div> <div class='card-body text-center'>" ;
-        echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
-        echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
-        echo "<p class='text-secondary'> House No: ". $row['house_no']." </p> " ;
-        echo "<p class='text-secondary'> Street: ". $row['street']." </p> " ;
-        echo "<p class='text-secondary'> No. of members: ". $row['no_of_members']." </p> " ;
-        echo "<p class='text-secondary'> Family Code: ". $row['family_code']." </p> ";
-        echo "<p class='text-secondary'> Registered By: ". $row['username']." </p> " ;
-        echo "</div> </div>";
-        //echo "<br>";
+    <?php if (!isset($_POST['search'])){      
+        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+        $results_per_page = 30;
+        $start_from = ($page-1) * $results_per_page;
+        if($account=='admin'){
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information;";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+          
+          $sql = "SELECT * FROM personal_information ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
         }
-        echo "</div>";
-        echo "</div>";
-        echo "<div><br></div>";
-      }
-      else{
-        echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
-      }
-      ?>
-    </div>
+        else{
+          $sbv =$_SESSION['sb'];
+          $sql = "SELECT COUNT(barangay_id) AS total FROM personal_information WHERE barangay = '$sbv';";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+        
+          $sql = "SELECT * FROM personal_information WHERE barangay = '$sbv' ORDER BY barangay_id ASC LIMIT $start_from, ".$results_per_page;
+        }
 
-    <div id="t2">
-      <?php
+        $result = mysqli_query($conn, $sql);
+        $RC = mysqli_num_rows($result);
+        if ($RC > 0 ){
+          echo "<div id='t1'><div class='container'> <div class='card-deck  text-center'> ";
+
+          //echo "<br>";
+          while($row = mysqli_fetch_assoc($result)){
+
+
+          echo "<div class='card lg-4  light-sm'>  <div class='card-header' >";
+          echo "<p> Barangay ID: ".$row['barangay_id']." </p> " ;
+          echo "</div> <div class='card-body text-center'>" ;
+          echo "<p class='primary'> Name: ". $row['first_name']. " ".$row['last_name']. "</p>  " ;
+          echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
+          echo "<p class='text-secondary'> House No: ". $row['house_no']." </p> " ;
+          echo "<p class='text-secondary'> Street: ". $row['street']." </p> " ;
+          echo "<p class='text-secondary'> No. of members: ". $row['no_of_members']." </p> " ;
+          echo "<p class='text-secondary'> Family Code: ". $row['family_code']." </p> ";
+          echo "<p class='text-secondary'> Registered By: ". $row['username']." </p> " ;
+          echo "</div> </div>";
+          //echo "<br>";
+          }
+          echo "</div>";
+          echo "</div>";
+          echo "<div><br></div></div>";
+        }
+        else{
+          echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
+        }
+      
       if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
       $results_per_page = 30;
       $start_from = ($page-1) * $results_per_page;
@@ -230,7 +285,7 @@ table{
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
         $counter=0;
-        echo "<table class='content-table'>";
+        echo "<div id='t2'><table class='content-table'>";
         echo "<thead><tr ><th >barangay_id</th>";
         echo "<th>first_name</th>";
         echo "<th>last_name</th>";
@@ -270,14 +325,12 @@ table{
 
         }
         echo "</tbody></table>";
-        echo "<div><br></div>";
+        echo "<div><br></div></div>";
       }
       else{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
-      ?>
-    </div>
-  <?php
+    }
 /*for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
             echo "<button style='font-size: 24px;
             font-weight: bold;
