@@ -155,6 +155,7 @@ ini_set('display_errors', 1);
     if (isset($_POST['search'])){
       $conn -> close();
       $searchq = $_POST['search'];
+      if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
       $results_per_page = 30;
       $start_from = ($page-1) * $results_per_page;
       if($account=='admin'){
