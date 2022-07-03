@@ -101,16 +101,11 @@ if(!empty($_SESSION['sun'])){
       var interval =60;
       function updateTime(){
         document.getElementById('submitbtn').disabled=true;
-        interval --;
-        if(interval == 0)
-        {
-            document.getElementById('submitbtn').disabled=false;
-            var interval = 60;
+        while (interval != 0){
+          document.getElementById('clock').innerHTML=interval + " seconds left";
+          interval --;
         }
-        else
-        {
-            $(clock).html(interval + " seconds left");
-        }
+       document.getElementById('submitbtn').disabled=false;
       }
       
       /*
