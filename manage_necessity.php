@@ -92,10 +92,19 @@ include 'includes/db.inc.php';
       ?>
     </div>
     <p> </p>
-    <a href="monitor_database.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return to Monitor Database</button></a>
-<p> </p>
-  <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns2">Return Home</button></a>
-  <p>&zwnj;</p>
+    <div class="container">
+      <div class="card-deck  text-center">
+      <div class="card  light-sm" style='margin:auto'>
+          <a href="monitor_database.php"><button type="button" id="d1"
+              class="btn btn-lg btn-block btn-outline-primary">Return to Monitor Database</button></a>
+        </div>
+        <div class="card  light-sm" style='margin:auto'>
+          <a href="includes/home_check.php"><button type="button" id="d1"
+              class="btn btn-lg btn-block btn-outline-primary">Return Home</button></a>
+        </div>
+      </div>
+    </div>
+    <p>&zwnj;</p>
 
 
 
