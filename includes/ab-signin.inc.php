@@ -24,7 +24,7 @@
         else{
             $_SESSION['attempt'] +=  1;
             if($_SESSION['attempt'] == 3){
-                header('Location: ../signin.php?login=failed&attempt=3');
+                header('Location: ../signintimeout.php');
               }
             else if($_SESSION['attempt'] > 3){
                 $_SESSION['attempt']= 1;
