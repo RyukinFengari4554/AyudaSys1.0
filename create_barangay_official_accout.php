@@ -131,7 +131,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <script type="text/javascript">
 
 function myFunction() {
-  if((document.getElementById('boun').innerHTML != "" && document.getElementById('bops').innerHTML != "") && document.getElementById('bob').innerHTML != "" ){
     var spass = "<?php echo $_SESSION['sps'];?>";
     let person = prompt("Please enter your password", "Password");
     if (person == spass) {
@@ -142,10 +141,6 @@ function myFunction() {
       //alert('FAILED');
       window.location.replace("create_barangay_official_accout.php?password=wrong");
     }
-  }
-  else if ((document.getElementById('boun').innerHTML == "" || document.getElementById('bops').innerHTML == "") || document.getElementById('bob').innerHTML == "" ){
-    document.getElementById("form1").submit();
-  }
 }
 </script>
 </body>
