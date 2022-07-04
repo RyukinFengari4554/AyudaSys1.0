@@ -6,9 +6,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   header("Location: signin.php");
   exit();
 }
-echo $_SESSION['sps'];
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 ?>
 <!doctype html>
 <html lang="en">
@@ -135,15 +132,14 @@ ini_set('display_errors', 1);
 
 function myFunction() {
   var spass = "<?php echo $_SESSION['sps'];?>";
-  alert(spass);
   let person = prompt("Please enter your password", "Password");
   if (person == spass) {
-    alert('SUCCESS');
-    //document.getElementById("form1").submit();
+    //alert('SUCCESS');
+    document.getElementById("form1").submit();
   }
   else{
-    alert('FAILED');
-    <?php //header("Location: create_barangay_official_accout.php?password=wrong"); ?>
+    //alert('FAILED');
+    <?php header("Location: create_barangay_official_accout.php?password=wrong"); ?>
   }
 }
 </script>
