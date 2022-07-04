@@ -123,40 +123,71 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
-  <form class="form1" id="form2" onSubmit="myFunction();">
-      <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
-        <label>Enter Password to Authorize: </label>
-        <input type="password" class="form-control" name="abops" id="abops" placeholder="Enter Password to Authorize" required>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Please fill out this field.</div>
-      </div>
-    <br>
-    <br>
-    <button class="w-100 btn btn-primary " id="myBtn3" type='submit'>Authorize</button>
-  
-  </form>
-  <!--<button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button> -->
+  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
 <p>&zwnj;</p>
 
 <script type="text/javascript">
+    var promptCount = 0;
+    window.pw_prompt = function(options) {
+    var lm = options.lm || "Password:",
+        bm = options.bm || "Submit";
+    if(!options.callback) { 
+        alert("No callback function provided! Please provide one.") 
+    };
+                   
+    var prompt = document.createElement("div");
+    prompt.className = "pw_prompt";
+    
+    var submit = function() {
+        options.callback(input.value);
+        document.body.removeChild(prompt);
+    };
+
+    var label = document.createElement("label");
+    label.textContent = lm;
+    label.for = "pw_prompt_input" + (++promptCount);
+    prompt.appendChild(label);
+
+    var input = document.createElement("input");
+    input.id = "pw_prompt_input" + (promptCount);
+    input.type = "password";
+    input.addEventListener("keyup", function(e) {
+        if (e.keyCode == 13) submit();
+    }, false);
+    prompt.appendChild(input);
+
+    var button = document.createElement("button");
+    button.textContent = bm;
+    button.addEventListener("click", submit, false);
+    prompt.appendChild(button);
+
+    document.body.appendChild(prompt);
+};
+
+
 document.getElementById("form1").style.display="none";
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
     //let person = prompt("Please enter your password", "Password"); used for promting only
-    var person =  document.getElementById("abops").innerHTML;
-    if (person == spass) {
+    //var person =  document.getElementById("abops").innerHTML;
+    pw_prompt({
+    lm:"Please enter your password:", 
+    callback: function(password) {
+      if (spass == password) {
       //alert('SUCCESS');
       //document.getElementById("form1").submit();
       document.getElementById("form1").style.display="block";
-      document.getElementById("form2").style.display="none";
+      //document.getElementById("form2").style.display="none";
       //document.getElementById("myBtn1").style.display="none";
     }
     else{
       //alert('FAILED');
       window.location.replace("create_barangay_official_accout.php?password=wrong");
     }
+    }
+});
 }
 </script>
 </body>
