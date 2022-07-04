@@ -100,7 +100,7 @@ if(!empty($_SESSION['sun'])){
     </form>
     <script type="text/javascript">
       function LA() {
-      while(<?php echo  $_SESSION['attempt'] ?> == 3) {
+      //while(<?php //echo  $_SESSION['attempt'] ?> == 3) {
       var counttime = new Date().getTime() + 1*60000;
                     document.getElementById('submitbtn').disabled=true;
                     // Update the count down every 1 second
@@ -124,7 +124,7 @@ if(!empty($_SESSION['sun'])){
                         clearInterval(x);
                         document.getElementById('submitbtn').disabled=false;
                       }
-                    }, 1000);};
+                    }, 1000);//};
                   };
 
       /*
