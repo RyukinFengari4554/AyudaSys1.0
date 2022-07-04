@@ -1,5 +1,5 @@
 .container {
-  max-width: 90%;
+  max-width: 960px;
 }
 
 .lh-condensed { line-height: 1.25; }
@@ -18,10 +18,18 @@ input[type=number].no-spinner::-webkit-inner-spin-button,
 }
 
 html{
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100%;
 
 }
+.row{
+  margin: auto;
+}
+
 .form1{
   color: white;
 }
