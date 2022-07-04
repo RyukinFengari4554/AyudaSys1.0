@@ -131,7 +131,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-var spas = <?php echo $_SESSION['sps'];?>;
+var spas = <?php session_start(); echo $_SESSION['sps'];?>;
 function myFunction() {
   alert(spas);
   wait(3);
