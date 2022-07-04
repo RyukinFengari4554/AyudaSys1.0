@@ -139,7 +139,7 @@ function myFunction() {
   }
   else{
     //alert('FAILED');
-    <?php header("Location: create_barangay_official_accout.php?password=wrong"); ?>
+    window.location.href("create_barangay_official_accout.php?password=wrong");
   }
 }
 </script>
