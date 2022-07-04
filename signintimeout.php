@@ -114,7 +114,7 @@ if(!empty($_SESSION['sun'])){
           clearInterval(x);
           document.getElementById('submitbtn').disabled=false;
           document.getElementById('demo').innerHTML = "";
-          document.getElementById('attemp').innerHTML = "Incorrect Username or Password! Remaining Attempt/s: 3";
+          document.getElementById('attem').innerHTML = "Incorrect Username or Password! Remaining Attempt/s: 3";
         }
       }, 1000);
 
