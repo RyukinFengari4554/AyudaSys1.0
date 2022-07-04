@@ -206,7 +206,7 @@ function myFunction() {
     var bun = document.getElementById('boun').innerHTML;
     var bps = document.getElementById('bops').innerHTML;
     var bb = document.getElementById('bob').innerHTML;
-    if (bun == null || bps == null || bb == null) {
+    if (bun == "" || bps == "" || bb == "") {
       document.getElementById("myBtn").click();
     }
     else{
