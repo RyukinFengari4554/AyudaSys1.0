@@ -69,6 +69,10 @@ if(!empty($_SESSION['sun'])){
         </ul>
     </nav>
   </head>
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Login Page</h1>
+      <p class="lead">The Login page for barangay official and admin.</p>
+    </div>
 <div class="hello">
 
 </div>
