@@ -111,7 +111,7 @@ if(!empty($_SESSION['sun'])){
         if (distance < 0) {
           clearInterval(x);
           document.getElementById('submitbtn').disabled=false;
-          document.getElementById('demo').hidden;
+          document.getElementById('demo').innerHTML = "";
         }
       }, 1000);
 
