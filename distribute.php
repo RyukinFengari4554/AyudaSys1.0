@@ -82,7 +82,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
             <input style="font-size: 2rem; text-align: center;" type="text" name="qrs" id="qrs" placeholder="scan qrcode" class="form-control" readonly> <!--cmnt 27/04/22 TODO Error handling for empty inputbox also enlarge input box or remove from table form -->
             <br>
             <button class="w-100 btn btn-primary " type="submit">Submit</button>
-            <br>
+            <label> </label>
             <a  href="includes/home_check.php"><button class="w-100 btn btn-primary " type="button" id="btns">Return Home</button></a>
           </form>
         </div>
