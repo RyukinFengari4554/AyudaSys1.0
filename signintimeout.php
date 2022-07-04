@@ -79,7 +79,7 @@ if(!empty($_SESSION['sun'])){
       <input type="password" id="inputPassword" class="form-control" name="ps" placeholder="Password" required="">
       <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                  if (strpos($fulUrl,"signin.php?login=failed") == true){
+                  if (strpos($fulUrl,"signintimeout.php") == true){
                     $ra =3-$_SESSION['attempt'];
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                   };
@@ -92,37 +92,29 @@ if(!empty($_SESSION['sun'])){
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
 
     </form>
-    <script type="text/javascript">
-      /*
-      function LA() {
-      //while(<?php //echo  $_SESSION['attempt'] ?> == 3) {
+    <script type="text/javascript"> 
       var counttime = new Date().getTime() + 1*60000;
-                    document.getElementById('submitbtn').disabled=true;
-                    // Update the count down every 1 second
-                    var x = setInterval(function() {
-              
-                      // Get today's date and time
-                      var now = new Date().getTime();
-                        
-                      // Find the distance between now and the count down date
-                      var distance = counttime - now;
-                        
-                      // Time calculations for days, hours, minutes and seconds
-                      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                        
-                      // Output the result in an element with id='demo'
-                      document.getElementById('demo').innerHTML =minutes + 'm ' + seconds + 's ';
-                        
-                      // If the count down is over, write some text 
-                      if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById('submitbtn').disabled=false;
-                      }
-                    }, 1000);//};
-                  };
+      document.getElementById('submitbtn').disabled=true;
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+        // Get today's date and time
+        var now = new Date().getTime();               
+        // Find the distance between now and the count down date
+        var distance = counttime - now;
+        // Time calculations for days, hours, minutes and seconds
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Output the result in an element with id='demo'
+        document.getElementById('demo').innerHTML =minutes + 'm ' + seconds + 's ';
+        // If the count down is over, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById('submitbtn').disabled=false;
+        }
+      }, 1000);
 
-      
+
+      /*
       var interval =60;
       function updateTime(){
         document.getElementById('submitbtn').disabled=true;
