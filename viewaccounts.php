@@ -274,10 +274,19 @@ table{
     ?>
       </div>
       <br>
-      <a href="monitor_database.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return to Monitor Database</button></a>
-<p> </p>
-      <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
-      <p>&zwnj;</p>
+      <div class="container">
+      <div class="card-deck  text-center">
+      <div class="card-sm  light-sm" style='margin:auto'>
+          <a href="includes/home_check.php"><button type="button" id="d1"
+              class="btn btn-lg btn-block btn-primary">Return to Monitor Database</button></a>
+        </div>
+        <div class="card-sm  light-sm" style='margin:auto'>
+          <a href="monitor_database.php"><button type="button" id="d1"
+              class="btn btn-lg btn-block btn-primary">Return Home</button></a>
+        </div>
+      </div>
+    </div>
+    <p>&zwnj;</p>
       <script type="text/javascript">
         document.getElementById("t2").style.display = "none"; //hide fil
         function viewdb() {

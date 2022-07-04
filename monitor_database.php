@@ -106,7 +106,14 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     </div>
   </div>
   <br>
-  <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
+  <div class="container">
+      <div class="card-deck  text-center">
+        <div class="card-sm  light-sm" style='margin:auto'>
+          <a href="includes/home_check.php"><button type="button" id="d1"
+              class="btn btn-lg btn-block btn-primary">Return Home</button></a>
+        </div>
+      </div>
+    </div>
   <p>&zwnj;</p>
 
 
