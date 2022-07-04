@@ -163,7 +163,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-  document.getElementById("myBtn").style.display="none";
     var promptCount = 0;
     window.pw_prompt = function(options) {
     var lm = options.lm || "Password:",
@@ -202,7 +201,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 };
 
 
-
+document.getElementById("myBtn").style.display="none";
 function myFunction() {
     var bun = document.getElementById('boun').innerHTML;
     var bps = document.getElementById('bops').innerHTML;
@@ -211,27 +210,27 @@ function myFunction() {
       document.getElementById("myBtn").click();
     }
     else{
-    document.getElementById("form1").style.display="none";
-    var spass = "<?php echo $_SESSION['sps'];?>";
-    //let person = prompt("Please enter your password", "Password"); used for promting only
-    //var person =  document.getElementById("abops").innerHTML;
-    pw_prompt({
-    lm:"Please enter your password:", 
-    callback: function(password) {
-      if (spass == password) {
-      //alert('SUCCESS');
-      document.getElementById("myBtn").click();
-      //document.getElementById("form1").style.display="block";
-      //document.getElementById("myBtn1").style.display="none";
-      //document.getElementById("myBtn1").style.display="none";
+      document.getElementById("form1").style.display="none";
+      var spass = "<?php echo $_SESSION['sps'];?>";
+      //let person = prompt("Please enter your password", "Password"); used for promting only
+      //var person =  document.getElementById("abops").innerHTML;
+      pw_prompt({
+      lm:"Please enter your password:", 
+      callback: function(password) {
+        if (spass == password) {
+        //alert('SUCCESS');
+        document.getElementById("myBtn").click();
+        //document.getElementById("form1").style.display="block";
+        //document.getElementById("myBtn1").style.display="none";
+        //document.getElementById("myBtn1").style.display="none";
+      }
+      else{
+        //alert('FAILED');
+        window.location.replace("create_barangay_official_accout.php?password=wrong");
+      }
+      }
+      });
     }
-    else{
-      //alert('FAILED');
-      window.location.replace("create_barangay_official_accout.php?password=wrong");
-    }
-    }
-});
-}
 }
 </script>
 </body>
