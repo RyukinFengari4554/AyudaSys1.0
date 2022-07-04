@@ -95,6 +95,8 @@ if(!empty($_SESSION['sun'])){
 
     </form>
     <br>
+<button class="w-100 btn btn-primary " type="submit" id="btns" href="index.php">Return Home</button>
+  <br>
     <script type="text/javascript">
       /*
       function LA() {

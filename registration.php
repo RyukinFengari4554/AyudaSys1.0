@@ -347,6 +347,9 @@
       <button class="w-100 btn btn-primary " id='myBtn2' type="submit">Magsumite ng Impormasyon</button>
 
     </form>
+    <br>
+<button class="w-100 btn btn-primary " type="submit" id="btns" href="index.php">Return Home</button>
+  <br>
   </section>
   <label class="switch">
     <input type="checkbox" id="myCheckbox" onchange="toggleCheck()" checked>

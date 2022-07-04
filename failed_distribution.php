@@ -77,7 +77,7 @@
 </div>
 
 <br>
-<a href="index.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
+<a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit">Return Home</button></a>
 </div>
 </body>
 </html>

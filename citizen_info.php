@@ -390,7 +390,9 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
 echo "</tr></table>";
 }
 ?>
-
+<br>
+<button class="w-100 btn btn-primary " type="submit" id="btns" href="includes/home_check.php">Return Home</button>
+  <br>
 
     <script type="text/javascript">
       document.getElementById("t2").style.display = "none"; //hide fil

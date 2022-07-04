@@ -70,6 +70,8 @@ include 'includes/db.inc.php';
   <button class="w-100 btn btn-primary " type="submit" id="btns" onclick="camo()">Show Packages Content</button>
   <br>
   <br>
+  <button class="w-100 btn btn-primary " type="submit" id="btns" href="includes/home_check.php">Return Home</button>
+  <br>
   <!-- Custom styles for this template -->
   <div id="camo">
     <?php
