@@ -209,7 +209,7 @@ function myFunction() {
     if (bun == "" || bps == "" || bb == "") {
       document.getElementById("myBtn").click();
     }
-    else{
+    if (bun != "" && bps != "" && bb != "") {
       document.getElementById("form1").style.display="none";
       var spass = "<?php echo $_SESSION['sps'];?>";
       //let person = prompt("Please enter your password", "Password"); used for promting only
