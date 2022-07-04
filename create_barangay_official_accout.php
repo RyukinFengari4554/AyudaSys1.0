@@ -69,6 +69,24 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
   <!-- Custom styles for this template -->
   <link href="styles/registration.css" rel="stylesheet">
+  <style>
+    .pw_prompt {
+    position:fixed;
+    left: 50%;
+    top:50%;
+    margin-left:-100px;
+    padding:15px;
+    width:200px;
+    border:1px solid black;
+}
+.pw_prompt label {
+    display:block; 
+    margin-bottom:5px;
+}
+.pw_prompt input {
+    margin-bottom:10px;
+}
+  </style>
 </head>
 
 <body class="bg-light">
