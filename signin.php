@@ -85,7 +85,7 @@ if(!empty($_SESSION['sun'])){
                   };
                   
                   if (strpos($fulUrl,"attempt=3") == true){
-                    while ($_SESSION==3){LA();};
+                    while ($_SESSION==3){echo "LA()";};
                     //$_SESSION['attempt']=0;
                   };
                   
