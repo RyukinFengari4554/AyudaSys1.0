@@ -26,8 +26,12 @@
             if($_SESSION['attempt'] == 3){
                 header('Location: ../signin.php?login=failed&attempt=3');
               }
+            else if($_SESSION['attempt'] > 3){
+                $_SESSION['attempt']= 1;
+                header("Location: ../signin.php?login=failed");
+            }
             else{
-            header("Location: ../signin.php?login=failed");
+                header("Location: ../signin.php?login=failed");
             }
             exit();
         }

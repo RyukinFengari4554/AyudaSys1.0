@@ -83,9 +83,23 @@ if(!empty($_SESSION['sun'])){
                     $ra =3-$_SESSION['attempt'];
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                   };
+                  /*
                   if (strpos($fulUrl,"attempt=3") == true){
-                    echo "<script type='text/javascript'’'>
-                    var counttime = new Date().getTime() + 1*60000;
+                    $_SESSION['attempt']=0;
+                  };
+                  */
+      ?>
+      <div class="checkbox mb-3">
+
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
+      <p id='clock' style='color: red'></p>
+      <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
+
+    </form>
+    <script type="text/javascript">
+      while(<?php echo  $_SESSION['attempt'] ?> == 3) {
+      var counttime = new Date().getTime() + 1*60000;
                     document.getElementById('submitbtn').disabled=true;
                     // Update the count down every 1 second
                     var x = setInterval(function() {
@@ -108,21 +122,7 @@ if(!empty($_SESSION['sun'])){
                         clearInterval(x);
                         document.getElementById('submitbtn').disabled=false;
                       }
-                    }, 1000);
-              </script>";
-                    $_SESSION['attempt']=0;
-                  };
-      ?>
-      <div class="checkbox mb-3">
-
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
-      <p id='clock' style='color: red'></p>
-      <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
-
-    </form>
-    <script type="text/javascript">
-
+                    }, 1000);}
 
       /*
       var interval =60;
