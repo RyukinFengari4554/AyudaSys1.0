@@ -68,7 +68,7 @@ include 'includes/db.inc.php';
   <!--packagechooseing-->
   <br>
   <button class="w-100 btn btn-primary " type="submit" id="btns" onclick="camo()">Show Packages Content</button>
-  <br>
+  <p> </p>
   <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="button" id="btns1">Return Home</button></a>
   
   <!-- Custom styles for this template -->
@@ -86,16 +86,16 @@ include 'includes/db.inc.php';
         echo "</div> <div class='card-body text-center'>" ;
         echo "<p class='primary'> Package Content: ". $row['package_content']. "</p>  " ;
         echo "</div> </div>";
-
+        
 
       //echo "<br>";
         }
-        echo "</table>";
+        echo "</div> </div>";
       }
       ?>
     </div>
     <br>
-  <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
+  <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns2">Return Home</button></a>
   <br>
 
 
