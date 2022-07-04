@@ -98,6 +98,7 @@ if(!empty($_SESSION['sun'])){
 
     </form>
     <script type="text/javascript">
+      window.onload = function() {
       while(<?php echo  $_SESSION['attempt'] ?> == 3) {
       var counttime = new Date().getTime() + 1*60000;
                     document.getElementById('submitbtn').disabled=true;
@@ -122,7 +123,8 @@ if(!empty($_SESSION['sun'])){
                         clearInterval(x);
                         document.getElementById('submitbtn').disabled=false;
                       }
-                    }, 1000);}
+                    }, 1000);};
+                  };
 
       /*
       var interval =60;
