@@ -133,7 +133,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <script type="text/javascript">
 function myFunction() {
   let person = prompt("Please enter your password", "Password");
-  if (person == <?php echo $_SESSION["sps"]?>) {
+  if (person == '<?php echo $_SESSION["sps"]?>') {
     document.getElementById("form1").submit();
   }
   else{
