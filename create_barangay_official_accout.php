@@ -132,7 +132,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <script type="text/javascript">
 
 function myFunction() {
-  wait(3);
   let person = prompt("Please enter your password", "Password");
   if (person === <?php echo $_SESSION['sps'];?>) {
     alert('SUCCESS');
