@@ -1,5 +1,5 @@
 .container {
-  max-width: 960px;
+  max-width: 90%;
 }
 
 .lh-condensed { line-height: 1.25; }
@@ -18,8 +18,6 @@ input[type=number].no-spinner::-webkit-inner-spin-button,
 }
 
 html{
-  background-position: center center;
-  
   background-size: cover;
   height: 100%;
 
