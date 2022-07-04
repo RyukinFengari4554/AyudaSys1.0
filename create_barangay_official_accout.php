@@ -154,10 +154,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Create</button>
   
   </form>
-  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button>
+  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Create</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
 <p>&zwnj;</p>
@@ -201,7 +201,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 };
 
 
-document.getElementById("form1").style.display="none";
+//document.getElementById("form1").style.display="none";
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
     //let person = prompt("Please enter your password", "Password"); used for promting only
@@ -211,9 +211,9 @@ function myFunction() {
     callback: function(password) {
       if (spass == password) {
       //alert('SUCCESS');
-      //document.getElementById("form1").submit();
-      document.getElementById("form1").style.display="block";
-      document.getElementById("myBtn1").style.display="none";
+      document.getElementById("myBtn").click();
+      //document.getElementById("form1").style.display="block";
+      //document.getElementById("myBtn1").style.display="none";
       //document.getElementById("myBtn1").style.display="none";
     }
     else{
