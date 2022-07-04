@@ -6,7 +6,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   header("Location: signin.php");
   exit();
 }
-
+echo $_SESSION['sps'];
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ?>
