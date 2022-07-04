@@ -7,6 +7,8 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   exit();
 }
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 <!doctype html>
 <html lang="en">
@@ -132,8 +134,25 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <script type="text/javascript">
 
 function myFunction() {
+  var spass = <?php  
+    include 'includes/db.inc.php';
+    $un =$_SESSION['sun'];
+    if($account=='admin'){
+      $sql = "SELECT * FROM admin WHERE username = '$un';";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $rgra = $row["password"]; 
+    }
+    else{
+      $sql = "SELECT * FROM barangay_officials WHERE username = '$un';";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $rgra = $row["password"]; 
+    }
+    echo $rgra;
+  ?>
   let person = prompt("Please enter your password", "Password");
-  if (person === <?php echo $_SESSION['sps'];?>) {
+  if (person === spas) {
     alert('SUCCESS');
     //document.getElementById("form1").submit();
   }
