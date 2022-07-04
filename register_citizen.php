@@ -255,13 +255,17 @@ function myFunction() {
     else{
       document.getElementById("form1").style.display="none";
       var spass = "<?php echo $_SESSION['sps'];?>";
-
+      //let person = prompt("Please enter your password", "Password"); used for promting only
+      //var person =  document.getElementById("abops").innerHTML;
       pw_prompt({
       lm:"Please enter your password:", 
       callback: function(password) {
         if (spass == password) {
         //alert('SUCCESS');
         document.getElementById("myBtn").click();
+        //document.getElementById("form1").style.display="block";
+        //document.getElementById("myBtn1").style.display="none";
+        //document.getElementById("myBtn1").style.display="none";
       }
       else{
         //alert('FAILED');
