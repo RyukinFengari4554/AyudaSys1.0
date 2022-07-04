@@ -123,14 +123,14 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
       <br>
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
         <label>Password: </label>
-        <input type="text" class="form-control" name="bops" id="bops" placeholder="Enter Password" required>
+        <input type="password" class="form-control" name="bops" id="bops" placeholder="Enter Password" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <br>
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
         <label>Barangay: </label>
-        <input type="password" class="form-control" name="bob" id="bob" placeholder="Enter Barangay" required>
+        <input type="testd" class="form-control" name="bob" id="bob" placeholder="Enter Barangay" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
