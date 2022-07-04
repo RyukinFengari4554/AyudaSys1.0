@@ -92,6 +92,7 @@ if(!empty($_SESSION['sun'])){
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
 
     </form>
+    <br>
     <script type="text/javascript"> 
       var counttime = new Date().getTime() + 3*60000;
       document.getElementById('submitbtn').disabled=true;

@@ -94,6 +94,7 @@ if(!empty($_SESSION['sun'])){
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
 
     </form>
+    <br>
     <script type="text/javascript">
       /*
       function LA() {
