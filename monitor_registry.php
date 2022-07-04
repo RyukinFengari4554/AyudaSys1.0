@@ -311,7 +311,7 @@ table{
       ?>
       <br>
       <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
-      <br>
+      <p> </p>
     <script type="text/javascript">
       document.getElementById("t2").style.display = "none"; //hide fil
       function viewdb() {
