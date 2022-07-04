@@ -91,7 +91,7 @@ include 'includes/db.inc.php';
       }
       ?>
     </div>
-    <br>
+    <p> </p>
   <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns2">Return Home</button></a>
   <br>
 
