@@ -145,7 +145,7 @@ document.getElementById("form1").style.display="none";
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
     //let person = prompt("Please enter your password", "Password"); used for promting only
-    let person =  document.getElementById("abops").innerHTML;
+    var person =  document.getElementById("abops").innerHTML;
     if (person == spass) {
       //alert('SUCCESS');
       //document.getElementById("form1").submit();
