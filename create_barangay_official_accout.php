@@ -121,9 +121,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     
     <br>
     <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Create</button>
-
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit" onclick="myFunction();">Create</button>
+  
   </form>
-  <button class="w-100 btn btn-primary " id="myBtn" type="submit" onclick="myFunction();">Create</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
 <p>&zwnj;</p>
