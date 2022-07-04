@@ -81,7 +81,7 @@ if(!empty($_SESSION['sun'])){
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"signintimeout.php") == true){
                     $ra =3-$_SESSION['attempt'];
-                    echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
+                    echo "<p id='attem' style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                     echo "<p id='demo' style='color: red'></p>";
                   };
                   
@@ -112,6 +112,7 @@ if(!empty($_SESSION['sun'])){
           clearInterval(x);
           document.getElementById('submitbtn').disabled=false;
           document.getElementById('demo').innerHTML = "";
+          document.getElementById('attemp').innerHTML = "Incorrect Username or Password! Remaining Attempt/s: 3";
         }
       }, 1000);
 
