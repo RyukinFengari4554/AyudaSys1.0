@@ -402,7 +402,7 @@ table{
     </div>
   </div>
   <br>
-  <button class="w-100 btn btn-primary " type="submit" id="btns" href="includes/home_check.php">Return Home</button>
+  <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
   <br>
       <script type="text/javascript">
         document.getElementById("t2").style.display = "none"; //hide fil
