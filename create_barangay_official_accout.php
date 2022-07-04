@@ -71,6 +71,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   <link href="styles/registration.css" rel="stylesheet">
   <style>
     .pw_prompt {
+    background-color: white;
     position:fixed;
     left: 50%;
     top:50%;
