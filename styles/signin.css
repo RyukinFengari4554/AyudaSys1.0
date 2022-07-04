@@ -39,6 +39,23 @@ body {
   background-attachment: fixed;
   background-image: url("../images/bg.jpg");
 }
+.lead{
+  padding: 0 0 10% 0;
+  color: #ADD8E6;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+
+}
+.display-4{
+  padding: 10% 0 5% 0;
+  color: #ADD8E6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+
+}
+.pricing-header {
+  max-width: 700px;
+}
 .hello{
   height: 10rem;
 }
