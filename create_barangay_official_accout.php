@@ -163,8 +163,8 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-    var promptCount = 0;
-    window.pw_prompt = function(options) {
+var promptCount = 0;
+window.pw_prompt = function(options) {
     var lm = options.lm || "Password:",
         bm = options.bm || "Submit";
     if(!options.callback) { 
@@ -199,8 +199,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
     document.body.appendChild(prompt);
 };
-
-
 
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
