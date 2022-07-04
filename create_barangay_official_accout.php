@@ -123,7 +123,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
-  <form class="form1" id="form2">
+  <form class="form1" id="form2" onSubmit="myFunction();">
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
         <label>Enter Password to Authorize: </label>
         <input type="password" class="form-control" name="abops" id="abops" placeholder="Enter Password to Authorize" required>
