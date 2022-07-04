@@ -41,7 +41,7 @@
         $row = mysqli_fetch_assoc($result);
         $fam_code = $row['family_code'];
         // checking if inputted data are IN personal_info Table
-        $sql = "SELECT * FROM granted WHERE family_code = '$fam_code';";
+        $sql = "SELECT * FROM granted WHERE family_code = '$fam_code' AND barangay = '$barangay';";
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
         if ($RC == 0 ){ // checking if inputted data are IN granted Table
@@ -91,7 +91,7 @@
     $result = mysqli_query($conn, $sql);
     $RC = mysqli_num_rows($result);
     if ($RC > 0 ){ // checking if inputted data are IN personal_info Table
-        $sql = "SELECT * FROM granted WHERE family_code = '$fam_code';";
+        $sql = "SELECT * FROM granted WHERE family_code = '$fam_code' AND barangay = '$barangay';";
         $result = mysqli_query($conn, $sql);
         $RC = mysqli_num_rows($result);
         if ($RC == 0 ){ // checking if inputted data are IN granted Table
