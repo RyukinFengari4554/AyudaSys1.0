@@ -97,7 +97,14 @@ if(!empty($_SESSION['sun'])){
     <br>
     <br>
     <br>
-    <a href="index.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
+    <div class="container">
+      <div class="card-deck  text-center">
+        <div class="card  light-sm">
+        <a href="index.php"><button type="button" id="d1"
+              class="btn btn-lg btn-block btn-outline-primary">Return Home</button></a>
+        </div>
+      </div>
+    </div>
     <p>&zwnj;</p>
     <script type="text/javascript">
       /*
