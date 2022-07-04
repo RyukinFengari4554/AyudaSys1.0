@@ -206,9 +206,7 @@ function myFunction() {
     var bun = document.getElementById('boun').innerHTML;
     var bps = document.getElementById('bops').innerHTML;
     var bb = document.getElementById('bob').innerHTML;
-    if (bun == "" || bps == "" || bb == "") {
-      document.getElementById("myBtn").click();
-    }
+    
     if (bun != "" && bps != "" && bb != "") {
       document.getElementById("form1").style.display="none";
       var spass = "<?php echo $_SESSION['sps'];?>";
@@ -230,6 +228,9 @@ function myFunction() {
       }
       }
       });
+    }
+    if (bun == "" || bps == "" || bb == "") {
+      document.getElementById("myBtn").click();
     }
 }
 </script>
