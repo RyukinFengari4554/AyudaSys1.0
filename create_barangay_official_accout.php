@@ -204,8 +204,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
 
 function myFunction() {
-    
-    if((document.getElementById('boun').innerHTML == "" OR document.getElementById('bops').innerHTML == "") OR document.getElementById('bob').innerHTML == ""){
+    var bun = document.getElementById('boun').innerHTML;
+    var bps = document.getElementById('bops').innerHTML;
+    var bb = document.getElementById('bob').innerHTML;
+    if(bun == null OR bps == null OR bb == null){
       document.getElementById("myBtn").click();
     }
     else{
