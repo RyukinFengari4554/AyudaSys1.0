@@ -83,11 +83,12 @@ if(!empty($_SESSION['sun'])){
                     $ra =3-$_SESSION['attempt'];
                     echo "<p style='color: red'> Incorrect Username or Password! Remaining Attempt/s: ".$ra."</p>";
                   };
-                  /*
+                  
                   if (strpos($fulUrl,"attempt=3") == true){
+                    LA();
                     $_SESSION['attempt']=0;
                   };
-                  */
+                  
       ?>
       <div class="checkbox mb-3">
 
@@ -98,7 +99,7 @@ if(!empty($_SESSION['sun'])){
 
     </form>
     <script type="text/javascript">
-      window.onload = function() {
+      function LA() {
       while(<?php echo  $_SESSION['attempt'] ?> == 3) {
       var counttime = new Date().getTime() + 1*60000;
                     document.getElementById('submitbtn').disabled=true;
