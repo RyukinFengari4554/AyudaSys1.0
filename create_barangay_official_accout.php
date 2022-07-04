@@ -128,7 +128,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" id="form1" action="includes/create_account.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
+  <form class="form1" id="form4" action="includes/create_account.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
     <div>
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
         <label>Username: </label>
