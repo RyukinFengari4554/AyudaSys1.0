@@ -73,22 +73,23 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     .pw_prompt {
     background-color: white;
     position:fixed;
-    left: 50%;
-    top:50%;
-    margin-left:-100px;
+    margin:auto;
     padding:15px;
     width:20%;
     border:1px solid black;
 }
 .pw_prompt label {
     display:block; 
+    margin:auto;
     margin-bottom:5px;
 }
 .pw_prompt input {
+    margin:auto;
     margin-bottom:10px;
 }
 .pw_prompt button {
       color: #ffffff;
+      margin:auto;
 			background-color: #007be1;
 			font-size: 19px;
 			border: 1px solid #007be1;
