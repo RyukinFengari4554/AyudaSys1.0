@@ -120,7 +120,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Create</button>
+    
     <button class="w-100 btn btn-primary " id="myBtn" onclick="myFunction();">Create</button>
   
   </form>
