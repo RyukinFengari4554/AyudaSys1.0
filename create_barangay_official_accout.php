@@ -163,6 +163,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
+  document.getElementById("myBtn").style.display="none";
     var promptCount = 0;
     window.pw_prompt = function(options) {
     var lm = options.lm || "Password:",
@@ -201,7 +202,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 };
 
 
-document.getElementById("form1").style.display="none";
+
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
     //let person = prompt("Please enter your password", "Password"); used for promting only
@@ -211,9 +212,9 @@ function myFunction() {
     callback: function(password) {
       if (spass == password) {
       //alert('SUCCESS');
-      //document.getElementById("form1").submit();
-      document.getElementById("form1").style.display="block";
-      document.getElementById("myBtn1").style.display="none";
+      document.getElementById("form1").click();
+      //document.getElementById("form1").style.display="block";
+      //document.getElementById("myBtn1").style.display="none";
       //document.getElementById("myBtn1").style.display="none";
     }
     else{
