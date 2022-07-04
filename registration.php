@@ -246,7 +246,7 @@
       </div>
       <br>
       <br>
-      <button class="w-100 btn btn-primary " id='myBtn1' type="submit">Submit Information</button>
+      <button class="w-99 btn btn-primary " id='myBtn1' type="submit">Submit Information</button>
 
     </form>
   </section>
