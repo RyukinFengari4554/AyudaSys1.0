@@ -204,6 +204,11 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
 
 function myFunction() {
+    
+    if((document.getElementById('boun').innerHTML == "" OR document.getElementById('bops').innerHTML == "") OR document.getElementById('bob').innerHTML == ""){
+      document.getElementById("myBtn").click();
+    }
+    else{
     document.getElementById("form1").style.display="none";
     var spass = "<?php echo $_SESSION['sps'];?>";
     //let person = prompt("Please enter your password", "Password"); used for promting only
@@ -224,7 +229,7 @@ function myFunction() {
     }
     }
 });
-document.getElementById("form1").style.display="block";
+}
 }
 </script>
 </body>
