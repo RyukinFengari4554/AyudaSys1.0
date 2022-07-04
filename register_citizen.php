@@ -59,6 +59,40 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
   <!-- Custom styles for this template -->
   <link href="styles/registration.css" rel="stylesheet">
+  <style>
+    .pw_prompt {
+    background-color: white;
+    position:fixed;
+    left: 40%;
+    margin: auto;
+    padding:15px;
+    width:20%;
+    border:1px solid black;
+}
+.pw_prompt label {
+    display:block; 
+    margin:auto;
+    margin-bottom:5px;
+}
+.pw_prompt input {
+    margin:auto;
+    margin-bottom:10px;
+}
+.pw_prompt button {
+      color: #ffffff;
+      margin:auto;
+			background-color: #007be1;
+			font-size: 19px;
+			border: 1px solid #007be1;
+			padding: 15px 50px;
+			cursor: pointer;
+      border-radius:12px;
+}
+.pw_prompt button:hover {
+  color: #ffffff;
+	background-color: #0005d9;
+}
+  </style>
 </head>
 
 <body class="bg-light">
@@ -75,6 +109,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
                   };
                   if (strpos($fulUrl,"register_citizen.php?register=failed") == true){
                     echo "<center><h2 style='color: red;margin: auto;'>Citizen Registration Failed</h2></center>";
+                  };
+                  if (strpos($fulUrl,"password=wrong") == true){
+                    echo "<center><h2 style='color: red;margin: auto;'> Authorization Failed! Try again.</h2></center>";
                   };
       ?>
       
@@ -157,8 +194,85 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
   </form>
   <br>
+  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Register Citizen</button>
+  <p> </p>
   <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
   <p>&zwnj;</p>
+
+  <script type="text/javascript">
+    var promptCount = 0;
+    window.pw_prompt = function(options) {
+    var lm = options.lm || "Password:",
+        bm = options.bm || "Submit";
+    if(!options.callback) { 
+        alert("No callback function provided! Please provide one.") 
+    };
+                   
+    var prompt = document.createElement("div");
+    prompt.className = "pw_prompt";
+    
+    var submit = function() {
+        options.callback(input.value);
+        document.body.removeChild(prompt);
+    };
+
+    var label = document.createElement("label");
+    label.textContent = lm;
+    label.for = "pw_prompt_input" + (++promptCount);
+    prompt.appendChild(label);
+
+    var input = document.createElement("input");
+    input.id = "pw_prompt_input" + (promptCount);
+    input.type = "password";
+    input.addEventListener("keyup", function(e) {
+        if (e.keyCode == 13) submit();
+    }, false);
+    prompt.appendChild(input);
+
+    var button = document.createElement("button");
+    button.textContent = bm;
+    button.addEventListener("click", submit, false);
+    prompt.appendChild(button);
+
+    document.body.appendChild(prompt);
+};
+
+
+document.getElementById("myBtn").style.display="none";
+function myFunction() {
+    var ra = document.getElementById('rfn').value;
+    var rb = document.getElementById('rmn').value;
+    var rc = document.getElementById('rln').value;
+    var rd = document.getElementById('rnom').value;
+    var re = document.getElementById('rbid').value;
+    var rf = document.getElementById('rfc').value;
+    var rg = document.getElementById('rb').value;
+    var rh = document.getElementById('rhn').value;
+    var ri = document.getElementById('rs').value;
+    if (ra === "" || rb === "" || rc === "" || rd === "" || re === "" || rf === "" || rg === "" || rh === "" || ri === "") {
+      document.getElementById("myBtn").click();
+    }
+    else{
+      document.getElementById("form1").style.display="none";
+      var spass = "<?php echo $_SESSION['sps'];?>";
+
+      pw_prompt({
+      lm:"Please enter your password:", 
+      callback: function(password) {
+        if (spass == password) {
+        //alert('SUCCESS');
+        document.getElementById("myBtn").click();
+      }
+      else{
+        //alert('FAILED');
+        window.location.replace("register_citizen.php?password=wrong");
+      }
+      }
+      });
+    }
+    
+}
+</script>
 </body>
 
 </html>
