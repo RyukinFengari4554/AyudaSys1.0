@@ -2,7 +2,6 @@
 require 'includes/check_account.php';
 session_start();
 $account=Check($_SESSION['sun'],$_SESSION['sps']);
-$spsv=$_SESSION['sps'];
 if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   header("Location: signin.php");
   exit();
@@ -131,17 +130,17 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-var spas = <?php echo $spsv;?>;
 
 function myFunction() {
-  alert(<?php echo $_SESSION['sps'];?>);
   wait(3);
-  let person = prompt("Please enter your password", spas);
-  if (person == spas) {
-    document.getElementById("form1").submit();
+  let person = prompt("Please enter your password", "Password");
+  if (person === <?php echo $_SESSION['sps'];?>) {
+    alert('SUCCESS');
+    //document.getElementById("form1").submit();
   }
   else{
-    <?php header("Location: create_barangay_official_accout.php?password=wrong"); ?>
+    alert('FAILED');
+    <?php //header("Location: create_barangay_official_accout.php?password=wrong"); ?>
   }
 }
 </script>
