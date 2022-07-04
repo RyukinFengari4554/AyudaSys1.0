@@ -119,7 +119,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/register_citizen.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
+  <form class="form1" id='form1' action="includes/register_citizen.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
     <div class="row">
       <div class="col-sm-12 col-lg-4 was-validated">
         <label> First Name: </label>
