@@ -246,7 +246,7 @@
       </div>
       <br>
       <br>
-      <button class="w-99 btn btn-primary " id='myBtn1' type="submit">Submit Information</button>
+      <button class="w-100 btn btn-primary " id='myBtn1' type="submit">Submit Information</button>
 
     </form>
   </section>
@@ -344,7 +344,7 @@
       </div>
       <br>
       <br>
-      <button class="w-99 btn btn-primary " id='myBtn2' type="submit">Magsumite ng Impormasyon</button>
+      <button class="w-100 btn btn-primary " id='myBtn2' type="submit">Magsumite ng Impormasyon</button>
 
     </form>
   </section>
@@ -357,7 +357,7 @@
   </label>
 </body>
 <br>
-    <a href="index.php"><button class="w-99 btn btn-primary " type="submit" id="btns">Return Home</button></a>
+    <a href="index.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
   <br>
 <script type="text/javascript">
   document.getElementById("d2").style.display = "none"; //hide fil
