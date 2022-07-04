@@ -88,12 +88,15 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
                   if (strpos($fulUrl,"create_barangay_official_accout.php?creation=failed") == true){
                     echo "<center><h2 style='color: red;margin: auto;'> Account Creation Failed</h2></center>";
                   };
+                  if (strpos($fulUrl,"password=wrong") == true){
+                    echo "<center><h2 style='color: red;margin: auto;'> Account Creation Failed! Wrong Password</h2></center>";
+                  };
       ?>
     </div>
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" action="includes/create_account.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
+  <form class="form1" id="form1" action="includes/create_account.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
     <div>
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
         <label>Username: </label>
@@ -119,11 +122,24 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Create</button>
 
   </form>
+  <button class="btn btn-primary " id="myBtn" type="submit" onclick="myFunction();">Create</button>
   <br>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
 <p>&zwnj;</p>
+
+<script type="text/javascript">
+function myFunction() {
+  let person = prompt("Please enter your password", "Password");
+  if (person == <?php echo $_SESSION["sps"]?>) {
+    document.getElementById("form1").submit();
+  }
+  else{
+    <?php header("Location: ../create_barangay_official_accout.php?password=wrong"); ?>
+  }
+}
+</script>
 </body>
 </html>
