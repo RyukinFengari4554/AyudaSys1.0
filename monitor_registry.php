@@ -310,6 +310,8 @@ table{
     }
       ?>
       <br>
+      <a href="monitor_database.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return to Monitor Database</button></a>
+<p> </p>
       <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
       <p> </p>
     <script type="text/javascript">
