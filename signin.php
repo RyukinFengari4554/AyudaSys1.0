@@ -1,7 +1,7 @@
 <?php
 require 'includes/check_account.php';
 session_start();
-if($_SESSION==3){
+if($_SESSION['attempt']==3){
   header("Location: signintimeout.php");
   exit();
 }
