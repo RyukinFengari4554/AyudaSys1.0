@@ -101,7 +101,7 @@ if(!empty($_SESSION['sun'])){
       <div class="card-deck  text-center">
         <div class="card-sm  light-sm" style='margin:auto'>
           <a href="index.php"><button type="button" id="d1"
-              class="btn btn-lg btn-block btn-outline-primary">Return Home</button></a>
+              class="btn btn-lg btn-block btn-primary btn-outline-primary">Return Home</button></a>
         </div>
 
       </div>
