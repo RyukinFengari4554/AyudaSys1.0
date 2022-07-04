@@ -74,7 +74,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     background-color: white;
     position:fixed;
     left: 50%;
-    
+    align-items:center;
     margin:auto;
     margin-left:-100px;
     padding:15px;
