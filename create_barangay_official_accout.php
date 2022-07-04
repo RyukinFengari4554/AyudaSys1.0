@@ -131,7 +131,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <script type="text/javascript">
 
 function myFunction() {
-  if((document.getElementById('boun').innerHTML != "" AND document.getElementById('bops').innerHTML != "") AND document.getElementById('bob').innerHTML != "" ){
+  if((document.getElementById('boun').innerHTML != "" && document.getElementById('bops').innerHTML != "") && document.getElementById('bob').innerHTML != "" ){
     var spass = "<?php echo $_SESSION['sps'];?>";
     let person = prompt("Please enter your password", "Password");
     if (person == spass) {
@@ -143,7 +143,7 @@ function myFunction() {
       window.location.replace("create_barangay_official_accout.php?password=wrong");
     }
   }
-  else if ((document.getElementById('boun').innerHTML == "" OR document.getElementById('bops').innerHTML == "") OR document.getElementById('bob').innerHTML == "" ){
+  else if ((document.getElementById('boun').innerHTML == "" || document.getElementById('bops').innerHTML == "") || document.getElementById('bob').innerHTML == "" ){
     document.getElementById("form1").submit();
   }
 }
