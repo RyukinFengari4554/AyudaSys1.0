@@ -85,13 +85,12 @@ if(!empty($_SESSION['sun'])){
                   };
                   
                   if (strpos($fulUrl,"attempt=3") == true){
-                    while ($_SESSION==3){echo "LA()";};
+                    while ($_SESSION==3){echo " <script type='text/javascript'> LA(); </script>";};
                     //$_SESSION['attempt']=0;
                   };
                   
       ?>
       <div class="checkbox mb-3">
-
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
       <p id='demo' style='color: red'></p>
