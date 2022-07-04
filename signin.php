@@ -99,7 +99,7 @@ if(!empty($_SESSION['sun'])){
     <br>
     <div class="container">
       <div class="card-deck  text-center">
-        <div class="card  light-sm">
+        <div class="card-sm  light-sm">
           <a href="index.php"><button type="button" id="d1"
               class="btn btn-lg btn-block btn-outline-primary">Return Home</button></a>
         </div>
