@@ -143,7 +143,7 @@ function myFunction() {
       window.location.replace("create_barangay_official_accout.php?password=wrong");
     }
   }
-  else{
+  else if if(document.getElementById('boun').innerHTML == "" OR document.getElementById('bops').innerHTML == "" OR document.getElementById('bob').innerHTML == "" ){
     document.getElementById("form1").submit();
   }
 }
