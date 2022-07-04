@@ -132,7 +132,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
       </div>
     <br>
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn3" type="submit">AuthorizE</button>
+    <button class="w-100 btn btn-primary " id="myBtn3" onclick="myFunction();">AuthorizE</button>
   
   </form>
   <!--<button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button> -->
