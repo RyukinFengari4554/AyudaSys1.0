@@ -134,26 +134,10 @@ ini_set('display_errors', 1);
 <script type="text/javascript">
 
 function myFunction() {
-  var spass = <?php  
-    include 'includes/db.inc.php';
-    $un =$_SESSION['sun'];
-    if($account=='admin'){
-      $sql = "SELECT * FROM admin WHERE username = '$un';";
-      $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      $rgra = $row["password"]; 
-    }
-    else{
-      $sql = "SELECT * FROM barangay_officials WHERE username = '$un';";
-      $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      $rgra = $row["password"]; 
-    }
-    echo $rgra;
-  ?>
+  var spass = 'hello';
   alert(spass);
   let person = prompt("Please enter your password", "Password");
-  if (person === spas) {
+  if (person == spass) {
     alert('SUCCESS');
     //document.getElementById("form1").submit();
   }
