@@ -213,7 +213,7 @@ function myFunction() {
     callback: function(password) {
       if (spass == password) {
       //alert('SUCCESS');
-      document.getElementById("form1").click();
+      document.getElementById("myBtn").click();
       //document.getElementById("form1").style.display="block";
       //document.getElementById("myBtn1").style.display="none";
       //document.getElementById("myBtn1").style.display="none";
