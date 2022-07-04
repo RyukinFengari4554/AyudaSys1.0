@@ -2,7 +2,7 @@
 require 'includes/check_account.php';
 session_start();
 $account=Check($_SESSION['sun'],$_SESSION['sps']);
-
+$spsv=$_SESSION['sps'];
 if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   header("Location: signin.php");
   exit();
@@ -131,10 +131,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-var spas = <?php session_start(); echo $_SESSION['sps'];?>;
-alert(spas);
+var spas = <?php echo $spsv;?>;
+
 function myFunction() {
-  
+  alert(spas);
   wait(3);
   let person = prompt("Please enter your password", spas);
   if (person == spas) {
