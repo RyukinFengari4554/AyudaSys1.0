@@ -206,10 +206,10 @@ function myFunction() {
     var bun = document.getElementById('boun').innerHTML;
     var bps = document.getElementById('bops').innerHTML;
     var bb = document.getElementById('bob').innerHTML;
-    if (bun == "" || bps == "" || bb == "") {
+    if (bun === "" || bps === "" || bb === "") {
       document.getElementById("myBtn").click();
     }
-    
+    else{
       document.getElementById("form1").style.display="none";
       var spass = "<?php echo $_SESSION['sps'];?>";
       //let person = prompt("Please enter your password", "Password"); used for promting only
@@ -230,6 +230,7 @@ function myFunction() {
       }
       }
       });
+    }
     
 }
 </script>
