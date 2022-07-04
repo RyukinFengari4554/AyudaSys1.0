@@ -94,7 +94,7 @@ if(!empty($_SESSION['sun'])){
 
       </div>
       <button class="btn btn-lg btn-primary btn-block" id="submitbtn" type="submit">Sign in</button>
-      <p id='clock' style='color: red'></p>
+      <p id='demo' style='color: red'></p>
       <p class="mt-5 mb-3 text-muted">© Ayuda-Sys</p>
 
     </form>
@@ -117,7 +117,7 @@ if(!empty($_SESSION['sun'])){
                       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                         
                       // Output the result in an element with id='demo'
-                      document.getElementById('clock').innerHTML =minutes + 'm ' + seconds + 's ';
+                      document.getElementById('demo').innerHTML =minutes + 'm ' + seconds + 's ';
                         
                       // If the count down is over, write some text 
                       if (distance < 0) {
