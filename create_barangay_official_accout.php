@@ -224,6 +224,7 @@ function myFunction() {
     }
     }
 });
+document.getElementById("form1").style.display="block";
 }
 </script>
 </body>
