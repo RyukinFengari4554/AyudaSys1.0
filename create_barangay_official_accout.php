@@ -179,7 +179,7 @@ function myFunction() {
       //alert('SUCCESS');
       //document.getElementById("form1").submit();
       document.getElementById("form1").style.display="block";
-      //document.getElementById("form2").style.display="none";
+      document.getElementById("myBtn1").style.display="none";
       //document.getElementById("myBtn1").style.display="none";
     }
     else{
