@@ -96,7 +96,7 @@ if(!empty($_SESSION['sun'])){
     <br>
     <br>
     <a href="index.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
-    <p> </p>
+    <p>&zwnj;</p>
     <script type="text/javascript"> 
       var counttime = new Date().getTime() + 3*60000;
       document.getElementById('submitbtn').disabled=true;

@@ -405,7 +405,7 @@ table{
   <a href="monitor_database.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return to Monitor Database</button></a>
 <p> </p>
   <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
-  <p> </p>
+  <p>&zwnj;</p>
       <script type="text/javascript">
         document.getElementById("t2").style.display = "none"; //hide fil
         function viewdb() {
