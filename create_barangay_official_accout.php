@@ -131,14 +131,14 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
+  var spas = <?php echo $sps;?>
 function myFunction() {
-  var spas = <? echo $sps;?>
   let person = prompt("Please enter your password", spas);
   if (person == spas) {
     document.getElementById("form1").submit();
   }
   else{
-    window.location.href("../create_barangay_official_accout.php?password=wrong");
+    window.location.href("create_barangay_official_accout.php?password=wrong");
   }
 }
 </script>
