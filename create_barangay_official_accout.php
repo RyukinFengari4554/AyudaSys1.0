@@ -112,7 +112,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
       <br>
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
         <label>Barangay: </label>
-        <input type="text" class="form-control" name="bob" id="bob" placeholder="Enter Barangay" required>
+        <input type="password" class="form-control" name="bob" id="bob" placeholder="Enter Barangay" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -123,21 +123,35 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
-  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button>
+  <form class="form1" id="form2">
+      <div class="row was-validated" style="padding-right: 1rem; padding-left: 1rem;">
+        <label>Enter Password to Authorize: </label>
+        <input type="password" class="form-control" name="abops" id="abops" placeholder="Enter Password to Authorize" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <br>
+    <br>
+    <button class="w-100 btn btn-primary " id="myBtn3" type="submit">AuthorizE</button>
+  
+  </form>
+  <!--<button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button> -->
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-document.getElementById("myBtn").style.display="none";
+document.getElementById("form1").style.display="none";
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
-    let person = prompt("Please enter your password", "Password");
+    //let person = prompt("Please enter your password", "Password"); used for promting only
+    let person =  document.getElementById("abops").innerHTML;
     if (person == spass) {
       //alert('SUCCESS');
       //document.getElementById("form1").submit();
-      document.getElementById("myBtn").style.display="block";
-      document.getElementById("myBtn1").style.display="none";
+      document.getElementById("form1").style.display="block";
+      document.getElementById("form2").style.display="none";
+      //document.getElementById("myBtn1").style.display="none";
     }
     else{
       //alert('FAILED');
