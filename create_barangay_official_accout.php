@@ -74,7 +74,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     background-color: white;
     position:fixed;
     left: 50%;
-    top:50%;
+    
     margin:auto;
     margin-left:-100px;
     padding:15px;
@@ -97,7 +97,8 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 			font-size: 19px;
 			border: 1px solid #007be1;
 			padding: 15px 50px;
-			cursor: pointer
+			cursor: pointer;
+      border-radius:12px;
 }
 .pw_prompt button:hover {
   color: #ffffff;
