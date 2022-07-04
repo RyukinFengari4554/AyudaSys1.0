@@ -19,9 +19,7 @@ input[type=number].no-spinner::-webkit-inner-spin-button,
 
 html{
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  
   background-size: cover;
   height: 100%;
 
