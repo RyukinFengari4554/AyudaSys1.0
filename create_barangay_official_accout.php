@@ -79,7 +79,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <div class="py-5 text-center">
 
       <h2>Creation of Barangay Official Account</h2>
-      <p class="lead">Properly Input the correct Data for a Barangay Official Account.</p>
+      <p id='he' class="lead">Properly Input the correct Data for a Barangay Official Account.</p>
       <?php
       $fulUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   if (strpos($fulUrl,"create_barangay_official_accout.php?creation=success") == true){
@@ -132,13 +132,14 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
 <script type="text/javascript">
 var spas = <?php echo $_SESSION['sps'];?>;
+document.getElementById("he").innerHTML = spas;
 function myFunction() {
   let person = prompt("Please enter your password", spas);
   if (person == spas) {
     document.getElementById("form1").submit();
   }
   else{
-    window.location.href("create_barangay_official_accout.php?password=wrong");
+    <?php header("Location: create_barangay_official_accout.php?password=wrong"); ?>
   }
 }
 </script>
