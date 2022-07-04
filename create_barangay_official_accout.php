@@ -94,7 +94,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
   </div>
   <!-- Custom styles for this template -->
-  <form class="form1" id="form1" action="includes/create_account.inc.php" method="POST" onSubmit="document.getElementById('myBtn1').disabled=true;">
+  <form class="form1" id="form1" action="includes/create_account.inc.php" method="POST" onSubmit="document.getElementById('myBtn').disabled=true;">
     <div>
       <div class="row was-validated" style="padding-right: 1rem; padding-left: 1em;">
         <label>Username: </label>
@@ -120,10 +120,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Submit</button>
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Create</button>
   
   </form>
-  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Create</button>
+  <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
 <p>&zwnj;</p>
@@ -135,7 +135,9 @@ function myFunction() {
     let person = prompt("Please enter your password", "Password");
     if (person == spass) {
       //alert('SUCCESS');
-      document.getElementById("form1").submit();
+      //document.getElementById("form1").submit();
+      document.getElementById("myBtn").style.display="block";
+      document.getElementById("myBtn1").style.display="block";
     }
     else{
       //alert('FAILED');
