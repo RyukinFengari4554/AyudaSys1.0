@@ -120,7 +120,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <br>
     
     <br>
-    <button class="w-100 btn btn-primary " id="myBtn" type="submit" hidden>Create</button>
+    <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
   <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Authorize</button>
@@ -129,7 +129,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 <p>&zwnj;</p>
 
 <script type="text/javascript">
-
+document.getElementById("myBtn").style.display="none";
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
     let person = prompt("Please enter your password", "Password");
@@ -137,7 +137,7 @@ function myFunction() {
       //alert('SUCCESS');
       //document.getElementById("form1").submit();
       document.getElementById("myBtn").style.display="block";
-      document.getElementById("myBtn1").style.display="block";
+      document.getElementById("myBtn1").style.display="none";
     }
     else{
       //alert('FAILED');
