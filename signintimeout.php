@@ -94,7 +94,7 @@ if(!empty($_SESSION['sun'])){
 
     </form>
     <script type="text/javascript"> 
-      var counttime = new Date().getTime() + 0.5*60000;
+      var counttime = new Date().getTime() + 3*60000;
       document.getElementById('submitbtn').disabled=true;
       // Update the count down every 1 second
       var x = setInterval(function() {
