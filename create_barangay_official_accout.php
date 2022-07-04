@@ -201,7 +201,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 };
 
 
-document.getElementById("form1").style.display="none";
+document.getElementById("myBtn").style.display="none";
 function myFunction() {
     var spass = "<?php echo $_SESSION['sps'];?>";
     //let person = prompt("Please enter your password", "Password"); used for promting only
