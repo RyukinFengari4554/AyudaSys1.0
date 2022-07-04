@@ -134,7 +134,7 @@ ini_set('display_errors', 1);
 <script type="text/javascript">
 
 function myFunction() {
-  var spass = <?php echo $_SESSION['sps'];?>';
+  var spass = "<?php echo $_SESSION['sps'];?>";
   alert(spass);
   let person = prompt("Please enter your password", "Password");
   if (person == spass) {
