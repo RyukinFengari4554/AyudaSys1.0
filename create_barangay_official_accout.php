@@ -132,8 +132,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
 <script type="text/javascript">
 var spas = <?php session_start(); echo $_SESSION['sps'];?>;
+alert(spas);
 function myFunction() {
-  alert(spas);
+  
   wait(3);
   let person = prompt("Please enter your password", spas);
   if (person == spas) {
