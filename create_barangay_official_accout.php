@@ -151,6 +151,7 @@ function myFunction() {
     }
     echo $rgra;
   ?>
+  alert(spass);
   let person = prompt("Please enter your password", "Password");
   if (person === spas) {
     alert('SUCCESS');
