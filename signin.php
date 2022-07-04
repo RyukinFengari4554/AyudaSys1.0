@@ -1,7 +1,10 @@
 <?php
 require 'includes/check_account.php';
 session_start();
-
+if($_SESSION==3){
+  header("Location: signintimeout.php");
+  exit();
+}
 if(!empty($_SESSION['sun'])){
   $account=Check($_SESSION['sun'],$_SESSION['sps']);
   if($account=="barangay"){
