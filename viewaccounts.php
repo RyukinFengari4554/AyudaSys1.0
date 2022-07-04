@@ -129,7 +129,7 @@ table{
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">View Accounts Page</h1>
-      <p class="lead">The View accounts page allows the  monitoring of created accounts</p>
+      <p class="lead">The View accounts page allows the  monitoring of created Barangay official accounts</p>
       <p style="color: #ADD8E6;
       font-family: 'Ubuntu', sans-serif;
       font-weight: 500; ">View Database as: </p>
