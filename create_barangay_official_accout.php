@@ -139,10 +139,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
                     echo "<center><h2 style='color: green;margin: auto;'> Account Successfully Created</h2></center>";
                   };
                   if (strpos($fulUrl,"create_barangay_official_accout.php?creation=failed") == true){
-                    echo "<center><h2 style='color: red;margin: auto;'> Account Creation Failed</h2></center>";
+                    echo "<center><h2 style='color: red;margin: auto;'> Account Creation Failed! Account Username Already Exist.</h2></center>";
                   };
                   if (strpos($fulUrl,"password=wrong") == true){
-                    echo "<center><h2 style='color: red;margin: auto;'> Authorization Failed! Try again.</h2></center>";
+                    echo "<center><h2 style='color: red;margin: auto;'> Authorization Failed! Please input your correct password in the prompt box.</h2></center>";
                   };
       ?>
     </div>

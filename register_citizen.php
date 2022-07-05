@@ -129,10 +129,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
                     echo "<center><h2 style='color: green; margin: auto;'>Citizen Registration Success</h2></center>";
                   };
                   if (strpos($fulUrl,"register_citizen.php?register=failed") == true){
-                    echo "<center><h2 style='color: red;margin: auto;'>Citizen Registration Failed</h2></center>";
+                    echo "<center><h2 style='color: red;margin: auto;'>Citizen Registration Failed! Barangay_ID already exist.</h2></center>";
                   };
                   if (strpos($fulUrl,"password=wrong") == true){
-                    echo "<center><h2 style='color: red;margin: auto;'> Authorization Failed! Try again.</h2></center>";
+                    echo "<center><h2 style='color: red;margin: auto;'> Authorization Failed! Please input your correct password in the prompt box.</h2></center>";
                   };
       ?>
       

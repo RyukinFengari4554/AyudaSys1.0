@@ -151,7 +151,7 @@
   <section id='d1'>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Already Registered!</h1>
-      <p class="lead">A family member has already registered! <br>
+      <p class="lead">You or a family member has already registered! <br>
     </div>
     <div class="hello">
     </div>
@@ -169,7 +169,7 @@
   <section id='d2'>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Nakarehistro na!</h1>
-      <p class="lead">Nakarehistro na ang isang miyembro ng pamilya mo! <br>
+      <p class="lead">Ikaw ay makarehistro na o ang isang miyembro ng pamilya mo! <br>
     </div>
     <div class="hello">
     </div>
