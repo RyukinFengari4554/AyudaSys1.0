@@ -63,10 +63,11 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     .pw_prompt {
     background-color: white;
     position:fixed;
+    top: 40%;
     left: 40%;
     margin: auto;
     padding:15px;
-    width:20%;
+    width:200px;
     border:1px solid black;
 }
 .pw_prompt label {
@@ -195,7 +196,10 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
   </form>
   <div  id="wa">
   <p>&zwnj;</p>
-  <center><h2 style='color: white;margin: auto;'>Waiting for Authorization.</h2></center>
+  <center><h2 style='color: white;margin: auto;'>&zwnj;</h2></center>
+  <p>&zwnj;</p>
+  <p>&zwnj;</p>
+  <p>&zwnj;</p>
   <p>&zwnj;</p>
   </div>
   <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Register Citizen</button>
