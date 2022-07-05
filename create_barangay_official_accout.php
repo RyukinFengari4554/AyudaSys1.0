@@ -157,9 +157,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
-  <br>
-  <h2 id="wa" style='margin: auto;'> Waiting for Authorization.</h2>
-  <br>
+  <h2 id="wa" style='color: white;margin: auto;'> <br>Waiting for Authorization.<br></h2>
   <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Create Account</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
@@ -207,7 +205,6 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 document.getElementById("myBtn").style.display="none";
 document.getElementById("wa").style.display="none";
 function myFunction() {
-  document.getElementById("wa").style.display="block";
     var bun = document.getElementById('boun').value;
     var bps = document.getElementById('bops').value;
     var bb = document.getElementById('bob').value;
@@ -216,6 +213,7 @@ function myFunction() {
     }
     else{
       document.getElementById("form1").style.display="none";
+      document.getElementById("wa").style.display="block";
       var spass = "<?php echo $_SESSION['sps'];?>";
       //let person = prompt("Please enter your password", "Password"); used for promting only
       //var person =  document.getElementById("abops").innerHTML;
