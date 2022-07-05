@@ -316,6 +316,7 @@ table{
           <a href="monitor_database.php"><button type="button" id="d1"
               class="btn btn-lg btn-block btn-outline-primary">Return to Monitor Database</button></a>
         </div>
+        <br>
         <div class="card  light-sm col-4" style='margin:auto;  padding:0;'>
           <a href="includes/home_check.php"><button type="button" id="d1"
               class="btn btn-lg btn-block btn-outline-primary">Return Home</button></a>
