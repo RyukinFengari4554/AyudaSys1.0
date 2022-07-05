@@ -96,11 +96,22 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
 @media (min-width: 320px) {
   .pw_prompt {
     left: 20%;
-}
+  }
 }
 @media (min-width: 430px) {
   .pw_prompt {
     left: 30%;
+  }
+}
+@media (min-width: 768px) {
+  .pw_prompt {
+    left: 40%;
+  }
+}
+@media (min-width: 1024px) {
+  .pw_prompt {
+    left: 40%;
+  }
 }
   </style>
 </head>
