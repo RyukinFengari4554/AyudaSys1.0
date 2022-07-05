@@ -67,7 +67,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
     left: 40%;
     margin: auto;
     padding:15px;
-    width:200px;
+    width:220px;
     border:1px solid black;
 }
 .pw_prompt label {
