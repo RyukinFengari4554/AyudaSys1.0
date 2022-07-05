@@ -93,6 +93,15 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
   color: #ffffff;
 	background-color: #0005d9;
 }
+@media (min-width: 320px) {
+  .pw_prompt {
+    left: 20%;
+}
+}
+@media (min-width: 430px) {
+  .pw_prompt {
+    left: 30%;
+}
   </style>
 </head>
 
