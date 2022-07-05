@@ -108,7 +108,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     left: 20%;
   }
 }
-@media (min-width: 430px) {
+@media (min-width: 425x) {
   .pw_prompt {
     left: 30%;
   }
