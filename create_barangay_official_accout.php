@@ -157,6 +157,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
+  <br>
+  <h2 id="wa" style='margin: auto;'> Waiting for Authorization.</h2>
+  <br>
   <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Create Account</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
@@ -166,7 +169,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     var promptCount = 0;
     window.pw_prompt = function(options) {
     var lm = options.lm || "Password:",
-        bm = options.bm || "Submit";
+        bm = options.bm || "Authorize";
     if(!options.callback) { 
         alert("No callback function provided! Please provide one.") 
     };
@@ -202,7 +205,9 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
 
 
 document.getElementById("myBtn").style.display="none";
+document.getElementById("wa").style.display="none";
 function myFunction() {
+  document.getElementById("wa").style.display="block";
     var bun = document.getElementById('boun').value;
     var bps = document.getElementById('bops').value;
     var bb = document.getElementById('bob').value;
