@@ -157,7 +157,11 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
     <button class="w-100 btn btn-primary " id="myBtn" type="submit">Create</button>
   
   </form>
-  <h2 id="wa" style='color: white;margin: auto;'> <br>Waiting for Authorization.<br></h2>
+  <div  id="wa">
+  <p>&zwnj;</p>
+  <h2 style='color: white;margin: auto;'><center>Waiting for Authorization.</center></h2>
+  <p>&zwnj;</p>
+  </div>
   <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Create Account</button>
   <p> </p>
 <a href="includes/home_check.php"><button class="w-100 btn btn-primary " type="submit" id="btns">Return Home</button></a>
