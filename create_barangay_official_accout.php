@@ -18,7 +18,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed" || $account=="barangay"){
   <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
   <title>AyudaSys Creation of Barangay Official Account</title>
-  
+  <link rel="shortcut icon" href="images/logo2.ico">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/checkout/">
 
