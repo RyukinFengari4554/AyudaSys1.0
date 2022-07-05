@@ -195,7 +195,7 @@ if(empty($_SESSION['sun']) || $account=="login-failed"){
   </form>
   <div  id="wa">
   <p>&zwnj;</p>
-  <h2 style='color: white;margin: auto;'><center>Waiting for Authorization.</center></h2>
+  <center><h2 style='color: white;margin: auto;'>Waiting for Authorization.</h2></center>
   <p>&zwnj;</p>
   </div>
   <button class="w-100 btn btn-primary " id="myBtn1" onclick="myFunction();">Register Citizen</button>
