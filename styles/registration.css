@@ -80,6 +80,9 @@ html{
     padding: 5px 5px;
     height: auto;
   }
+  .pw_prompt {
+    left: 20%;
+}
 }
 @media (min-width: 430px) {
   .navbar{
@@ -89,6 +92,9 @@ html{
     padding: 7px 7px;
     height: auto;
   }
+  .pw_prompt {
+    left: 20%;
+}
 }
 @media (min-width: 768px) {
   .navbar{
