@@ -81,7 +81,7 @@ html{
     height: auto;
   }
   .pw_prompt {
-    left: 20%;
+    left: 10%;
 }
 }
 @media (min-width: 430px) {
@@ -93,7 +93,7 @@ html{
     height: auto;
   }
   .pw_prompt {
-    left: 20%;
+    left: 10%;
 }
 }
 @media (min-width: 768px) {
