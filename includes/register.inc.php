@@ -16,6 +16,7 @@
         }
         return $randomString;
     }
+    ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
 
     $barangay_id = mysqli_real_escape_string($conn, $_POST['rbid']);
     $house_no  = mysqli_real_escape_string($conn, $_POST['rhn']);
