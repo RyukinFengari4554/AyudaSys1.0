@@ -214,17 +214,29 @@ table, th, td {
           <input type="radio" name="Ayuda_option" value="Granted Date">
           <label for="html">Granted Date</label>
 
-          <input type="radio" name="Ayuda_option" value="1">
-          <label for="css">Delivered</label>
+          <input type="radio" name="Ayuda_option" value="first_name">
+          <label for="css">Name</label>
 
-          <input type="radio" name="Ayuda_option" value="0">
-          <label for="javascript">Undelivered</label>
+          <input type="radio" name="Ayuda_option" value="barangay">
+          <label for="javascript">Barangay</label>
 
-          <input type="radio" name="Ayuda_option" value="0">
-          <label for="javascript">Undelivered</label>
+          <input type="radio" name="Ayuda_option" value="barangay_id">
+          <label for="javascript">Barangay Id</label>
+          
+          <input type="radio" name="Ayuda_option" value="family_code">
+          <label for="javascript">Family Code</label>
       </fieldset>
+      <fieldset id="group2">
+          <p>Select Direction:</p>
+          <input type="radio" name="Ayuda_option" value="ASC">
+          <label for="html">Ascending</label>
+
+          <input type="radio" name="Ayuda_option" value="DESC">
+          <label for="javascript">Descending</label>
+      </fieldset>
+      <br>
       <fieldset id="group1">
-          <p>Select Filter:</p>
+          <p>Select Distribution Status:</p>
           <input type="radio" name="Ayuda_option" value="All">
           <label for="html">All</label>
 
@@ -530,7 +542,6 @@ table, th, td {
     ?>
 
   </div>
-  <br>
   <div class="container">
       <div class="card-deck  text-center">
         <div class="card-sm  light-sm" style='margin:auto'>
