@@ -166,7 +166,10 @@ table{
 .tprint{
   background-color: white;
 }
-
+table, th, td {
+    border: 1px solid black;
+  border-collapse: collapse;
+}
 
 </style>
   <body>
