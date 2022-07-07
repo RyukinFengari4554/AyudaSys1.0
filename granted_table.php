@@ -202,14 +202,7 @@ table{
         <input type='submit' value='Search' />
       </form>
     </div>
-    <div class="container">
-      <div class="card-deck  text-center">
-        <div class="card-sm  light-sm" style='margin:auto'>
-        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent(id='t2')">Generate Report</button></a>
-        </div>
-      </div>
-    </div>
-  <p>&zwnj;</p>
+    
     <?php
     if (isset($_POST['search'])){
       $conn -> close();
@@ -396,6 +389,13 @@ table{
       ?>
   </div>
   <br>
+  <div class="container">
+      <div class="card-deck  text-center">
+        <div class="card-sm  light-sm" style='margin:auto'>
+        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent(id='t2')">Generate Report</button></a>
+        </div>
+      </div>
+    </div>
   <br>
   <div class='container' > 
     <div class="card-deck  text-center ">
