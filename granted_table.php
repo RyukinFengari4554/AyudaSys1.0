@@ -348,14 +348,27 @@ table, th, td {
               echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
             }
             echo "</div>";
-        }else if ((isset($_POST['Ayuda_option']) && $_POST['Ayuda_option'] != "All")){
+        }else if (isset($_POST['Ayuda_option']) || isset($_POST['dir']) || isset($_POST['sort'])){
           $rd=$_POST['Ayuda_option'];
-          if($account=='admin'){
-            $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE distribution_status = $rd ORDER BY g.granted_date ASC;";
+          $ord=$_POST['dir'];
+          $so=$_POST['sort'];
+          if ($rd == "All"){
+            if($account=='admin'){
+              $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id ORDER BY $so $ord;";
+            }
+            else{
+              $sbv =$_SESSION['sb'];
+              $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' ORDER BY $so $ord;";
+            }
           }
           else{
-            $sbv =$_SESSION['sb'];
-            $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND distribution_status = $rd ORDER BY g.granted_date ASC;";
+            if($account=='admin'){
+              $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE distribution_status = $rd ORDER BY $so $ord;";
+            }
+            else{
+              $sbv =$_SESSION['sb'];
+              $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND distribution_status = $rd ORDER BY $so $ord;";
+            }
           }
           echo "<div id='t1'>";
             $result = mysqli_query($conn, $sql);
