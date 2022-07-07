@@ -611,14 +611,14 @@ fieldset {
 
         function printContent(el) {
           document.getElementById("t2").style.display = "block";
-          //document.body.style.backgroundImage = "none";
+          document.body.style.backgroundImage = "none";
           var restorepage = $('body').html();
           var printcontent = $('#' + el).clone();
           $('body').empty().html(printcontent);
           window.print();
           $('body').html(restorepage);
           document.getElementById("t1").style.display = "block";
-          //document.body.style.backgroundImage = url("images/bg.jpg");
+          document.body.style.backgroundImage = "url('images/bg.jpg')";
         }
       </script>
 
