@@ -227,7 +227,7 @@ table, th, td {
           <label for="javascript">Family Code</label>
       </fieldset>
       <fieldset id="group2">
-          <p>Select Direction:</p>
+          <p>Select ORDER:</p>
           <input type="radio" name="dir" value="ASC">
           <label for="html">Ascending</label>
 
