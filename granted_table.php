@@ -209,7 +209,22 @@ table, th, td {
       <form action='granted_table.php' method='post' style="color: #ADD8E6;
       font-family: 'Ubuntu', sans-serif;
       font-weight: 500; ">
-      <p>Select Filter:</p>
+      <fieldset id="group2">
+          <p>Select Sorting:</p>
+          <input type="radio" name="Ayuda_option" value="Granted Date">
+          <label for="html">Granted Date</label>
+
+          <input type="radio" name="Ayuda_option" value="1">
+          <label for="css">Delivered</label>
+
+          <input type="radio" name="Ayuda_option" value="0">
+          <label for="javascript">Undelivered</label>
+
+          <input type="radio" name="Ayuda_option" value="0">
+          <label for="javascript">Undelivered</label>
+      </fieldset>
+      <fieldset id="group1">
+          <p>Select Filter:</p>
           <input type="radio" name="Ayuda_option" value="All">
           <label for="html">All</label>
 
@@ -218,6 +233,7 @@ table, th, td {
 
           <input type="radio" name="Ayuda_option" value="0">
           <label for="javascript">Undelivered</label>
+      </fieldset>
         <br><br>
           <input type="submit" value="Submit">
       </form>
@@ -247,9 +263,7 @@ table, th, td {
               echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
               echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
               echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
-              echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
               echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
-              echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
               echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
               echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
               if($row['distribution_status']==1){
@@ -277,9 +291,7 @@ table, th, td {
               echo "<thead><tr ><th >qr_code</th>";
               echo "<th>Name</th>";
               echo "<th>Barangay</th>";
-              echo "<th>register_no</th>";
               echo "<th>granted_date</th>";
-              echo "<th>pick_up_date</th>";
               echo "<th>barangay_id</th>";
               echo "<th>family_code</th>";
               echo "<th>package_no</th>";
@@ -291,9 +303,7 @@ table, th, td {
               echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
               echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
               echo "<td >". $row['barangay']. "</td>";
-              echo "<td >". $row['registration_no']. "</td>";
               echo "<td >". $row['granted_date']. "</td>";
-              echo "<td >". $row['pick_up_date']. "</td>";
               echo "<td >". $row['barangay_id']. "</td>";
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
@@ -308,9 +318,7 @@ table, th, td {
                 echo "<tr  ><td >".$row['qr_code']."</td>";
                 echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
                 echo "<td >". $row['barangay']. "</td>";
-                echo "<td >". $row['registration_no']. "</td>";
                 echo "<td >". $row['granted_date']. "</td>";
-                echo "<td >". $row['pick_up_date']. "</td>";
                 echo "<td >". $row['barangay_id']. "</td>";
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
@@ -350,9 +358,7 @@ table, th, td {
               echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
               echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
               echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
-              echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
               echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
-              echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
               echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
               echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
               if($row['distribution_status']==1){
@@ -380,9 +386,7 @@ table, th, td {
               echo "<thead><tr ><th >qr_code</th>";
               echo "<th>Name</th>";
               echo "<th>Barangay</th>";
-              echo "<th>register_no</th>";
               echo "<th>granted_date</th>";
-              echo "<th>pick_up_date</th>";
               echo "<th>barangay_id</th>";
               echo "<th>family_code</th>";
               echo "<th>package_no</th>";
@@ -394,9 +398,7 @@ table, th, td {
               echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
               echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
               echo "<td >". $row['barangay']. "</td>";
-              echo "<td >". $row['registration_no']. "</td>";
               echo "<td >". $row['granted_date']. "</td>";
-              echo "<td >". $row['pick_up_date']. "</td>";
               echo "<td >". $row['barangay_id']. "</td>";
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
@@ -411,9 +413,7 @@ table, th, td {
                 echo "<tr  ><td >".$row['qr_code']."</td>";
                 echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
                 echo "<td >". $row['barangay']. "</td>";
-                echo "<td >". $row['registration_no']. "</td>";
                 echo "<td >". $row['granted_date']. "</td>";
-                echo "<td >". $row['pick_up_date']. "</td>";
                 echo "<td >". $row['barangay_id']. "</td>";
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
@@ -453,9 +453,7 @@ table, th, td {
               echo "<p class='text-secondary'> Name: ".$row['first_name']." ".$row['last_name']." </p> " ;
               echo "<p class='text-secondary'> Barangay: ".$row['barangay']." </p> " ;
               echo "<p class='text-secondary'> QR code: ".$row['qr_code']." </p> " ;
-              echo "<p class='text-secondary'> Registration No: ". $row['registration_no']." </p> " ;
               echo "<p class='text-secondary'> Granted Date: ". $row['granted_date']." </p> " ;
-              echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
               echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
               echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
               if($row['distribution_status']==1){
@@ -483,9 +481,7 @@ table, th, td {
               echo "<thead><tr ><th >qr_code</th>";
               echo "<th>Name</th>";
               echo "<th>Barangay</th>";
-              echo "<th>register_no</th>";
               echo "<th>granted_date</th>";
-              echo "<th>pick_up_date</th>";
               echo "<th>barangay_id</th>";
               echo "<th>family_code</th>";
               echo "<th>package_no</th>";
@@ -497,9 +493,7 @@ table, th, td {
               echo "<tr class='active-row' ><td >".$row['qr_code']."</td>";
               echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
               echo "<td >". $row['barangay']. "</td>";
-              echo "<td >". $row['registration_no']. "</td>";
               echo "<td >". $row['granted_date']. "</td>";
-              echo "<td >". $row['pick_up_date']. "</td>";
               echo "<td >". $row['barangay_id']. "</td>";
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
@@ -514,9 +508,7 @@ table, th, td {
                 echo "<tr  ><td >".$row['qr_code']."</td>";
                 echo "<td >". $row['first_name']. " ". $row['last_name']."</td>";
                 echo "<td >". $row['barangay']. "</td>";
-                echo "<td >". $row['registration_no']. "</td>";
                 echo "<td >". $row['granted_date']. "</td>";
-                echo "<td >". $row['pick_up_date']. "</td>";
                 echo "<td >". $row['barangay_id']. "</td>";
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
