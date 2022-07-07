@@ -68,7 +68,7 @@ elseif($account=="login-failed"){
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Barangay Official Page</h1>
-      <p class="lead">The Barangay Official page allows inputting data of citizens and monitoring the databse system</p>
+      <p class="lead">The Barangay Official page allows inputting data of citizens and monitoring the database system</p>
     </div>
     <div class="container">
       <div class="card-deck text-center">
