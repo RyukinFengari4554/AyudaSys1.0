@@ -205,7 +205,7 @@ table{
     <div class="container">
       <div class="card-deck  text-center">
         <div class="card-sm  light-sm" style='margin:auto'>
-        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent()">Generate Report</button></a>
+        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent(id='t2')">Generate Report</button></a>
         </div>
       </div>
     </div>
@@ -438,9 +438,10 @@ table{
           }
         }
 
-        function printContent() {
+        function printContent(el) {
+          document.getElementById("t2").style.display = "block";
           var restorepage = $('body').html();
-          var printcontent = $('#' + id='t2').clone();
+          var printcontent = $('#' + el).clone();
           $('body').empty().html(printcontent);
           window.print();
           $('body').html(restorepage);
