@@ -203,7 +203,9 @@ table{
         <input type='submit' value='Search' />
       </form>
       <br>
-      <form action='granted_table.php' method='post' style='color: white;'>
+      <form action='granted_table.php' method='post' style="color: #ADD8E6;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500; ">
       <p>Select Filter:</p>
           <input type="radio" name="Ayuda_option" value="All">
           <label for="html">All</label>
