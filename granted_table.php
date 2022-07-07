@@ -207,10 +207,10 @@ table{
           <input type="radio" name="Ayuda_option" value="All">
           <label for="html">All</label>
 
-          <input type="radio" name="Ayuda_option" value="Delivered">
+          <input type="radio" name="Ayuda_option" value="1">
           <label for="css">Delivered</label>
 
-          <input type="radio" name="Ayuda_option" value="Undelivered">
+          <input type="radio" name="Ayuda_option" value="0">
           <label for="javascript">Undelivered</label>
         <br><br>
           <input type="submit" value="Submit">
@@ -246,7 +246,11 @@ table{
               echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
               echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
               echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
-              echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> ";
+              if($row['distribution_status']==1){
+                echo "<p class='text-secondary'> Distribution Status: DELIVERED </p> " ;
+              }else{
+                echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
+              }
               echo "</div> </div>";
               }
               echo "</div>";
@@ -287,7 +291,11 @@ table{
               echo "<td >". $row['barangay_id']. "</td>";
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
-              echo "<td >". $row['distribution_status']. "</td></tr>";
+              if($row['distribution_status']==1){
+                echo "<td > DISTRIBUTED </td></tr>";
+              }else{
+                echo "<td > UNDELIVERED </td></tr>";
+              }
             }
 
               else{
@@ -300,7 +308,11 @@ table{
                 echo "<td >". $row['barangay_id']. "</td>";
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
-                echo "<td >". $row['distribution_status']. "</td></tr>";
+                if($row['distribution_status']==1){
+                  echo "<td > DISTRIBUTED </td></tr>";
+                }else{
+                  echo "<td > UNDELIVERED </td></tr>";
+                }
             }
             }
             echo "</tbody></table>";
@@ -310,14 +322,14 @@ table{
               echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
             }
             echo "</div>";
-        }else if (isset($_POST['Ayuda_option']) && ($_POST['Ayuda_option'] == 'Delivered' || $_POST['Ayuda_option'] == 'Undelivered')){
+        }else if (isset($_POST['Ayuda_option']) && ($_POST['Ayuda_option'] == 1 || $_POST['Ayuda_option'] == 0)){
           $rd=$_POST['Ayuda_option'];
           if($account=='admin'){
-            $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE distribution_status = '$rd' ORDER BY g.granted_date ASC;";
+            $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE distribution_status = $rd ORDER BY g.granted_date ASC;";
           }
           else{
             $sbv =$_SESSION['sb'];
-            $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND distribution_status = '$rd' ORDER BY g.granted_date ASC;";
+            $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE p.barangay = '$sbv' AND distribution_status = $rd ORDER BY g.granted_date ASC;";
           }
           echo "<div id='t1'>";
             $result = mysqli_query($conn, $sql);
@@ -336,7 +348,11 @@ table{
               echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
               echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
               echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
-              echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> ";
+              if($row['distribution_status']==1){
+                echo "<p class='text-secondary'> Distribution Status: DELIVERED </p> " ;
+              }else{
+                echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
+              }
               echo "</div> </div>";
               }
               echo "</div>";
@@ -377,7 +393,11 @@ table{
               echo "<td >". $row['barangay_id']. "</td>";
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
-              echo "<td >". $row['distribution_status']. "</td></tr>";
+              if($row['distribution_status']==1){
+                echo "<td > DISTRIBUTED </td></tr>";
+              }else{
+                echo "<td > UNDELIVERED </td></tr>";
+              }
             }
 
               else{
@@ -390,7 +410,11 @@ table{
                 echo "<td >". $row['barangay_id']. "</td>";
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
-                echo "<td >". $row['distribution_status']. "</td></tr>";
+                if($row['distribution_status']==1){
+                  echo "<td > DISTRIBUTED </td></tr>";
+                }else{
+                  echo "<td > UNDELIVERED </td></tr>";
+                }
             }
             }
             echo "</tbody></table>";
@@ -427,7 +451,11 @@ table{
               echo "<p class='text-secondary'> Pick up Date: ". $row['pick_up_date']." </p> " ;
               echo "<p class='text-secondary'> Family code: ". $row['family_code']." </p> " ;
               echo "<p class='text-secondary'> Package No: ". $row['package_no']." </p> " ;
-              echo "<p class='text-secondary'> Distribution Status: ". $row['distribution_status']." </p> ";
+              if($row['distribution_status']==1){
+                echo "<p class='text-secondary'> Distribution Status: DELIVERED </p> " ;
+              }else{
+                echo "<p class='text-secondary'> Distribution Status: UNDELIVERED </p> " ;
+              }
               echo "</div> </div>";
               }
               echo "</div>";
@@ -468,7 +496,11 @@ table{
               echo "<td >". $row['barangay_id']. "</td>";
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
-              echo "<td >". $row['distribution_status']. "</td></tr>";
+              if($row['distribution_status']==1){
+                echo "<td > DISTRIBUTED </td></tr>";
+              }else{
+                echo "<td > UNDELIVERED </td></tr>";
+              }
             }
 
               else{
@@ -481,7 +513,11 @@ table{
                 echo "<td >". $row['barangay_id']. "</td>";
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
-                echo "<td >". $row['distribution_status']. "</td></tr>";
+                if($row['distribution_status']==1){
+                  echo "<td > DISTRIBUTED </td></tr>";
+                }else{
+                  echo "<td > UNDELIVERED </td></tr>";
+                }
             }
             }
             echo "</tbody></table>";
