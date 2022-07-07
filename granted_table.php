@@ -200,6 +200,14 @@ table{
         <input type='submit' value='Search' />
       </form>
     </div>
+    <div class="container">
+      <div class="card-deck  text-center">
+        <div class="card-sm  light-sm" style='margin:auto'>
+        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent(id='d2-print')">Generate Report</button></a>
+        </div>
+      </div>
+    </div>
+  <p>&zwnj;</p>
     <?php
     if (isset($_POST['search'])){
       $conn -> close();
@@ -426,6 +434,15 @@ table{
             document.getElementById("t1").style.display = "none";
             document.getElementById("t2").style.display = "block";
           }
+        }
+
+        function printContent(el) {
+          var restorepage = $('body').html();
+          var printcontent = $('#' + el).clone();
+          $('body').empty().html(printcontent);
+          window.print();
+          $('body').html(restorepage);
+          document.getElementById("d1").style.display = "block";
         }
       </script>
 
