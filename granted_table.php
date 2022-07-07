@@ -215,6 +215,7 @@ fieldset {
       <form action='granted_table.php' method='post' style="color: #ADD8E6;
       font-family: 'Ubuntu', sans-serif;
       font-weight: 500; ">
+      <fieldset>
       <fieldset id="group1">
           <p>Select Sorting:</p>
           <input type="radio" name="sort" value="g.granted_date" checked="checked">
@@ -251,8 +252,8 @@ fieldset {
           <input type="radio" name="Ayuda_option" value="0">
           <label for="javascript">Undelivered</label>
       </fieldset>
-        <br><br>
           <input type="submit" value="Submit">
+          </fieldset>
       </form>
     </div>
     
