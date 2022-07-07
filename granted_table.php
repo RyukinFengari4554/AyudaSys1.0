@@ -593,7 +593,8 @@ table{
           $('body').empty().html(printcontent);
           window.print();
           $('body').html(restorepage);
-          document.getElementById("t1").style.display = "block";
+          document.getElementById("t1").style.display = url("images/bg.jpg");
+          document.body.style.backgroundImage =
         }
       </script>
 
