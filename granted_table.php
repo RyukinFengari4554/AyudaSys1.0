@@ -170,6 +170,12 @@ table, th, td {
     border: 1px solid black;
   border-collapse: collapse;
 }
+fieldset {
+    margin: 8px;
+    border: 1px solid silver;
+    padding: 8px;    
+    border-radius: 4px;
+}
 
 </style>
   <body>
@@ -234,7 +240,6 @@ table, th, td {
           <input type="radio" name="dir" value="DESC">
           <label for="javascript">Descending</label>
       </fieldset>
-      <br>
       <fieldset id="group3">
           <p>Select Distribution Status:</p>
           <input type="radio" name="Ayuda_option" value="All" checked="checked">
