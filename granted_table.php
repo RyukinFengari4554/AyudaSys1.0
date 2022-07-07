@@ -209,7 +209,7 @@ table, th, td {
       <form action='granted_table.php' method='post' style="color: #ADD8E6;
       font-family: 'Ubuntu', sans-serif;
       font-weight: 500; ">
-      <fieldset id="group2">
+      <fieldset id="group1">
           <p>Select Sorting:</p>
           <input type="radio" name="Ayuda_option" value="Granted Date">
           <label for="html">Granted Date</label>
@@ -235,7 +235,7 @@ table, th, td {
           <label for="javascript">Descending</label>
       </fieldset>
       <br>
-      <fieldset id="group1">
+      <fieldset id="group3">
           <p>Select Distribution Status:</p>
           <input type="radio" name="Ayuda_option" value="All">
           <label for="html">All</label>
@@ -348,7 +348,7 @@ table, th, td {
               echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
             }
             echo "</div>";
-        }else if (isset($_POST['Ayuda_option']) && ($_POST['Ayuda_option'] != "All")){
+        }else if ((isset($_POST['Ayuda_option']) && $_POST['Ayuda_option'] != "All")){
           $rd=$_POST['Ayuda_option'];
           if($account=='admin'){
             $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE distribution_status = $rd ORDER BY g.granted_date ASC;";
