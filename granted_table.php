@@ -211,27 +211,27 @@ table, th, td {
       font-weight: 500; ">
       <fieldset id="group1">
           <p>Select Sorting:</p>
-          <input type="radio" name="Ayuda_option" value="Granted Date">
+          <input type="radio" name="sort" value="Granted Date">
           <label for="html">Granted Date</label>
 
-          <input type="radio" name="Ayuda_option" value="first_name">
+          <input type="radio" name="sort" value="first_name">
           <label for="css">Name</label>
 
-          <input type="radio" name="Ayuda_option" value="barangay">
+          <input type="radio" name="sort" value="barangay">
           <label for="javascript">Barangay</label>
 
-          <input type="radio" name="Ayuda_option" value="barangay_id">
+          <input type="radio" name="sort" value="barangay_id">
           <label for="javascript">Barangay Id</label>
           
-          <input type="radio" name="Ayuda_option" value="family_code">
+          <input type="radio" name="sort" value="family_code">
           <label for="javascript">Family Code</label>
       </fieldset>
       <fieldset id="group2">
           <p>Select Direction:</p>
-          <input type="radio" name="Ayuda_option" value="ASC">
+          <input type="radio" name="dir" value="ASC">
           <label for="html">Ascending</label>
 
-          <input type="radio" name="Ayuda_option" value="DESC">
+          <input type="radio" name="dir" value="DESC">
           <label for="javascript">Descending</label>
       </fieldset>
       <br>
