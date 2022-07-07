@@ -445,6 +445,7 @@ table{
           $('body').empty().html(printcontent);
           window.print();
           $('body').html(restorepage);
+          document.getElementById("t1").style.display = "block";
         }
       </script>
 
