@@ -292,7 +292,7 @@ table{
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
               if($row['distribution_status']==1){
-                echo "<td > DISTRIBUTED </td></tr>";
+                echo "<td > DELIVERED </td></tr>";
               }else{
                 echo "<td > UNDELIVERED </td></tr>";
               }
@@ -309,7 +309,7 @@ table{
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
                 if($row['distribution_status']==1){
-                  echo "<td > DISTRIBUTED </td></tr>";
+                  echo "<td > DELIVERED </td></tr>";
                 }else{
                   echo "<td > UNDELIVERED </td></tr>";
                 }
@@ -395,7 +395,7 @@ table{
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
               if($row['distribution_status']==1){
-                echo "<td > DISTRIBUTED </td></tr>";
+                echo "<td > DELIVERED </td></tr>";
               }else{
                 echo "<td > UNDELIVERED </td></tr>";
               }
@@ -412,7 +412,7 @@ table{
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
                 if($row['distribution_status']==1){
-                  echo "<td > DISTRIBUTED </td></tr>";
+                  echo "<td > DELIVERED </td></tr>";
                 }else{
                   echo "<td > UNDELIVERED </td></tr>";
                 }
@@ -498,7 +498,7 @@ table{
               echo "<td >". $row['family_code']. "</td>";
               echo "<td >". $row['package_no']. "</td>";
               if($row['distribution_status']==1){
-                echo "<td > DISTRIBUTED </td></tr>";
+                echo "<td > DELIVERED </td></tr>";
               }else{
                 echo "<td > UNDELIVERED </td></tr>";
               }
@@ -515,7 +515,7 @@ table{
                 echo "<td >". $row['family_code']. "</td>";
                 echo "<td >". $row['package_no']. "</td>";
                 if($row['distribution_status']==1){
-                  echo "<td > DISTRIBUTED </td></tr>";
+                  echo "<td > DELIVERED </td></tr>";
                 }else{
                   echo "<td > UNDELIVERED </td></tr>";
                 }
