@@ -597,7 +597,7 @@ table, th, td {
           window.print();
           $('body').html(restorepage);
           document.getElementById("t1").style.display = "block";
-          document.body.style.backgroundImage = = url("images/bg.jpg");
+          document.body.style.backgroundImage = url("images/bg.jpg");
         }
       </script>
 
