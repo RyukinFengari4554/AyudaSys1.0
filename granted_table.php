@@ -340,7 +340,7 @@ table{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
     echo "</div>";
-    echo "<div id='t2'>";
+    echo "<div id='t2 d2-print'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -444,7 +444,6 @@ table{
           $('body').empty().html(printcontent);
           window.print();
           $('body').html(restorepage);
-          document.getElementById("d1").style.display = "block";
         }
       </script>
 
