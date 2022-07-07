@@ -205,7 +205,7 @@ table{
     <div class="container">
       <div class="card-deck  text-center">
         <div class="card-sm  light-sm" style='margin:auto'>
-        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent(id='d2-print')">Generate Report</button></a>
+        <button type="button" class="btn btn-lg btn-block btn-primary" onclick="printContent(id='t2')">Generate Report</button></a>
         </div>
       </div>
     </div>
@@ -251,7 +251,7 @@ table{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
     echo "</div>";
-    echo "<div id='t2 d2-print'>";
+    echo "<div id='t2'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
@@ -340,7 +340,7 @@ table{
         echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
       }
     echo "</div>";
-    echo "<div id='t2 d2-print'>";
+    echo "<div id='t2'>";
       $result = mysqli_query($conn, $sql);
       $RC = mysqli_num_rows($result);
       if ($RC > 0 ){
