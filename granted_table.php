@@ -587,6 +587,7 @@ table{
 
         function printContent(el) {
           document.getElementById("t2").style.display = "block";
+          document.body.style.backgroundImage = "none";
           var restorepage = $('body').html();
           var printcontent = $('#' + el).clone();
           $('body').empty().html(printcontent);
