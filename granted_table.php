@@ -211,7 +211,7 @@ table, th, td {
       font-weight: 500; ">
       <fieldset id="group1">
           <p>Select Sorting:</p>
-          <input type="radio" name="sort" value="Granted Date">
+          <input type="radio" name="sort" value="Granted Date" checked="checked">
           <label for="html">Granted Date</label>
 
           <input type="radio" name="sort" value="first_name">
@@ -228,7 +228,7 @@ table, th, td {
       </fieldset>
       <fieldset id="group2">
           <p>Select ORDER:</p>
-          <input type="radio" name="dir" value="ASC">
+          <input type="radio" name="dir" value="ASC" checked="checked">
           <label for="html">Ascending</label>
 
           <input type="radio" name="dir" value="DESC">
@@ -237,7 +237,7 @@ table, th, td {
       <br>
       <fieldset id="group3">
           <p>Select Distribution Status:</p>
-          <input type="radio" name="Ayuda_option" value="All">
+          <input type="radio" name="Ayuda_option" value="All" checked="checked">
           <label for="html">All</label>
 
           <input type="radio" name="Ayuda_option" value="1">
