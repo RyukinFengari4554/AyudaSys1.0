@@ -322,7 +322,8 @@ table{
               echo "<center><h3 style='color: white;'>DATA NOT FOUND</h3></center>";
             }
             echo "</div>";
-        }else if (isset($_POST['Ayuda_option']) && ($_POST['Ayuda_option'] == 1 || $_POST['Ayuda_option'] == 0)){
+        }else if (isset($_POST['Ayuda_option']) && ($_POST['Ayuda_option'] == 
+        1 || $_POST['Ayuda_option'] == 0)){
           $rd=$_POST['Ayuda_option'];
           if($account=='admin'){
             $sql = "SELECT * FROM granted AS g INNER JOIN personal_information AS p ON g.barangay_id=p.barangay_id WHERE distribution_status = $rd ORDER BY g.granted_date ASC;";
