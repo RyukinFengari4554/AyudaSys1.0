@@ -202,6 +202,7 @@ table{
         <input type='text' name='search' placeholder='Search Database'/>
         <input type='submit' value='Search' />
       </form>
+      <br>
       <form action='granted_table.php' method='post' style='color: white;'>
       <p>Select Filter:</p>
           <input type="radio" name="Ayuda_option" value="All">
