@@ -169,7 +169,7 @@
   <section id='d2'>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">Nakarehistro na!</h1>
-      <p class="lead">Ikaw ay nakapag-rehistro na o ang isang miyembro ng pamilya mo! <br>
+      <p class="lead">Ikaw o isang miyembro ng pamilya mo ay nakapag-rehistro na! <br>
     </div>
     <div class="hello">
     </div>
